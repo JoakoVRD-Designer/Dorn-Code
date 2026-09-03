@@ -1,0 +1,60 @@
+name: DORN source gates
+
+on:
+  push:
+    branches: [main, "checkpoint/**", "feature/**", "fix/**"]
+  pull_request:
+    branches: [main]
+
+permissions:
+  contents: read
+
+concurrency:
+  group: dorn-source-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  source:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Node.js 22
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - name: Install dependencies without downloading Electron
+        run: npm ci --ignore-scripts
+
+      - name: Verify recoverable structure
+        run: node scripts/verify-recovery.cjs
+
+      - name: Verify runtime Node dependencies
+        run: npm run verify:runtime
+
+      - name: Check JavaScript syntax
+        shell: bash
+        run: |
+          find out scripts sdk installer bin tests -type f \( -name '*.js' -o -name '*.cjs' \) -print0 \
+            | xargs -0 -n 1 node --check
+
+      - name: Run source tests
+        shell: bash
+        run: |
+          mapfile -t tests < <(find tests -name '*.test.cjs' \
+            ! -name 'alpha10.test.cjs' \
+            ! -name 'installer-hardening.test.cjs' \
+            -print | sort)
+          node --test "${tests[@]}"
+
+      - name: Confirm excluded binary classes are absent
+        shell: bash
+        run: |
+          if find . -path './.git' -prune -o -type f \( -name '*.gguf' -o -name '*.dll' -o -name '*.exe' -o -name '*.pfx' \) -print -quit | grep -q .; then
+            echo 'El repositorio contiene un binario o secreto excluido.' >&2
+            exit 1
+          fi

@@ -1,0 +1,82 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://dorn.local/schemas/dorn-installer-plugin-v1.json",
+  "title": "DORN Installer Studio Plugin Manifest",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schemaVersion", "id", "name", "version", "entry", "hooks", "permissions"],
+  "properties": {
+    "schemaVersion": { "const": 1 },
+    "id": {
+      "type": "string",
+      "pattern": "^[a-z0-9]+(?:[._-][a-z0-9]+)*$",
+      "maxLength": 100
+    },
+    "name": { "type": "string", "minLength": 1, "maxLength": 100 },
+    "version": {
+      "type": "string",
+      "pattern": "^(0|[1-9][0-9]*)\\.(0|[1-9][0-9]*)\\.(0|[1-9][0-9]*)(?:-[0-9A-Za-z.-]+)?$"
+    },
+    "publisher": { "type": "string", "maxLength": 120 },
+    "description": { "type": "string", "maxLength": 1000 },
+    "entry": {
+      "type": "string",
+      "pattern": "^(?![/\\\\])(?!.*\\.\\.)[^:*?\"<>|]+\\.js$",
+      "maxLength": 180
+    },
+    "engine": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["dornInstaller"],
+      "properties": {
+        "dornInstaller": {
+          "type": "string",
+          "pattern": "^>=3\\.0\\.0-alpha\\.7$"
+        }
+      }
+    },
+    "hooks": {
+      "type": "array",
+      "uniqueItems": true,
+      "maxItems": 7,
+      "items": {
+        "enum": [
+          "before-scan",
+          "after-scan",
+          "validate-project",
+          "transform-manifest",
+          "before-build",
+          "after-build",
+          "publish"
+        ]
+      }
+    },
+    "permissions": {
+      "type": "array",
+      "uniqueItems": true,
+      "maxItems": 8,
+      "items": {
+        "enum": [
+          "project:read",
+          "project:write-generated",
+          "manifest:read",
+          "manifest:transform",
+          "artifact:read",
+          "artifact:write",
+          "network:https",
+          "publish:external"
+        ]
+      }
+    },
+    "networkHosts": {
+      "type": "array",
+      "uniqueItems": true,
+      "maxItems": 20,
+      "items": {
+        "type": "string",
+        "pattern": "^[a-z0-9.-]+$",
+        "maxLength": 253
+      }
+    }
+  }
+}

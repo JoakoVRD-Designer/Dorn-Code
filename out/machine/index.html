@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data: dorn-background:; connect-src 'none'; object-src 'none'; base-uri 'none'; form-action 'none'">
+    <title>DORN Machine</title>
+    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="../renderer/vendor/dorn-product-shell.css">
+    <link rel="stylesheet" href="../renderer/vendor/dorn-appearance.css">
+    <script src="../renderer/vendor/dorn-appearance.js"></script>
+    <script src="./app.js" defer></script>
+  </head>
+  <body>
+    <header class="titlebar">
+      <div class="wordmark"><img src="./icon.svg" alt="">DORN <span>MACHINE</span></div>
+      <div class="machine-state"><i></i><span>Sistema de productos físicos · modo local</span></div>
+      <div class="window-controls">
+        <button data-window="minimize" aria-label="Minimizar">—</button>
+        <button data-window="maximize" aria-label="Maximizar">□</button>
+        <button data-window="close" aria-label="Cerrar">×</button>
+      </div>
+    </header>
+    <div class="machine-shell">
+      <aside class="machine-nav">
+        <div class="machine-glyph"><img src="./icon.svg" alt="Identidad de DORN Machine"></div>
+        <button class="active" data-view="devices">Mis productos</button>
+        <button data-view="catalog">Catálogo DORN</button>
+        <button data-view="automation">Automatización</button>
+        <button data-view="diagnostics">Diagnóstico</button>
+        <div class="security-card"><strong>PRODUCTOS VERIFICADOS</strong><p>DORN Machine sólo mostrará hardware publicado y firmado por DORN.</p></div>
+      </aside>
+      <main>
+        <section data-page="devices" class="page active">
+          <header class="page-head"><span><small>CUENTA LOCAL</small><h1>Mis productos DORN</h1><p>Aquí aparecerán únicamente productos físicos oficiales de DORN asociados al usuario. No se pueden registrar equipos ajenos como si fueran fabricados por la empresa.</p></span></header>
+          <div class="metrics">
+            <article><small>PRODUCTOS PUBLICADOS</small><strong data-device-count>0</strong></article>
+            <article><small>CONECTORES ACTIVOS</small><strong>0</strong></article>
+            <article><small>ACCIONES PENDIENTES</small><strong>0</strong></article>
+          </div>
+          <div class="official-empty" data-device-list><img src="./icon.svg" alt=""><strong>Aún no existen productos físicos DORN publicados</strong><p>Esta pantalla permanecerá vacía hasta que un producto real tenga identidad, documentación, firmware, garantía y conector firmado.</p><button data-open-readiness>Ver requisitos de publicación</button></div>
+        </section>
+        <section data-page="catalog" class="page">
+          <header class="page-head"><span><small>ECOSISTEMA DORN</small><h1>Catálogo oficial</h1><p>El catálogo no muestra conceptos como productos terminados. Se habilitará sólo cuando DORN publique hardware real.</p></span></header>
+          <div class="release-gate"><strong>0 productos disponibles</strong><p>No hay una máquina, sensor o controlador DORN listo para compra o vinculación en esta versión interna.</p></div>
+        </section>
+        <section data-page="automation" class="page">
+          <header class="page-head"><span><small>FLUJOS SEGUROS</small><h1>Automatización de máquinas</h1><p>La edición v4 define el flujo y las aprobaciones; no simula conexiones inexistentes.</p></span></header>
+          <div class="roadmap">
+            <article><i>1</i><span><strong>Producto físico validado</strong><small>Pendiente: prototipo, pruebas eléctricas, mecánicas y de seguridad.</small></span></article>
+            <article><i>2</i><span><strong>Firmware y protocolo</strong><small>Pendiente: comunicación autenticada, actualización y recuperación.</small></span></article>
+            <article><i>3</i><span><strong>Conector DORN firmado</strong><small>Pendiente: permisos mínimos, simulador y trazabilidad.</small></span></article>
+            <article><i>4</i><span><strong>Publicación</strong><small>Pendiente: documentación, soporte, garantía y parada segura.</small></span></article>
+          </div>
+        </section>
+        <section data-page="diagnostics" class="page">
+          <header class="page-head"><span><small>VERIFICACIÓN</small><h1>Diagnóstico</h1><p>Comprueba qué es real y qué falta antes de trabajar con hardware.</p></span><button data-send-diagnostics>Analizar con DORN AI</button></header>
+          <div class="diagnostics">
+            <article class="ok"><strong>Política de catálogo</strong><span>Sólo acepta productos oficiales firmados por DORN.</span></article>
+            <article class="ok"><strong>Estado transparente</strong><span>No existen productos publicados en esta versión.</span></article>
+            <article class="pending"><strong>Conectores de hardware</strong><span>No instalados; no se emiten comandos.</span></article>
+            <article class="pending"><strong>Telemetría en tiempo real</strong><span>Requiere SDK y hardware autorizado.</span></article>
+          </div>
+        </section>
+      </main>
+    </div>
+    <footer class="statusbar"><span>DORN Machine · Base v4</span><span data-status>0 productos oficiales publicados</span></footer>
+  </body>
+</html>

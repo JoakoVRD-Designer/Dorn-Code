@@ -1,0 +1,17 @@
+docs/DORN-PC-INSTALLER-V3-AND-LINUX.md
+installer/v3/build-installer-v3.sh
+installer/v3/native/dorn-installer-v3.c
+installer/v3/native/dorn-installer-v3.rc
+out/main/dorn-core/linux-runtime.js
+out/main/index.js
+out/preload/index.js
+out/renderer/vendor/dorn-control-center.css
+out/renderer/vendor/dorn-control-center.js
+package.json
+scripts/assemble-windows-portable.cjs
+scripts/electron-runtime.lock.json
+scripts/recover-windows-runtime-from-installer.cjs
+tests/installer-v3.test.cjs
+tests/linux-runtime.test.cjs
+verification/installer-v3-delta-files.txt
+verification/ui-4.0-change-ledger.json

@@ -1,0 +1,4 @@
+Esta es la Parte 2 de 4 del editable de DORN AI Alpha 7.
+Descarga las cuatro partes y extraelas dentro de una misma carpeta vacia.
+No unas los ZIP, no cambies sus extensiones y no uses CMD.
+

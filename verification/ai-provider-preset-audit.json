@@ -1,0 +1,100 @@
+{
+  "schema": "dorn.ai-provider-preset-audit/1",
+  "auditedAt": "2026-08-21",
+  "state": "VERIFIED_STATIC_NEEDS_USER_KEYS_FOR_LIVE_PROVIDERS",
+  "goal": "A normal provider must require only provider selection and an API key; templates, headers, endpoints, response extraction and model selection are DORN responsibilities.",
+  "catalog": {
+    "totalPresets": 30,
+    "uniqueKeys": 30,
+    "keys": [
+      "openai-images",
+      "google-gemini",
+      "groq",
+      "openai-responses",
+      "anthropic-messages",
+      "ollama",
+      "openrouter",
+      "hugging-face",
+      "mistral",
+      "cohere",
+      "deepseek",
+      "xai",
+      "lm-studio",
+      "together",
+      "fireworks",
+      "cerebras",
+      "perplexity",
+      "nvidia-nim",
+      "zai-glm",
+      "moonshot-kimi",
+      "sambanova",
+      "deepinfra",
+      "nebius-token-factory",
+      "aimlapi",
+      "novita",
+      "siliconflow",
+      "cloudflare-workers-ai",
+      "litellm-gateway",
+      "open-webui-gateway",
+      "generic-json"
+    ]
+  },
+  "automaticFlow": [
+    "Load a validated native preset.",
+    "Encrypt the API key separately from headers and request JSON.",
+    "Create the connection disabled.",
+    "Query the provider model endpoint and replace a retired default when possible.",
+    "Send a real minimal response request.",
+    "Activate only after the real request succeeds; otherwise keep it disabled with an actionable error."
+  ],
+  "advancedOnlyReasons": {
+    "openai-images": "Uses the specialized image workflow rather than a chat response contract.",
+    "cloudflare-workers-ai": "Requires an account identifier that cannot be derived safely from an API key alone.",
+    "generic-json": "A private endpoint necessarily requires its private request and response contract."
+  },
+  "officialContractsChecked": [
+    {
+      "provider": "OpenAI",
+      "url": "https://developers.openai.com/api/docs/models",
+      "result": "Responses API and gpt-5.6-sol model identifier confirmed."
+    },
+    {
+      "provider": "Anthropic",
+      "url": "https://platform.claude.com/docs/en/api/messages",
+      "result": "Messages endpoint and required authentication/version headers confirmed."
+    },
+    {
+      "provider": "Anthropic",
+      "url": "https://docs.anthropic.com/en/docs/about-claude/models/overview",
+      "result": "claude-sonnet-5 current API alias confirmed."
+    },
+    {
+      "provider": "Google Gemini",
+      "url": "https://ai.google.dev/gemini-api/docs/openai",
+      "result": "OpenAI-compatible base URL, Bearer authentication, chat endpoint and gemini-3.7-flash confirmed."
+    },
+    {
+      "provider": "Ollama",
+      "url": "https://docs.ollama.com/api/chat",
+      "result": "Local /api/chat request and message response contract confirmed."
+    },
+    {
+      "provider": "Groq",
+      "url": "https://console.groq.com/docs/models",
+      "result": "OpenAI-compatible model discovery endpoint confirmed."
+    },
+    {
+      "provider": "Mistral",
+      "url": "https://docs.mistral.ai/api/endpoint/chat",
+      "result": "Chat completion contract and model discovery recommendation confirmed."
+    }
+  ],
+  "regressions": [
+    "tests/ai-provider-compatibility.test.cjs"
+  ],
+  "limitations": [
+    "No external provider is marked live-verified without a user-owned key and a successful real request.",
+    "Providers may change model catalogs; DORN discovers models at connection time instead of trusting only a hard-coded identifier.",
+    "Specialized image, audio and video generation continue through their typed product runtimes, not a generic chat template."
+  ]
+}

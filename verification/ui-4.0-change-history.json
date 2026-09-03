@@ -1,0 +1,14 @@
+{
+  "schema": "dorn.ui-change-history/1",
+  "entries": [
+    {
+      "path": "resources/startup/splash.html",
+      "baselineSha256": "0ea4b7bd85888af4e43fa91a0297d68d3ea4def6f0483603c9cba45a3502df15",
+      "temporarySha256": "ad5107e3fdda6ffb3dd4d4a0bf14cfa93333bf32514dcfe9c7121d39e28f21b2",
+      "restoredSha256": "0ea4b7bd85888af4e43fa91a0297d68d3ea4def6f0483603c9cba45a3502df15",
+      "status": "REVERTED_TO_DORN_4_0",
+      "reason": "La presentación aportada se interpretó temporalmente como una propuesta para el splash. El usuario aclaró que sólo explica el origen visual y que la animación original 4.0 es obligatoria. Se restauró el archivo original byte por byte.",
+      "tests": ["tests/prompt-explorer.test.cjs", "tests/senior-baseline.test.cjs", "tests/alpha10.test.cjs"]
+    }
+  ]
+}

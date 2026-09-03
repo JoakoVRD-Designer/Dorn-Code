@@ -1,0 +1,96 @@
+{
+  "product": "DORN AI para Windows",
+  "targetVersion": "3.0.0",
+  "buildVersion": "3.0.0-alpha.10.3",
+  "sourceContract": "DORN AI — Maestro de Desarrollo(2).docx",
+  "baseAudited": "DORN_AI_Windows_3.0.0-alpha.4_Portable",
+  "requirements": {
+    "total": 152,
+    "partialExisting": 14,
+    "partialAlpha3": 106,
+    "partialAlpha4": 12,
+    "partialAlpha6": 10,
+    "partialAlpha7": 7,
+    "pending": 3,
+    "matrix": "dorn-v3-requirements.json",
+    "humanReport": "ESTADO-152-PUNTOS-ALPHA10.md",
+    "note": "Partial significa base comprobable, no función final."
+  },
+  "completedInAlpha6": [
+    "preferencias persistentes que modifican el prompt",
+    "perfiles Directo, Mentor, Cercano, Aprendizaje, Ingeniería, Gamers y Desarrollador",
+    "sugerencias de espacio de trabajo",
+    "precarga opcional de DORN Local",
+    "campo de chat ampliado y preservación de espacios",
+    "validación del reconocimiento matemático",
+    "panel de productos",
+    "administración local de plugins",
+    "diseñador inicial de manifiestos de Installer Studio",
+    "contrato CAD neutral y matriz de dependencias"
+  ],
+  "completedInAlpha7": [
+    "catálogo buscable de modelos locales y conectores de API",
+    "orientación de RAM, tareas, licencias, origen e implementación",
+    "aplicación base DORN Design",
+    "aplicación base audiovisual DORN Editor",
+    "IPC aislado y rutas autorizadas para productos opcionales",
+    "envío de documentos estructurados a DORN AI",
+    "SDK específico de plugins de Installer Studio"
+  ],
+  "completedInAlpha8": [
+    "buscador y menú de administración de conversaciones",
+    "archivado, restauración, anclado y duplicado local",
+    "exportación Markdown y JSON versionado de conversaciones",
+    "acciones por respuesta: copiar, regenerar, escuchar, compartir, exportar y valorar",
+    "edición y regeneración no destructivas mediante ramas",
+    "confirmación nativa antes de eliminar conversaciones",
+    "migración SQLite compatible al esquema 4"
+  ],
+  "completedInAlpha9": [
+    "accesos Gamers y Colores dentro de Configuración",
+    "perfil Gamers persistente con objetivo, nivel, motor y plataforma",
+    "prioridades Gamers para rendimiento, gráficos, pruebas, accesibilidad, streaming y modding",
+    "siete paletas visuales aplicables al núcleo de DORN AI",
+    "editor de paleta HEX con vista previa y comprobación de contraste",
+    "importación y exportación de paletas JSON versionadas",
+    "migración segura de preferencias creadas por versiones anteriores"
+  ],
+  "completedInAlpha10": [
+    "almacén validado y atómico de apariencia compartida",
+    "migración de la apariencia local de alpha.9 al proceso principal",
+    "difusión en vivo de colores, contraste, densidad y movimiento",
+    "sincronización visual de DORN AI, DORN Design, DORN Editor y DORN Studio3D",
+    "adaptación de fondo WebGL, rejilla, iluminación y selección de Studio3D",
+    "preloads aislados para apariencia sin exponer Node.js al renderer"
+  ],
+  "requirementsEnhancedInAlpha8": [10, 11, 12, 33],
+  "requirementsEnhancedInAlpha9": [36, 38],
+  "requirementsEnhancedInAlpha10": [36],
+  "notCompleted": [
+    "emulación de Android",
+    "segunda y tercera fase de Installer Studio",
+    "render final de DORN Editor mediante FFmpeg",
+    "operaciones de IA aplicables automáticamente en Design y Editor",
+    "host aislado de plugins de Installer Studio",
+    "Google OAuth y servidor público",
+    "marketplace remoto",
+    "telemetría pública en tiempo real",
+    "motores Open CASCADE y Assimp",
+    "adaptadores ejecutables propietarios"
+  ],
+  "safetyDecisions": [
+    "no anti-idle ni evasión de reglas de Roblox",
+    "no acceso irrestricto y silencioso al sistema",
+    "las herramientas mantienen vista previa, aprobación, límites y registro",
+    "el modo cercano no se presenta como psicólogo ni reemplazo profesional",
+    "las claves API no se generan ni se incluyen"
+  ],
+  "verification": {
+    "command": "npm run verify",
+    "automatedTests": 45,
+    "passed": 45,
+    "failed": 0,
+    "windowsVisualRun": false
+  },
+  "status": "development-build-not-final"
+}

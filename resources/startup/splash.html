@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; media-src 'self'; style-src 'unsafe-inline'; script-src 'unsafe-inline'" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Iniciando DORN</title>
+    <style>
+      * { box-sizing: border-box; }
+      :root { --accent: #c8d0d8; --background: #08090a; --panel: #111316; --text: #f4f6f8; }
+      html, body { width: 100%; height: 100%; margin: 0; overflow: hidden; background: var(--background); font-family: Inter, "Segoe UI", sans-serif; }
+      body { display: grid; place-items: center; border: 1px solid color-mix(in srgb, var(--text) 9%, transparent); opacity: 0; animation: window-in .45s ease forwards, window-out .3s 6.7s ease forwards; }
+      .grid { position: absolute; inset: -25%; opacity: 0; background-image: linear-gradient(color-mix(in srgb, var(--accent) 9%, transparent) 1px, transparent 1px), linear-gradient(90deg, color-mix(in srgb, var(--accent) 9%, transparent) 1px, transparent 1px); background-size: 58px 58px; -webkit-mask-image: radial-gradient(circle at 50% 46%, black 0%, transparent 68%); mask-image: radial-gradient(circle at 50% 46%, black 0%, transparent 68%); animation: grid-in 2s .2s ease forwards; }
+      .glow { position: absolute; width: 720px; height: 720px; border-radius: 50%; background: radial-gradient(circle, color-mix(in srgb, var(--accent) 18%, transparent) 0%, color-mix(in srgb, var(--accent) 6%, transparent) 32%, transparent 67%); opacity: 0; transform: scale(.55); animation: glow-in 4.5s .35s cubic-bezier(.22,.9,.22,1) forwards; }
+      .grain { position: absolute; inset: 0; opacity: .024; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitchTiles'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E"); }
+      .lockup { position: relative; display: flex; flex-direction: column; align-items: center; transform: translateY(-8px); }
+      .word { display: flex; align-items: baseline; color: var(--text); -webkit-text-fill-color: var(--text); text-shadow: 0 0 1px var(--text), 0 14px 48px color-mix(in srgb, var(--accent) 24%, transparent); font-size: clamp(128px, 18vw, 190px); font-weight: 880; letter-spacing: -.065em; line-height: .78; }
+      .letter { display: inline-block; opacity: 0; filter: blur(16px); transform: translateY(.3em) rotateX(-62deg) scale(.93); transform-origin: 50% 100%; animation: letter-in 1.05s cubic-bezier(.22,.9,.22,1) forwards; }
+      .letter:nth-child(1) { animation-delay: .35s; }
+      .letter:nth-child(2) { animation-delay: .85s; }
+      .letter:nth-child(3) { animation-delay: 1.35s; }
+      .letter:nth-child(4) { animation-delay: 1.85s; }
+      .rule { width: 170px; height: 1px; margin-top: 38px; background: linear-gradient(90deg, transparent, var(--accent), transparent); transform: scaleX(0); animation: rule-in 1s 3.65s cubic-bezier(.22,.9,.22,1) forwards; }
+      .subtitle { margin-top: 14px; color: color-mix(in srgb, var(--text) 54%, var(--background)); font-size: 10px; font-weight: 600; letter-spacing: .42em; text-indent: .42em; opacity: 0; animation: meta-in .9s 4.15s ease forwards; }
+      .edition { margin-top: 8px; color: color-mix(in srgb, var(--accent) 36%, var(--background)); font-size: 7px; font-weight: 700; letter-spacing: .23em; text-indent: .23em; opacity: 0; animation: meta-in .8s 4.55s ease forwards; }
+      .loading { display: flex; align-items: center; justify-content: flex-start; width: 18px; height: 7px; margin-top: 20px; color: var(--accent); font-size: 11px; letter-spacing: 2px; opacity: 0; animation: meta-in .6s 4.85s ease forwards; }
+      body[data-product="design"] .grid { transform: rotate(9deg) scale(1.1); }
+      body[data-product="design"] .word { font-style: italic; letter-spacing: -.075em; }
+      body[data-product="education"] .grid { background-size: 42px 42px; }
+      body[data-product="education"] .glow { border: 1px solid color-mix(in srgb, var(--accent) 18%, transparent); }
+      body[data-product="machine"] .grid { background-size: 34px 34px; }
+      body[data-product="machine"] .rule { width: 250px; box-shadow: 0 0 18px var(--accent); }
+      .loading::after { content: "."; animation: loading-dots 1.15s steps(1, end) infinite; }
+      @keyframes window-in { to { opacity: 1; } }
+      @keyframes window-out { to { opacity: 0; transform: scale(1.025); filter: blur(6px); } }
+      @keyframes grid-in { to { opacity: .18; transform: scale(.96); } }
+      @keyframes glow-in { 45% { opacity: 1; } to { opacity: .72; transform: scale(1); } }
+      @keyframes letter-in { to { opacity: 1; filter: blur(0); transform: none; } }
+      @keyframes rule-in { to { transform: scaleX(1); } }
+      @keyframes meta-in { from { transform: translateY(8px); letter-spacing: .55em; } to { opacity: 1; transform: none; } }
+      @keyframes loading-dots { 0%, 24% { content: "."; } 25%, 57% { content: ".."; } 58%, 100% { content: "..."; } }
+      @media (prefers-reduced-motion: reduce) {
+        .grid, .glow, .letter, .rule, .subtitle, .edition, .loading { animation-duration: .01ms; animation-delay: 0s; animation-fill-mode: forwards; }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="grid"></div>
+    <div class="glow"></div>
+    <div class="grain"></div>
+    <main class="lockup">
+      <div class="word" aria-label="DORN"><span class="letter">D</span><span class="letter">O</span><span class="letter">R</span><span class="letter">N</span></div>
+      <div class="rule"></div>
+      <div class="subtitle">INTELLIGENT WORKSYSTEM</div>
+      <div class="edition" id="edition">DORN AI 4.0 · COMPATIBLE CON WINDOWS 11</div>
+      <div class="loading" aria-label="Iniciando"></div>
+    </main>
+    <audio id="startup-sound" preload="auto" src="./dorn-startup.wav"></audio>
+    <script>
+      const params = new URLSearchParams(window.location.search)
+      const audio = document.getElementById('startup-sound')
+      const edition = document.getElementById('edition')
+      const version = params.get('version')
+      const product = params.get('product') || 'ai'
+      const validHex = (value, fallback) => /^#[0-9a-f]{6}$/i.test(value || '') ? value : fallback
+      document.documentElement.style.setProperty('--accent', validHex(params.get('accent'), '#c8d0d8'))
+      document.documentElement.style.setProperty('--background', validHex(params.get('background'), '#08090a'))
+      document.documentElement.style.setProperty('--panel', validHex(params.get('panel'), '#111316'))
+      document.documentElement.style.setProperty('--text', validHex(params.get('text'), '#f4f6f8'))
+      document.body.dataset.product = product
+      const subtitles = {
+        ai: 'INTELLIGENT WORKSYSTEM',
+        design: 'CREATIVE VISUAL SYSTEM',
+        education: 'ADAPTIVE LEARNING SYSTEM',
+        machine: 'CONNECTED MACHINE SYSTEM',
+        editor: 'MEDIA CREATION SYSTEM'
+      }
+      document.querySelector('.subtitle').textContent = subtitles[product] || subtitles.ai
+      if (version) edition.textContent = `DORN AI · ${version.toUpperCase()}`
+      if (product !== 'ai') edition.textContent = `DORN ${product.toUpperCase()} · ${String(version || '').toUpperCase()}`
+      audio.muted = false
+      audio.volume = 0.78
+      let soundStarted = false
+      window.dornPlayStartupSound = async () => {
+        if (params.get('sound') !== '1') return false
+        if (soundStarted && !audio.paused) return true
+        try {
+          soundStarted = true
+          audio.currentTime = 0
+          await audio.play()
+          return true
+        } catch {
+          soundStarted = false
+          return false
+        }
+      }
+      void window.dornPlayStartupSound()
+    </script>
+  </body>
+</html>

@@ -1,0 +1,40 @@
+{
+  "schema": "dorn-connector-matrix/1",
+  "connectors": [
+    {
+      "id": "opencascade",
+      "type": "open-source-runtime",
+      "status": "contract-only",
+      "required": ["official-source", "windows-x64-build", "license-bundle", "corpus-tests"],
+      "operations": ["inspect-brep", "tessellate", "convert-neutral", "repair-shape", "measure"]
+    },
+    {
+      "id": "assimp",
+      "type": "open-source-runtime",
+      "status": "contract-only",
+      "required": ["official-binary-or-build", "license-bundle", "format-corpus-tests"],
+      "operations": ["import-3d", "export-3d", "convert-format"]
+    },
+    {
+      "id": "cinema4d",
+      "type": "licensed-application",
+      "status": "adapter-required",
+      "required": ["installed-application", "official-sdk", "authorized-adapter"],
+      "operations": ["inspect-3d", "render-image", "render-animation", "export-3d"]
+    },
+    {
+      "id": "solidworks",
+      "type": "licensed-application",
+      "status": "adapter-required",
+      "required": ["installed-application", "official-api", "authorized-adapter"],
+      "operations": ["inspect-3d", "export-3d", "measure"]
+    },
+    {
+      "id": "fusion360",
+      "type": "licensed-service",
+      "status": "adapter-required",
+      "required": ["installed-application", "authenticated-account", "official-api", "authorized-adapter"],
+      "operations": ["inspect-3d", "export-3d", "run-script"]
+    }
+  ]
+}

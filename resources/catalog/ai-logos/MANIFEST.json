@@ -1,0 +1,33 @@
+{
+  "schema": "dorn-ai-brand-assets/1",
+  "source": "Simple Icons 16.28.0",
+  "license": "CC0-1.0",
+  "note": "Las marcas pertenecen a sus titulares. DORN muestra únicamente los recursos autorizados presentes en este paquete.",
+  "aliases": {
+    "anthropic": "./vendor/ai-logos/anthropic.svg",
+    "anthropic claude": "./vendor/ai-logos/anthropic.svg",
+    "claude": "./vendor/ai-logos/anthropic.svg",
+    "apple": "./vendor/ai-logos/apple.svg",
+    "baidu": "./vendor/ai-logos/baidu.svg",
+    "bytedance": "./vendor/ai-logos/bytedance.svg",
+    "google": "./vendor/ai-logos/google.svg",
+    "google gemini": "./vendor/ai-logos/google.svg",
+    "google y deepmind": "./vendor/ai-logos/deepmind.svg",
+    "deepmind": "./vendor/ai-logos/deepmind.svg",
+    "deepseek": "./vendor/ai-logos/deepseek.svg",
+    "hugging face": "./vendor/ai-logos/huggingface.svg",
+    "hugging face y comunidad": "./vendor/ai-logos/huggingface.svg",
+    "huawei": "./vendor/ai-logos/huawei.svg",
+    "meta": "./vendor/ai-logos/meta.svg",
+    "minimax": "./vendor/ai-logos/minimax.svg",
+    "mistral ai": "./vendor/ai-logos/mistral.svg",
+    "moonshot ai": "./vendor/ai-logos/moonshot.svg",
+    "moonshot ai kimi": "./vendor/ai-logos/moonshot.svg",
+    "nvidia": "./vendor/ai-logos/nvidia.svg",
+    "openrouter": "./vendor/ai-logos/openrouter.svg",
+    "alibaba qwen": "./vendor/ai-logos/qwen.svg",
+    "qwen": "./vendor/ai-logos/qwen.svg",
+    "alibaba cloud model studio qwen": "./vendor/ai-logos/qwen.svg",
+    "snowflake": "./vendor/ai-logos/snowflake.svg"
+  }
+}

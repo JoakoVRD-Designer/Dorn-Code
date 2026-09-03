@@ -1,0 +1,139 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      http-equiv="Content-Security-Policy"
+      content="default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data: blob: dorn-background:; media-src 'self' file: blob:; object-src 'none'; base-uri 'none'; form-action 'none'"
+    />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>DORN Editor</title>
+    <link rel="stylesheet" href="./style.css" />
+    <link rel="stylesheet" href="../renderer/vendor/dorn-product-shell.css" />
+    <link rel="stylesheet" href="../renderer/vendor/dorn-appearance.css" />
+    <script src="../renderer/vendor/dorn-appearance.js"></script>
+  </head>
+  <body>
+    <header class="titlebar">
+      <div class="brand"><img src="./icon.svg" alt=""><span>DORN</span><small>Editor · alpha</small></div>
+      <nav class="file-actions" aria-label="Archivo">
+        <button id="new-project">Nuevo</button>
+        <button id="import-file">Importar medio</button>
+        <button id="open-project">Abrir proyecto</button>
+        <button id="save-project">Guardar</button>
+        <button id="export-project">Guardar copia</button>
+      </nav>
+      <div class="window-actions">
+        <button data-window="minimize" aria-label="Minimizar">—</button>
+        <button data-window="maximize" aria-label="Maximizar">□</button>
+        <button data-window="close" aria-label="Cerrar">×</button>
+      </div>
+    </header>
+
+    <main class="workspace">
+      <aside class="library panel">
+        <div class="panel-heading">
+          <div><small>BIBLIOTECA</small><strong>Medios</strong></div>
+          <button id="library-import" class="icon-button" title="Importar medio">＋</button>
+        </div>
+        <div id="media-library" class="media-library"></div>
+        <div class="scope-note">
+          <strong>Base audiovisual local</strong>
+          <p>Organiza, previsualiza, corta y documenta el montaje. La codificación final de video se añadirá con FFmpeg validado.</p>
+        </div>
+      </aside>
+
+      <section class="center">
+        <div class="viewer panel">
+          <div class="viewer-stage">
+            <video id="preview" controls preload="metadata"></video>
+            <div id="viewer-empty" class="viewer-empty">
+              <span>DORN</span>
+              <strong>Importa un video o audio</strong>
+              <small>Los archivos permanecen en tu computador.</small>
+            </div>
+          </div>
+          <div class="viewer-meta">
+            <span id="active-media">Sin medio seleccionado</span>
+            <span id="time-readout">00:00.000 / 00:00.000</span>
+          </div>
+        </div>
+
+        <div class="toolbar panel">
+          <button id="split-clip">Dividir en el cursor</button>
+          <button id="move-left">Mover izquierda</button>
+          <button id="move-right">Mover derecha</button>
+          <button id="delete-clip" class="danger">Eliminar clip</button>
+          <span class="toolbar-spacer"></span>
+          <button id="send-to-dorn" class="primary">Continuar en DORN AI</button>
+        </div>
+
+        <section class="timeline panel">
+          <div class="timeline-header">
+            <div>
+              <small>SECUENCIA</small>
+              <input id="project-name" value="Proyecto sin título" aria-label="Nombre del proyecto" />
+            </div>
+            <label>FPS
+              <select id="project-fps">
+                <option>24</option>
+                <option>25</option>
+                <option selected>30</option>
+                <option>50</option>
+                <option>60</option>
+              </select>
+            </label>
+            <label>Formato
+              <select id="project-size">
+                <option value="1920x1080">1920 × 1080</option>
+                <option value="1080x1920">1080 × 1920</option>
+                <option value="3840x2160">3840 × 2160</option>
+                <option value="1280x720">1280 × 720</option>
+              </select>
+            </label>
+          </div>
+          <div class="ruler" aria-hidden="true"><span>0 s</span><span>25%</span><span>50%</span><span>75%</span><span>Fin</span></div>
+          <div id="video-track" class="track">
+            <span class="track-label">V1</span>
+            <div id="clips" class="clips"></div>
+          </div>
+          <div id="audio-track" class="track">
+            <span class="track-label">A1</span>
+            <div id="audio-clips" class="clips"></div>
+          </div>
+        </section>
+      </section>
+
+      <aside class="inspector panel">
+        <div class="panel-heading">
+          <div><small>INSPECTOR</small><strong>Clip seleccionado</strong></div>
+        </div>
+        <div id="clip-inspector" class="inspector-fields">
+          <label>Nombre<input id="clip-name" disabled /></label>
+          <div class="field-row">
+            <label>Entrada<input id="clip-in" type="number" step="0.01" min="0" disabled /></label>
+            <label>Salida<input id="clip-out" type="number" step="0.01" min="0" disabled /></label>
+          </div>
+          <label>Volumen<input id="clip-volume" type="range" min="0" max="1" step="0.01" value="1" disabled /></label>
+          <div class="field-value"><span>Duración</span><strong id="clip-duration">—</strong></div>
+          <div class="field-value"><span>Archivo</span><strong id="clip-path">—</strong></div>
+        </div>
+        <section class="subtitles">
+          <div class="section-heading"><strong>Subtítulos</strong><button id="add-subtitle">Añadir</button></div>
+          <textarea id="subtitle-text" placeholder="Texto del subtítulo"></textarea>
+          <div class="field-row">
+            <label>Inicio<input id="subtitle-start" type="number" min="0" step="0.1" value="0" /></label>
+            <label>Fin<input id="subtitle-end" type="number" min="0" step="0.1" value="3" /></label>
+          </div>
+          <div id="subtitle-list" class="subtitle-list"></div>
+        </section>
+      </aside>
+    </main>
+
+    <footer>
+      <span id="status">Listo. Los cambios se guardan sólo cuando tú lo confirmas.</span>
+      <span id="project-state">Proyecto nuevo</span>
+    </footer>
+    <script src="./app.js"></script>
+  </body>
+</html>

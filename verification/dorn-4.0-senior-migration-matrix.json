@@ -1,0 +1,149 @@
+{
+  "schema": "dorn.senior-migration-matrix/1",
+  "canonicalBase": "DORN AI 4.0.0-alpha.7",
+  "candidateSource": "DORN AI 4.9.0-alpha.1 PRE-IDE",
+  "policy": "Preserve DORN 4.0 product identity and migrate only independently verified behavior.",
+  "userOverrides": {
+    "startupDurationMs": 7000,
+    "startupAlwaysOnTop": true,
+    "startupWindowSize": [760, 440],
+    "internalBranding": "DORN_TEXT_ONLY",
+    "externalBranding": "USER_SUPPLIED_OFFICIAL_SYMBOL",
+    "preserveMenuAndProducts": true,
+    "preserveAppearanceCustomization": true
+  },
+  "decisions": [
+    {
+      "surface": "4.9 renderer and navigation",
+      "decision": "REJECT_WHOLESALE",
+      "reason": "It replaces the visual identity, menu and product organization explicitly preserved by the user."
+    },
+    {
+      "surface": "4.9 preload as a complete replacement",
+      "decision": "REJECT_WHOLESALE_ADAPT_APIS",
+      "reason": "It removes compatibility names used by the 4.0 renderer. New APIs must be additive and regression-tested."
+    },
+    {
+      "surface": "4.0 menu, Products and appearance system",
+      "decision": "PRESERVE_AND_EVOLVE",
+      "reason": "Canonical user-approved product experience protected by hash baseline and explicit change ledger."
+    },
+    {
+      "surface": "Startup splash and application identity",
+      "decision": "INTEGRATED_CURRENT",
+      "reason": "The original DORN 4.0 splash remains byte-exact and canonical; its small always-on-top host runs for exactly 7000 ms, while the official symbol remains external-only. The supplied presentation documents visual lineage and is not a splash template."
+    },
+    {
+      "surface": "Prompt Explorer",
+      "decision": "INTEGRATED_CURRENT",
+      "reason": "Native offline catalog inside Settings; no iframe, automatic execution or unreviewed external content."
+    },
+    {
+      "surface": "State Core and Event Bus",
+      "decision": "INTEGRATED_CURRENT",
+      "reason": "Adapted behind the 4.0 UI with atomic state, scope generation, stale-result rejection, schemas, idempotency, ordering, retries and diagnostics."
+    },
+    {
+      "surface": "Project Core and .dorn project identity",
+      "decision": "INTEGRATED_CURRENT",
+      "reason": "The 4.0 database identity is reconciled before any metadata write; probes are read-only, malformed or conflicting manifests remain byte-exact, linked metadata paths are rejected and project content is never deleted."
+    },
+    {
+      "surface": "Project Integrity and recoverable Change Scope",
+      "decision": "INTEGRATED_CURRENT",
+      "reason": "Paged static indexing, identity-bound databases, transitive impact, external-change invalidation, exact recovery snapshots, nested undeclared-change detection and parallel path claims are active behind the 4.0 UI."
+    },
+    {
+      "surface": "AI provider compatibility and one-key setup",
+      "decision": "INTEGRATED_CURRENT_NEEDS_USER_KEYS_FOR_LIVE_PROVIDERS",
+      "reason": "Thirty presets have static contracts; common providers now require only selection and a key, store secrets outside JSON, discover family-compatible models, run a real request while disabled and activate only after that request passes. Kimi/Kimi K2 encyclopedia results resolve to the official Moonshot automatic assistant instead of a blank advanced template. Failed additions are removed and failed active edits restore their prior configuration and encrypted key. Specialized or account-scoped APIs stay advanced instead of receiving a false one-key claim."
+    },
+    {
+      "surface": "Evidence Core",
+      "decision": "INTEGRATED_CURRENT",
+      "reason": "Identity-bound SQLite evidence, exact source and artifact hashes, real screenshot validation, lineage, truth-state downgrade and NEEDS_RETEST evaluation now run behind scoped IPC and the DORN 4.0 UI."
+    },
+    {
+      "surface": "Durable Job Runtime and Worktrees",
+      "decision": "INTEGRATED_CURRENT_FOUNDATION",
+      "reason": "Jobs are identity-bound and durable outside the renderer; interrupted effects require explicit review, retries are capped to idempotent failures, dependencies and cancellation are durable, and COMPLETED requires independent exact-byte Evidence. Git Worktrees or bounded copy sandboxes reject undeclared/post-test/main-tree changes, use multi-file rollback and integrate only tested bytes. Agent sessions now attach to active Jobs and preserve checkpoints/handoffs, while actual external agent executors remain the next layer."
+    },
+    {
+      "surface": "Agent Session Broker and CrossAgentHandoff",
+      "decision": "INTEGRATED_CURRENT_FOUNDATION_NEEDS_RUNTIME_ADAPTERS",
+      "reason": "Each project owns an identity-bound SQLite session ledger linked to an active Durable Job. Start/resume/pause/cancel/recover, attach/detach, bounded stream, health, usage/quota, atomic checkpoints and hash-chained structured handoffs are implemented. Secrets, unsafe paths, false test results and unlinked Evidence are rejected; changed source or Evidence degrades continuity to NEEDS_RETEST. No Codex, Claude or Gemini runtime is claimed live yet."
+    },
+    {
+      "surface": "Versioned AgentRuntimeAdapter Registry and Codex discovery",
+      "decision": "INTEGRATED_DISCOVERY_FOUNDATION_CODEX_NOT_INSTALLED",
+      "reason": "The complete versioned adapter surface is enforced before registration. Codex discovery uses the real system PATH, regular executable checks, SHA-256, shell-free --version/--help probes, TOCTOU detection and observed-only capabilities. Missing Codex reports NOT_INSTALLED; a healthy executable still cannot open a session while startSession is NOT_IMPLEMENTED, and any task-capable adapter must present a fresh bounded ContextPack. This environment contains no Codex executable, so live agent execution remains partial."
+    },
+    {
+      "surface": "Context Compiler 2.0 and bounded Working Set",
+      "decision": "INTEGRATED_CURRENT_FOUNDATION",
+      "reason": "Project Integrity supplies bounded ranked candidates without reading the whole repository. Context Compiler creates identity-bound durable ContextPacks with exact hashes, provenance, freshness, budgets, selection reasons, explicit requirements/decisions/observations/failures/Evidence, secret exclusion and targeted invalidation. Agent Sessions and handoffs reject missing, stale or cross-Job packs. Scale is regression-tested at 1,500 indexed files; symbol-level semantic indexing and automatic ingestion of every runtime observation remain partial."
+    },
+    {
+      "surface": "Contract Intelligence and Worktree contract gate",
+      "decision": "INTEGRATED_CURRENT_FOUNDATION",
+      "reason": "Identity-bound durable baselines inventory mapped JSON Schema, OpenAPI JSON and Protobuf contracts from the fresh Project Integrity index. Conservative semantic comparison detects incompatible fields, constraints, routes, parameters, responses, RPCs, fields and enums. Worktree blocks breaking, unmapped, unbaselined and untested contract changes before integration; compatible changes require declared contract-test paths and Evidence. OpenAPI YAML, AsyncAPI, generated types and Evidence-native isolated contract execution remain partial."
+    },
+    {
+      "surface": "Data Intelligence and recoverable SQLite migrations",
+      "decision": "INTEGRATED_CURRENT_FOUNDATION",
+      "reason": "Project-bound Data Intelligence inventories schema without exposing raw defaults, pages records with automatic credential redaction, tests conservative migrations on consistent copies and blocks destructive SQL, superficial checks, stale source, changed working copies, foreign-key/integrity failures and unsafe paths. Apply requires representative checks plus exact VERIFIED Evidence, creates a consistent backup and supports idempotent apply and exact rollback. Full lineage, generated migration planning, worker isolation and integration with every product editor remain partial."
+    },
+    {
+      "surface": "Intelligence Gateway 2.0 and one-key provider routing",
+      "decision": "INTEGRATED_CURRENT_FOUNDATION_NEEDS_LIVE_PROVIDER_EVIDENCE",
+      "reason": "Provider, Model, AccessRoute, Connection and CredentialRef are stored as separate normalized entities without API material. The main chat and Agent Work Units now use durable exact-context attempts, transactional quota reservations, health probes, latency and observed-only cost, circuit breaker, cooldown, a single recoverable retry, compatible failover checkpoints and bounded model discovery cache. Kimi/Kimi K2 catalog results use the official automatic Moonshot assistant and never require JSON repair. External success remains unclaimed until user-provided keys produce live Evidence, and semantic failover across different providers remains partial."
+    },
+    {
+      "surface": "Harness x Model x Skill x Tool Benchmarking",
+      "decision": "INTEGRATED_CURRENT_FOUNDATION_NEEDS_LIVE_CANDIDATE_RUNS",
+      "reason": "An owner-bound SQLite Router records the exact model, harness, access route, skills, tools and context strategy. Provider and Agent Work Unit attempts feed non-authoritative telemetry, while only official Evidence independently attesting the exact task, source, output, quality, latency and cost can change ranking. Cold start and historical selection are explained. Shadow/Candidate runs require an active Worktree, are comparable, recover after interruption and never become official automatically. Live candidate execution and explicit promotion/canary remain partial."
+    },
+    {
+      "surface": "Safe multi-agent concurrency",
+      "decision": "INTEGRATED_CURRENT_FOUNDATION_NEEDS_LIVE_MULTI_RUNTIME_EVIDENCE",
+      "reason": "A project-bound SQLite Task Graph now validates dependencies, caps nodes and parallelism, predicts file and parent/child conflicts, assigns temporary ownership, requires Worktree isolation for writers, cancels low-utility and redundant work, recovers interrupted nodes and releases claims. The confirmed multi-IA path uses the graph and deterministic result order. Independently attested exact Evidence selects candidates and only the winner can enter Worktree integration. Live heterogeneous runtime writers and large-repository load tests remain partial."
+    },
+    {
+      "surface": "Environment Capsule 2.0",
+      "decision": "INTEGRATED_CURRENT_FOUNDATION_NEEDS_CLEAN_BUILD_EVIDENCE",
+      "reason": "Target requirements and current-PC observations are separate, project-bound records. Static manifest detection never executes project scripts; registered/fixed probes collect bounded version and executable hash observations; non-secret variables store presence only; service probes require explicit scope; corrupt, linked, HTTP, secret-bearing and ambiguous dependency sources are blocked. Authorized preparation remains a non-mutating source-pinned handoff to Supply Chain Guard. A clean reproducible build on another environment is still required."
+    },
+    {
+      "surface": "Policy Engine and Execution Core",
+      "decision": "INTEGRATED_CURRENT_FOUNDATION",
+      "reason": "Project trust, permission modes, real paths, one-use approvals, secret rejection and exact network policy gate shell-free hash-pinned Node and read-only Git targets inside verified isolation. Relative scripts are resolved from the authorized working directory while containment remains rooted in the Worktree. Browser targets, Windows Job Objects, enforceable local network isolation and migration of the legacy direct chat-action path remain incomplete."
+    },
+    {
+      "surface": "Professional Web Golden Project",
+      "decision": "INTEGRATED_STATIC_FOUNDATION_BLOCKED_BROWSER_ENVIRONMENT",
+      "reason": "DORN deterministically authors eight dependency-free files with three documented visual directions, semantic accessibility, responsive behavior, CSP and hostile input defenses. Durable Jobs run an independent validator through Policy and Execution inside a Worktree and integrate only the tested bytes. Static Evidence is VERIFIED; real browser screenshots, DOM, console, network and keyboard Evidence remain BLOCKED_ENVIRONMENT and are not inferred from source code."
+    },
+    {
+      "surface": "Presentation native author and verifier",
+      "decision": "ADAPT_AFTER_EXECUTION_CORE",
+      "reason": "Valuable verified 4.9 capability; must enter through 4.0 Jobs, projects and Evidence rather than importing the 4.9 UI."
+    },
+    {
+      "surface": "Skill package and universal extension bridge",
+      "decision": "ADAPT_AFTER_POLICY_SANDBOX",
+      "reason": "Declarative inspection is useful; sensitive process, network, model, MCP and hook execution remains incomplete."
+    },
+    {
+      "surface": "Godot vertical and Computer Use",
+      "decision": "REMAIN_PARTIAL",
+      "reason": "The supplied 4.9 checkpoint itself records no complete Godot golden project and no real Computer Use driver."
+    },
+    {
+      "surface": "Installer hardening",
+      "decision": "ADAPT_CODE_KEEP_B28_OPEN",
+      "reason": "Target preflight and exact-file checks are useful, but Windows 11 install, update, launch and uninstall evidence is still required."
+    }
+  ],
+  "nextUnit": "Supply Chain Guard plus Skill/Plugin Trust Pipeline: verified quarantine, provenance, version/hash/signature/license/SBOM, permission diff, Compatibility Lab, per-project activation and rollback for libraries, tools, models, templates, plugins and Skills",
+  "globalState": "PARTIAL"
+}

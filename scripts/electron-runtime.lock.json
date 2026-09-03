@@ -1,0 +1,11 @@
+{
+  "electronVersion": "37.2.6",
+  "artifact": "electron-v37.2.6-win32-x64.zip",
+  "platform": "win32",
+  "arch": "x64",
+  "archiveSha256": "f7732d90dc70b9c7415a06f97f47f1ad45af8d6d89f557f6b00cee613f9a508e",
+  "electronExeBytes": 205883904,
+  "electronExeSha256": "582c6eeaac0b32d7f78cfe5e225854a3cfe38ff16d725f41f590c20800054375",
+  "source": "Electron official release artifact",
+  "lockedAt": "2026-07-30"
+}

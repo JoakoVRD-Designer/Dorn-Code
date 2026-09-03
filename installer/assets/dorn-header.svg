@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="150" height="57" viewBox="0 0 150 57">
+  <defs>
+    <linearGradient id="silver" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#ffffff"/>
+      <stop offset=".55" stop-color="#a4a9af"/>
+      <stop offset="1" stop-color="#e5e7ea"/>
+    </linearGradient>
+    <pattern id="grid" width="18" height="18" patternUnits="userSpaceOnUse">
+      <path d="M18 0H0V18" fill="none" stroke="#ffffff" stroke-opacity=".06"/>
+    </pattern>
+  </defs>
+  <rect width="150" height="57" fill="#0a0a0c"/>
+  <rect width="150" height="57" fill="url(#grid)"/>
+  <text x="17" y="31" fill="url(#silver)" font-family="DejaVu Sans" font-size="22" font-weight="700" letter-spacing="-1">DORN</text>
+  <text x="18" y="43" fill="#74787d" font-family="DejaVu Sans Mono" font-size="5.8" letter-spacing=".8">SOBERANÍA TECNOLÓGICA</text>
+  <circle cx="135" cy="28" r="3" fill="#d7dade"/>
+</svg>
