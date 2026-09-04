@@ -1,0 +1,11 @@
+{
+  "schemaVersion": 1,
+  "checkpoint": "4.0.0-alpha.7-installer-v3",
+  "targetBranch": "checkpoint/4.0.0-alpha.7-installer-v3-source-20260904",
+  "transport": "concatenated-base64-text",
+  "archive": "dorn-source.tar.gz",
+  "archiveSha256": "6c6fc5ffd6dc03fba5e4694304b14a1476a3be31bd0847533c739d951f5feb45",
+  "partCount": 12,
+  "sourceFileCount": 420,
+  "generatedUtc": "2026-09-04T00:00:00Z"
+}

@@ -1,4 +1,4 @@
-name: Import DORN source checkpoint
+name: Publish DORN source checkpoint branch
 
 on:
   push:
@@ -9,48 +9,50 @@ permissions:
   contents: write
 
 jobs:
-  import-source:
+  publish-checkpoint:
     if: github.repository == 'JoakoVRD-Designer/DORN-AI'
-    runs-on: ubuntu-latest
-    timeout-minutes: 10
+    runs-on: ubuntu-24.04
+    env:
+      ARCHIVE_SHA256: 6c6fc5ffd6dc03fba5e4694304b14a1476a3be31bd0847533c739d951f5feb45
+      EXPECTED_BASE_SHA: 1e779de7cb8fcf66c5cf9a5b937ca4628ab4570d
+      TARGET_BRANCH: checkpoint/4.0.0-alpha.7-installer-v3-source-20260904
     steps:
       - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
         with:
           fetch-depth: 0
+
       - name: Verify source archive
         shell: bash
-        env:
-          ARCHIVE_SHA256: 6c6fc5ffd6dc03fba5e4694304b14a1476a3be31bd0847533c739d951f5feb45
         run: |
           set -euo pipefail
+          encoded="$RUNNER_TEMP/dorn-source.tar.gz.b64"
           archive="$RUNNER_TEMP/dorn-source.tar.gz"
-          cat .dorn-import/source.tar.gz.part-* > "$archive"
+          cat .dorn-import-v3/source.b64.part-* > "$encoded"
+          base64 --decode "$encoded" > "$archive"
           printf '%s  %s\n' "$ARCHIVE_SHA256" "$archive" | sha256sum -c -
           file_count="$(tar -tzf "$archive" | awk 'substr($0,length($0),1)!="/" {count++} END {print count}')"
           test "$file_count" = "420"
-      - name: Commit source to main
+
+      - name: Publish isolated source branch
         shell: bash
-        env:
-          EXPECTED_PARENT: 1e779de7cb8fcf66c5cf9a5b937ca4628ab4570d
         run: |
           set -euo pipefail
           archive="$RUNNER_TEMP/dorn-source.tar.gz"
           git fetch origin main
-          test "$(git rev-parse origin/main)" = "$EXPECTED_PARENT"
-          git switch -C main origin/main
+          current_base="$(git rev-parse origin/main)"
+          test "$current_base" = "$EXPECTED_BASE_SHA"
+          if git ls-remote --exit-code --heads origin "refs/heads/$TARGET_BRANCH" >/dev/null 2>&1; then
+            echo "Target branch already exists; refusing to overwrite it." >&2
+            exit 1
+          fi
+          git switch --force-create "$TARGET_BRANCH" origin/main
           git rm -r --ignore-unmatch .
-          tar -xzf "$archive" -C .
-          file_count="$(find . -type f -not -path './.git/*' | wc -l | tr -d ' ')"
-          test "$file_count" = "420"
+          tar -xzf "$archive"
           git add -A
-          tracked_count="$(git ls-files | wc -l | tr -d ' ')"
-          test "$tracked_count" = "420"
+          tracked="$(git ls-files | wc -l | tr -d ' ')"
+          test "$tracked" = "420"
           git diff --cached --check
           git config user.name "DORN Checkpoint Bot"
-          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git config user.email "actions@users.noreply.github.com"
           git commit -m "checkpoint: DORN AI 4.0.0-alpha.7 Installer v3"
-          git push origin HEAD:main
-      - name: Remove temporary import branch
-        if: success()
-        shell: bash
-        run: git push origin --delete "$GITHUB_REF_NAME"
+          git push origin "HEAD:refs/heads/$TARGET_BRANCH"
