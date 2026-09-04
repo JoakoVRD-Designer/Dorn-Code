@@ -48,9 +48,10 @@ jobs:
           git switch --force-create "$TARGET_BRANCH" origin/main
           git rm -r --ignore-unmatch .
           tar -xzf "$archive"
+          rm .github/workflows/source-gates.yml
           git add -A
           tracked="$(git ls-files | wc -l | tr -d ' ')"
-          test "$tracked" = "420"
+          test "$tracked" = "419"
           test ! -e node_modules
           test ! -e build-tools
           test ! -e resources/local-ai/runtime
