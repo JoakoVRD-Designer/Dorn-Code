@@ -51,7 +51,14 @@ jobs:
           git add -A
           tracked="$(git ls-files | wc -l | tr -d ' ')"
           test "$tracked" = "420"
-          git diff --cached --check
+          test ! -e node_modules
+          test ! -e build-tools
+          test ! -e resources/local-ai/runtime
+          if find . -path ./.git -prune -o -type l -print -quit | grep -q .; then
+            echo "Symbolic links are not allowed in this checkpoint." >&2
+            exit 1
+          fi
+          git diff --cached --check -- .github .gitignore .gitattributes README.md CONTRIBUTING.md scripts/verify-source-checkout.cjs package.json
           git config user.name "DORN Checkpoint Bot"
           git config user.email "actions@users.noreply.github.com"
           git commit -m "checkpoint: DORN AI 4.0.0-alpha.7 Installer v3"
