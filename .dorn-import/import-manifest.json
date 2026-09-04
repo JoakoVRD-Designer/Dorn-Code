@@ -1,0 +1,23 @@
+{
+  "schema": "dorn.github-import/1",
+  "repository": "JoakoVRD-Designer/DORN-AI",
+  "targetBranch": "main",
+  "expectedParent": "1e779de7cb8fcf66c5cf9a5b937ca4628ab4570d",
+  "sourceFiles": 420,
+  "sourceBytes": 20071961,
+  "archiveSha256": "6c6fc5ffd6dc03fba5e4694304b14a1476a3be31bd0847533c739d951f5feb45",
+  "parts": [
+    {
+      "path": "source.tar.gz.part-000",
+      "sha": "845d1717808f0215e34ec8fa115fc92e072109ed"
+    },
+    {
+      "path": "source.tar.gz.part-001",
+      "sha": "32315f65d692b83128fd2e9adabe327d3cd72504"
+    },
+    {
+      "path": "source.tar.gz.part-002",
+      "sha": "e39a10510a1f91471b06af18c4080576c7255d38"
+    }
+  ]
+}

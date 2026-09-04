@@ -1,0 +1,56 @@
+name: Import DORN source checkpoint
+
+on:
+  push:
+    branches:
+      - dorn-import-4.0.0-alpha.7-20260904
+
+permissions:
+  contents: write
+
+jobs:
+  import-source:
+    if: github.repository == 'JoakoVRD-Designer/DORN-AI'
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+        with:
+          fetch-depth: 0
+      - name: Verify source archive
+        shell: bash
+        env:
+          ARCHIVE_SHA256: 6c6fc5ffd6dc03fba5e4694304b14a1476a3be31bd0847533c739d951f5feb45
+        run: |
+          set -euo pipefail
+          archive="$RUNNER_TEMP/dorn-source.tar.gz"
+          cat .dorn-import/source.tar.gz.part-* > "$archive"
+          printf '%s  %s\n' "$ARCHIVE_SHA256" "$archive" | sha256sum -c -
+          file_count="$(tar -tzf "$archive" | awk 'substr($0,length($0),1)!="/" {count++} END {print count}')"
+          test "$file_count" = "420"
+      - name: Commit source to main
+        shell: bash
+        env:
+          EXPECTED_PARENT: 1e779de7cb8fcf66c5cf9a5b937ca4628ab4570d
+        run: |
+          set -euo pipefail
+          archive="$RUNNER_TEMP/dorn-source.tar.gz"
+          git fetch origin main
+          test "$(git rev-parse origin/main)" = "$EXPECTED_PARENT"
+          git switch -C main origin/main
+          git rm -r --ignore-unmatch .
+          tar -xzf "$archive" -C .
+          file_count="$(find . -type f -not -path './.git/*' | wc -l | tr -d ' ')"
+          test "$file_count" = "420"
+          git add -A
+          tracked_count="$(git ls-files | wc -l | tr -d ' ')"
+          test "$tracked_count" = "420"
+          git diff --cached --check
+          git config user.name "DORN Checkpoint Bot"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git commit -m "checkpoint: DORN AI 4.0.0-alpha.7 Installer v3"
+          git push origin HEAD:main
+      - name: Remove temporary import branch
+        if: success()
+        shell: bash
+        run: git push origin --delete "$GITHUB_REF_NAME"
