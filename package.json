@@ -1,0 +1,31 @@
+{
+  "name": "motionsites-mcp",
+  "version": "1.0.0",
+  "description": "MCP server for motionsites.ai - generates motion-based websites from prompts",
+  "main": "build/index.js",
+  "type": "module",
+  "scripts": {
+    "build": "tsc",
+    "start": "node build/index.js",
+    "dev": "ts-node src/index.ts",
+    "watch": "tsc --watch"
+  },
+  "keywords": [
+    "mcp",
+    "motionsites",
+    "ai",
+    "website-generation"
+  ],
+  "author": "DORN-AI",
+  "license": "MIT",
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.30.0",
+    "axios": "^1.6.0",
+    "zod": "^3.22.0"
+  },
+  "devDependencies": {
+    "@types/node": "^20.0.0",
+    "typescript": "^5.0.0",
+    "ts-node": "^10.9.0"
+  }
+}
