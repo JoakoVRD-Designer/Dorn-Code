@@ -1,0 +1,40 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://dorn.local/schemas/dorn-bridge.schema.json",
+  "title": "DORN Bridge Connector",
+  "type": "object",
+  "required": ["id", "name", "application", "executable", "arguments", "capabilities"],
+  "additionalProperties": false,
+  "properties": {
+    "id": { "type": "string", "pattern": "^[A-Za-z0-9][A-Za-z0-9._-]{2,79}$" },
+    "name": { "type": "string", "minLength": 1, "maxLength": 160 },
+    "application": { "type": "string", "minLength": 1, "maxLength": 160 },
+    "version": { "type": "string" },
+    "executable": { "type": "string", "minLength": 1 },
+    "arguments": {
+      "type": "array",
+      "items": { "type": "string" },
+      "contains": { "const": "{request}" }
+    },
+    "capabilities": {
+      "type": "array",
+      "minItems": 1,
+      "uniqueItems": true,
+      "items": {
+        "enum": [
+          "import-3d",
+          "export-3d",
+          "inspect-3d",
+          "render-image",
+          "render-animation",
+          "convert-format",
+          "run-script"
+        ]
+      }
+    },
+    "inputFormats": { "type": "array", "items": { "type": "string" } },
+    "outputFormats": { "type": "array", "items": { "type": "string" } },
+    "source": { "type": "string" },
+    "license": { "type": "string" }
+  }
+}

@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta
+      http-equiv="Content-Security-Policy"
+      content="default-src 'self' blob: data:; script-src 'self'; style-src 'self'; img-src 'self' blob: data: dorn-background:; font-src 'self'; connect-src 'self' blob: data:; object-src 'none'; frame-src 'none'; base-uri 'none'; form-action 'none'"
+    >
+    <title>DORN Studio 3D · Inspector</title>
+    <link rel="stylesheet" href="./studio3d.css">
+    <link rel="stylesheet" href="../renderer/vendor/dorn-product-shell.css">
+    <link rel="stylesheet" href="../renderer/vendor/dorn-appearance.css">
+    <script src="../renderer/vendor/dorn-appearance.js"></script>
+  </head>
+  <body>
+    <main class="studio-shell">
+      <header class="studio-header">
+        <div>
+          <span class="brand">DORN <small>STUDIO 3D</small></span>
+          <p id="file-name">Cargando modelo…</p>
+        </div>
+        <nav aria-label="Controles del visor">
+          <button id="fit-view" type="button">Encuadrar</button>
+          <button id="toggle-wireframe" type="button" aria-pressed="false">Malla</button>
+          <button id="toggle-grid" type="button" aria-pressed="true">Rejilla</button>
+          <button id="copy-report" type="button">Copiar informe</button>
+        </nav>
+      </header>
+      <section class="studio-content">
+        <div id="viewport" class="viewport">
+          <div id="loading" class="loading">Preparando el motor 3D…</div>
+          <div class="viewport-help">Girar: botón izquierdo · Desplazar: derecho · Zoom: rueda · Seleccionar: clic</div>
+        </div>
+        <aside class="inspector">
+          <span class="eyebrow">INSPECCIÓN</span>
+          <h1 id="model-title">Modelo 3D</h1>
+          <dl>
+            <div><dt>Formato</dt><dd id="format">—</dd></div>
+            <div><dt>Objetos</dt><dd id="objects">—</dd></div>
+            <div><dt>Vértices</dt><dd id="vertices">—</dd></div>
+            <div><dt>Triángulos</dt><dd id="triangles">—</dd></div>
+            <div><dt>Dimensiones</dt><dd id="dimensions">—</dd></div>
+            <div><dt>Tamaño</dt><dd id="file-size">—</dd></div>
+          </dl>
+          <section class="selection">
+            <span class="eyebrow">SELECCIÓN</span>
+            <strong id="selection-name">Ningún objeto</strong>
+            <small id="selection-detail">Haz clic en una pieza del modelo.</small>
+          </section>
+          <section class="warnings">
+            <span class="eyebrow">ADVERTENCIAS</span>
+            <ul id="warnings"><li>Sin advertencias.</li></ul>
+          </section>
+        </aside>
+      </section>
+      <footer>
+        <span>Visor local · el archivo no sale del computador</span>
+        <span id="status">DORN Geometry Engine</span>
+      </footer>
+    </main>
+    <script type="module" src="./studio3d.js"></script>
+  </body>
+</html>

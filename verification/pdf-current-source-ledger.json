@@ -1,0 +1,370 @@
+{
+  "schema": "dorn.pdf-current-source-ledger/1",
+  "createdAt": "2026-08-21",
+  "state": "PARTIAL",
+  "claim": "This ledger identifies the PDF files actually supplied for the DORN 4.0 senior rebuild. It does not claim that every requirement is implemented.",
+  "sourceSet": {
+    "attachedFiles": 4,
+    "uniqueDocuments": 3,
+    "attachedPages": 1075,
+    "uniquePages": 1064,
+    "duplicatePolicy": "Byte-identical copies share one requirement source but both attachments remain recorded."
+  },
+  "documents": [
+    {
+      "documentId": "PDF-CODEX-PARITY-P0",
+      "fileName": "DORN_AI_CODEX_PARITY_LAYER_P0_2026-08-10.pdf",
+      "pages": 11,
+      "sha256": "9e8e70131d8dd0b69580ae00e60f54f5352b42523aee40ba38b090e358196728",
+      "role": "CURRENT_P0_COMPLEMENT"
+    },
+    {
+      "documentId": "PDF-CODEX-PARITY-P0-COPY",
+      "fileName": "DORN_AI_CODEX_PARITY_LAYER_P0_2026-08-10 (1).pdf",
+      "pages": 11,
+      "sha256": "9e8e70131d8dd0b69580ae00e60f54f5352b42523aee40ba38b090e358196728",
+      "role": "BYTE_IDENTICAL_COPY",
+      "duplicateOf": "PDF-CODEX-PARITY-P0"
+    },
+    {
+      "documentId": "PDF-MASTER-V49-PRE-IDE",
+      "fileName": "DORN_AI_Especificacion_Maestra_TOTAL_SIN_RECORTE_v4.9_PRE_IDE_2026-08-08.pdf",
+      "pages": 1033,
+      "sha256": "20026ccfc027ee10a9fc95fd5e671a9fd99fc8ea2235d3a68f07ee027ecdd63a",
+      "role": "MASTER_WITH_CURRENT_CONSOLIDATION_AND_HISTORY"
+    },
+    {
+      "documentId": "PDF-PLAN-CURRENT-20260810",
+      "fileName": "DORN_AI_Plan_Maestro_Mejoras_Actuales_Nuevas_Ideas_2026-08-10.pdf",
+      "pages": 20,
+      "sha256": "242769428452fab501a796ae471a4540d344ab32c8d5f944d665f5e8d29001ca",
+      "role": "CURRENT_EXECUTION_ROADMAP"
+    }
+  ],
+  "precedence": [
+    "Explicit user decisions in the DORN 4.0 senior rebuild",
+    "CURRENT decisions in PDF-PLAN-CURRENT-20260810 and PDF-CODEX-PARITY-P0",
+    "Current consolidated sections of PDF-MASTER-V49-PRE-IDE",
+    "Historical sections only where they do not contradict newer decisions"
+  ],
+  "userOverrides": [
+    {
+      "requirementId": "USER-STARTUP-7000MS",
+      "decision": "The original DORN 4.0 splash is mandatory for exactly 7000 ms even though the master PDF allowed faster warm start.",
+      "state": "VERIFIED_BY_REGRESSION",
+      "tests": ["tests/senior-baseline.test.cjs"]
+    },
+    {
+      "requirementId": "USER-PRESERVE-DORN-4-UI",
+      "decision": "DORN 4.0 menu, products, themes, backgrounds, GIFs, color customization and visual identity are canonical; the 4.9 renderer is not.",
+      "state": "VERIFIED_BY_HASH_LEDGER",
+      "evidence": "verification/ui-4.0-change-ledger.json"
+    },
+    {
+      "requirementId": "USER-AI-ONE-KEY",
+      "decision": "Normal providers, including Kimi, must connect from the searchable AI catalog by pasting a key; users must not repair JSON templates.",
+      "state": "TESTED_STATIC_NEEDS_LIVE_KEYS",
+      "tests": ["tests/ai-provider-compatibility.test.cjs", "tests/provider-quick-connect.test.cjs", "tests/provider-edit-transaction.test.cjs"],
+      "evidence": "Kimi uses the official OpenAI-compatible endpoint and current kimi-k3 fallback, filters discovered models to the Kimi family, activates only after a non-empty live response, removes failed temporary connections and restores active edits transactionally. Search results for Kimi/Kimi K2 in the encyclopedia now resolve to this same automatic assistant instead of a blank advanced JSON template. A user key is still required for live external verification."
+    },
+    {
+      "requirementId": "USER-EXTENSIBLE-PLUGINS-SKILLS",
+      "decision": "DORN must allow users to add complements such as Skills and plugins, with an easy UI and without granting trust merely because a package installs.",
+      "state": "REQUIRED_NEXT_UNIT_NOT_YET_VERIFIED",
+      "nextGate": "Supply Chain Guard plus Skill/Plugin Trust Pipeline: manifest translation, provenance, version, license, hash/signature, permission diff, quarantine, isolated Compatibility Lab, per-project activation, rollback and removal. The legacy PluginEngine remains UI-disabled because its declared permissions are not yet fully enforced."
+    }
+  ],
+  "currentRequirementGroups": [
+    {
+      "requirementId": "PARITY-P0-01",
+      "name": "Computer Use Runtime",
+      "state": "NOT_IMPLEMENTED",
+      "nextEvidence": "Operate an authorized real application and link observation, action and result to Evidence."
+    },
+    {
+      "requirementId": "PARITY-P0-02",
+      "name": "Screenshot Evidence Capture",
+      "state": "INTEGRATED_FOUNDATION",
+      "tests": ["tests/evidence-core.test.cjs"],
+      "gap": "No native Computer Use capture driver yet."
+    },
+    {
+      "requirementId": "PARITY-P0-03",
+      "name": "Browser Automation Runtime",
+      "state": "PARTIAL_STATIC_GOLDEN_BLOCKED_BROWSER_ENVIRONMENT",
+      "tests": ["tests/web-golden-project.test.cjs", "tests/web-golden-runtime.test.cjs"],
+      "gap": "The professional Web Golden Project is authored, tested, integrated and statically evidenced through the trusted runtime, but no executable browser is available here for real DOM, accessibility tree, console, network, responsive, keyboard or screenshot Evidence."
+    },
+    {
+      "requirementId": "PARITY-P0-04",
+      "name": "Worktree Manager",
+      "state": "INTEGRATED_FOUNDATION",
+      "tests": ["tests/worktree-manager.test.cjs"]
+    },
+    {
+      "requirementId": "PARITY-P0-05",
+      "name": "Agent Session Broker",
+      "state": "INTEGRATED_FOUNDATION_NEEDS_LIVE_RUNTIME_ADAPTERS",
+      "tests": ["tests/agent-session-broker.test.cjs", "tests/context-compiler.test.cjs"],
+      "gap": "Project-bound durable sessions now implement lifecycle, checkpoints, restart recovery, attach/detach, bounded streams, health, usage/quota and hash-chained CrossAgentHandoff with source/Evidence/ContextPack invalidation. No external agent runtime has been executed through the broker yet."
+    },
+    {
+      "requirementId": "PARITY-P0-06",
+      "name": "Codex AgentRuntimeAdapter",
+      "state": "PARTIAL_VERSIONED_DISCOVERY_CODEX_NOT_INSTALLED",
+      "tests": ["tests/agent-runtime-registry.test.cjs", "tests/agent-session-broker.test.cjs", "tests/context-compiler.test.cjs"],
+      "gap": "The full adapter method contract, safe registry, executable hashing, shell-free health/help discovery, TOCTOU defense, bounded ContextPack requirement and broker connection exist. Codex is not installed in this environment and start/resume/run/stream/artifact/usage/cancel/benchmark remain explicitly NOT_IMPLEMENTED rather than simulated."
+    },
+    {
+      "requirementId": "PARITY-P0-07",
+      "name": "Windows Shell Adapter",
+      "state": "PARTIAL_EXECUTION_CORE_NEEDS_WINDOWS_RETEST",
+      "tests": ["tests/policy-engine.test.cjs", "tests/execution-core.test.cjs"],
+      "gap": "Execution is shell-free, scoped and observable; Windows Job Object containment and the legacy direct terminal path still require migration and a real Windows retest."
+    },
+    {
+      "requirementId": "PARITY-P0-08",
+      "name": "WSL Adapter",
+      "state": "NOT_IMPLEMENTED"
+    },
+    {
+      "requirementId": "PARITY-P0-09",
+      "name": "SSH Remote Adapter",
+      "state": "NOT_IMPLEMENTED"
+    },
+    {
+      "requirementId": "PARITY-P0-10",
+      "name": "Skill Runtime and Trust Pipeline",
+      "state": "PARTIAL",
+      "gap": "A legacy DORN PluginEngine can inventory/copy packages and run a very small VM command surface, but its requested permissions are not yet capability-enforced and the 4.0 UI correctly keeps it disabled. Declarative Skills, Claude/Codex/Gemini compatibility, provenance, signature/license/SBOM checks, quarantine, per-project activation, sensitive process/network/model/MCP/LSP gates and rollback must be completed through Supply Chain Guard before users can add complements safely."
+    },
+    {
+      "requirementId": "PARITY-P0-11",
+      "name": "Automated Visual Verification",
+      "state": "PARTIAL_WEB_STATIC_VERIFIED_VISUAL_BLOCKED_ENVIRONMENT",
+      "tests": ["tests/evidence-core.test.cjs", "tests/web-golden-project.test.cjs", "tests/web-golden-runtime.test.cjs"],
+      "gap": "The Web Golden runtime records a separate BLOCKED visual Evidence entry instead of inferring quality from HTML/CSS. Browser/computer-use runners and the independent screenshot critic remain."
+    },
+    {
+      "requirementId": "PARITY-P0-12",
+      "name": "Execution Target Registry",
+      "state": "INTEGRATED_FOUNDATION",
+      "tests": ["tests/execution-core.test.cjs"],
+      "gap": "Node test/build and Git inspection targets are hash-pinned; browser, Godot, Windows shell, WSL and SSH targets remain."
+    },
+    {
+      "requirementId": "PLAN-P0-PROJECT-INTEGRITY",
+      "name": "Project Integrity Engine and predictive impact",
+      "state": "INTEGRATED_FOUNDATION",
+      "tests": ["tests/project-integrity-change-scope.test.cjs"],
+      "gap": "Architecture ownership, complexity and 100-change long-horizon gate remain incomplete."
+    },
+    {
+      "requirementId": "PLAN-P0-VERIFICATION-2",
+      "name": "Verification Fabric 2.0",
+      "state": "PARTIAL",
+      "tests": ["tests/evidence-core.test.cjs", "tests/job-runtime.test.cjs", "tests/execution-core.test.cjs", "tests/web-golden-runtime.test.cjs"],
+      "gap": "A scoped process/test/build executor and an exact-byte Web Golden route exist; browser, computer use, performance and critic executors remain."
+    },
+    {
+      "requirementId": "PLAN-P0-DURABLE-JOBS",
+      "name": "Durable Job Kernel",
+      "state": "INTEGRATED_FOUNDATION",
+      "tests": ["tests/job-runtime.test.cjs", "tests/execution-core.test.cjs", "tests/agent-session-broker.test.cjs", "tests/context-compiler.test.cjs"],
+      "gap": "Scoped process/test/build execution, bounded ContextPacks and persistent structured agent handoff exist; external agent executors and complete automatic failover remain."
+    },
+    {
+      "requirementId": "PLAN-P0-CONTEXT-COMPILER",
+      "name": "Context Compiler 2.0 and Working Set",
+      "state": "INTEGRATED_FOUNDATION",
+      "tests": ["tests/context-compiler.test.cjs", "tests/project-integrity-change-scope.test.cjs", "tests/agent-session-broker.test.cjs", "tests/agent-runtime-registry.test.cjs"],
+      "gap": "Durable identity-bound ContextPacks now include exact source hashes, provenance, freshness, budgets, selection reasons, secret exclusion, Evidence snapshots and targeted invalidation. The agent/session boundary rejects absent, stale and cross-Job packs, and a 1,500-file project remains bounded. Symbol-level semantic indexing and automatic ingestion of all runtime observations are still partial."
+    },
+    {
+      "requirementId": "PLAN-P0-CONTRACT-INTELLIGENCE",
+      "name": "Contract Intelligence",
+      "state": "INTEGRATED_FOUNDATION",
+      "tests": ["tests/contract-intelligence.test.cjs", "tests/project-integrity-change-scope.test.cjs", "tests/worktree-manager.test.cjs"],
+      "gap": "Project-bound durable baselines, producer/consumer/test mapping, conservative JSON Schema/OpenAPI JSON/Protobuf comparison and an automatic Worktree integration gate are active. OpenAPI YAML, AsyncAPI, generated types, full external-reference resolution and Evidence-native isolated contract-test execution remain partial."
+    },
+    {
+      "requirementId": "PLAN-P0-DATA-INTELLIGENCE",
+      "name": "Data Intelligence",
+      "state": "INTEGRATED_FOUNDATION",
+      "tests": [
+        "tests/data-intelligence.test.cjs",
+        "tests/evidence-core.test.cjs"
+      ],
+      "gap": "Project-bound schema inspection, bounded/redacted queries, consistent snapshots, representative migration checks, destructive-change blocking, exact Evidence, backup, idempotent apply and rollback are active. Full lineage, automatic migration planning, large-workload worker isolation and integration with every DORN product editor remain partial."
+    },
+    {
+      "requirementId": "PLAN-P0-INTELLIGENCE-GATEWAY",
+      "name": "Intelligence Gateway 2.0",
+      "state": "INTEGRATED_FOUNDATION_NEEDS_LIVE_PROVIDER_EVIDENCE",
+      "tests": ["tests/intelligence-gateway.test.cjs", "tests/ai-provider-compatibility.test.cjs", "tests/provider-quick-connect.test.cjs", "tests/provider-edit-transaction.test.cjs"],
+      "gap": "Provider, Model, AccessRoute, Connection and CredentialRef are normalized separately without API material. Durable attempts implement health probes, transactional quota reservation/renewal, observed-only cost and latency, circuit breaker, cooldown, one bounded retry, exact-context failover checkpoints, compatible credential load balancing, model-list cache and crash recovery. Kimi/Kimi K2 resolve from catalog search to the one-key Moonshot flow. Live keys are still required to produce external-provider Evidence; cross-provider semantic failover and task-response caching remain deliberately unclaimed."
+    },
+    {
+      "requirementId": "PLAN-P0-HARNESS-MODEL-SKILL-TOOL-BENCHMARK",
+      "name": "Harness x Model x Skill x Tool Benchmarking",
+      "state": "INTEGRATED_FOUNDATION_NEEDS_LIVE_CANDIDATE_RUNS",
+      "tests": ["tests/intelligence-benchmark-router.test.cjs", "tests/intelligence-gateway.test.cjs", "tests/evidence-core.test.cjs", "tests/worktree-manager.test.cjs"],
+      "gap": "The exact model, harness, access route, skills, tools and context strategy combination is stored in an owner-bound SQLite ledger. Cold-start routing is explainable; only official independently attested Evidence over the same task, bytes, output and metrics can affect ranking. Unverified telemetry, duplicate Evidence, self-evaluation and Shadow/Candidate output cannot manipulate selection. Shadow/Candidate requires an active Worktree and produces a comparison without silently becoming official. Live provider/runtime candidate executions and an approved promotion/canary pipeline remain pending."
+    },
+    {
+      "requirementId": "PLAN-P0-MULTI-AGENT-CONCURRENCY",
+      "name": "Safe multi-agent concurrency",
+      "state": "INTEGRATED_FOUNDATION_NEEDS_LIVE_MULTI_RUNTIME_EVIDENCE",
+      "tests": ["tests/multi-agent-coordinator.test.cjs", "tests/worktree-manager.test.cjs", "tests/evidence-core.test.cjs", "tests/alpha7-enhancements.test.cjs"],
+      "gap": "A project-bound durable Task Graph now enforces acyclic dependencies, a 64-node/8-parallel ceiling, deterministic waves, marginal-utility gating, redundant-work cancellation, temporary path ownership including parent/child conflicts, isolated Worktrees for writers, crash interruption and claim release. The real confirmed multi-IA chat path records and claims each node and preserves deterministic result order. Candidate selection requires independent exact Evidence and only the selected winner may cross the Worktree integration gate. Live multi-runtime write experiments and scale telemetry over large real repositories remain pending."
+    },
+    {
+      "requirementId": "PLAN-P0-AGENT-FABRIC",
+      "name": "Agent Runtime Fabric 2.0 and structured handoff",
+      "state": "PARTIAL_SESSION_BROKER_AND_VERSIONED_REGISTRY_FOUNDATION",
+      "tests": ["tests/agent-session-broker.test.cjs", "tests/agent-runtime-registry.test.cjs", "tests/context-compiler.test.cjs"],
+      "gap": "The DORN-owned session/handoff authority, bounded ContextPack boundary and versioned adapter registry are integrated. Live task adapters, authorized hot loading and real Codex/Claude/Gemini execution remain."
+    },
+    {
+      "requirementId": "PLAN-P0-ENVIRONMENT-CAPSULE",
+      "name": "Environment Capsule",
+      "state": "INTEGRATED_FOUNDATION_NEEDS_CLEAN_BUILD_EVIDENCE",
+      "tests": ["tests/environment-capsule.test.cjs", "tests/project-core.test.cjs", "tests/execution-core.test.cjs"],
+      "gap": "Environment Capsule 2.0 separates declared target OS/architecture and explicit project requirements from current-PC observations. It statically detects Node/package-manager, Python, Rust, Go, .NET, CMake, PlatformIO and Godot signals without executing project scripts; checks registered or fixed-contract tool versions and hashes; records only presence for non-secret variables; gates service probes; preserves A→B→A identity; and rejects corrupt, linked, HTTP, credential-bearing or ambiguous sources. Preparation is plan-only and hands only approved HTTPS + hash/signature + license sources to Supply Chain Guard. An authorized clean dependency preparation and reproducible build on a second environment remain unproven."
+    },
+    {
+      "requirementId": "PLAN-P0-POLICY-SECURITY",
+      "name": "Policy and Security Plane",
+      "state": "INTEGRATED_FOUNDATION",
+      "tests": ["tests/policy-engine.test.cjs", "tests/execution-core.test.cjs"],
+      "gap": "Scoped filesystem/process/network/secret policy, one-use approvals and hostile tests exist. Network isolation is not enforceable for the local Node target, Windows process trees need Job Objects, and the legacy chat action path still requires migration."
+    },
+    {
+      "requirementId": "PLAN-P0-SUPPLY-CHAIN",
+      "name": "Supply Chain Guard",
+      "state": "PARTIAL_NEXT_UNIT",
+      "gap": "Environment Capsule now blocks ambiguous dependency preparation and emits only source-pinned plans. The next unit must implement verified fetch/quarantine, transitive inventory, license, vulnerabilities, permissions, SBOM/provenance and artifact admission for libraries, CLIs, models, templates, plugins and Skills."
+    },
+    {
+      "requirementId": "PLAN-P0-EVIDENCE-OBSERVABILITY",
+      "name": "Evidence and Observability",
+      "state": "INTEGRATED_FOUNDATION",
+      "tests": ["tests/evidence-core.test.cjs"]
+    },
+    {
+      "requirementId": "PLAN-P0-TECH-RADAR",
+      "name": "Technology Radar foundation",
+      "state": "LEGACY_PARTIAL_NEEDS_RETEST"
+    },
+    {
+      "requirementId": "PLAN-P0-ULTRA-UX-PERF",
+      "name": "Ultra UX and Performance",
+      "state": "PARTIAL_PRESERVE_DORN_4_UI_WEB_GOLDEN_STATIC_VERIFIED",
+      "tests": ["tests/senior-baseline.test.cjs", "tests/web-golden-project.test.cjs", "tests/web-golden-runtime.test.cjs"],
+      "gap": "The DORN 4.0 product identity remains protected and the generated web foundation passes static/hostile gates, but fresh visual Evidence in a real browser remains blocked."
+    },
+    {
+      "requirementId": "PLAN-P0-GODOT",
+      "name": "Godot and Game Verification vertical",
+      "state": "NOT_IMPLEMENTED"
+    },
+    {
+      "requirementId": "PLAN-P0-NANOHUACA",
+      "name": "Android, backend, ESP32 and contextual AI vertical",
+      "state": "NOT_IMPLEMENTED"
+    },
+    {
+      "requirementId": "MASTER-CURRENT-ARCHITECTURE",
+      "name": "Central authoritative architecture and universal creation cycle",
+      "state": "PARTIAL"
+    },
+    {
+      "requirementId": "MASTER-CURRENT-STARTUP",
+      "name": "Progressive startup, interaction priority and metrics",
+      "state": "PARTIAL_WITH_USER_7000MS_OVERRIDE"
+    },
+    {
+      "requirementId": "MASTER-CURRENT-PROJECT-TRUTH",
+      "name": "Real project and persistent Project Intelligence",
+      "state": "PARTIAL"
+    },
+    {
+      "requirementId": "MASTER-CURRENT-AI-UNIVERSAL",
+      "name": "Universal model/provider/route/credential/agent architecture",
+      "state": "PARTIAL"
+    },
+    {
+      "requirementId": "MASTER-CURRENT-EXECUTION-EVIDENCE",
+      "name": "Execution, Work Units, quality and Evidence",
+      "state": "PARTIAL"
+    },
+    {
+      "requirementId": "MASTER-CURRENT-ARTIFACTS",
+      "name": "Universal Artifact Pipeline",
+      "state": "LEGACY_PARTIAL_NEEDS_HOSTILE_RETEST"
+    },
+    {
+      "requirementId": "MASTER-CURRENT-DEVELOPER-ENV",
+      "name": "Native developer capabilities and execution environments",
+      "state": "PARTIAL"
+    },
+    {
+      "requirementId": "MASTER-CURRENT-VOICE-GAMER-STREAMING",
+      "name": "Voice, Gamer, Streaming and Mini Panel",
+      "state": "LEGACY_PARTIAL_NEEDS_RUNTIME_RETEST"
+    },
+    {
+      "requirementId": "MASTER-CURRENT-GAMES",
+      "name": "Real game creation and Game Runtime Lab",
+      "state": "NOT_IMPLEMENTED_END_TO_END"
+    },
+    {
+      "requirementId": "MASTER-CURRENT-RUNTIMES",
+      "name": "Web, mobile, desktop, hardware, design, multimedia, CAD and education real routes",
+      "state": "PARTIAL_NO_UNIVERSAL_END_TO_END_PROOF"
+    },
+    {
+      "requirementId": "MASTER-CURRENT-SECURITY",
+      "name": "Security that does not paralyze scoped work",
+      "state": "PARTIAL"
+    },
+    {
+      "requirementId": "MASTER-BUGS-B01-B27",
+      "name": "Twenty-seven confirmed master-spec bugs",
+      "state": "PARTIAL_RECONCILIATION_REQUIRED",
+      "bugIds": ["B01", "B02", "B03", "B04", "B05", "B06", "B07", "B08", "B09", "B10", "B11", "B12", "B13", "B14", "B15", "B16", "B17", "B18", "B19", "B20", "B21", "B22", "B23", "B24", "B25", "B26", "B27"],
+      "rule": "No bug is closed by historical claims alone; each needs a fresh regression against the 4.0 baseline."
+    },
+    {
+      "requirementId": "MASTER-CURRENT-ACCEPTANCE-GATES",
+      "name": "State, composer, startup, catalog, connections, artifacts, agents, work units, worker, verification, game, Android, hardware, security and release suites",
+      "state": "PARTIAL"
+    },
+    {
+      "requirementId": "MASTER-CURRENT-NANOHUACA-DEMO",
+      "name": "End-to-end demonstrable vertical",
+      "state": "NOT_IMPLEMENTED"
+    },
+    {
+      "requirementId": "MASTER-CURRENT-DELIVERY-CONTRACT",
+      "name": "Truthful work-unit delivery with commands, hashes, tests, runtime evidence and rollback",
+      "state": "INTEGRATED_AS_WORKING_RULE_PARTIAL_AS_PRODUCT"
+    },
+    {
+      "requirementId": "MASTER-HISTORICAL-BODY",
+      "name": "Non-current historical body of the 1033-page master specification",
+      "state": "PARTIAL_RECONCILIATION_REQUIRED",
+      "rule": "Historical requirements must be mapped to CURRENT, SUPERSEDED, REJECTED, FUTURE or still-required before global completion."
+    }
+  ],
+  "testSnapshot": {
+    "command": "node --test tests/*.test.cjs",
+    "executed": 273,
+    "passed": 272,
+    "failed": 0,
+    "skipped": 1,
+    "interpretation": "The current source regression is green, but it does not prove all PDF requirements."
+  },
+  "nextExactGap": "Supply Chain Guard plus Skill/Plugin Trust Pipeline: verified fetch and quarantine, provenance, exact version/hash/signature, license, transitive dependency and vulnerability inventory, permission diff, SBOM, isolated Compatibility Lab, per-project activation and rollback. This is required before exposing user-added complements such as Claude/Codex/Gemini-compatible Skills or enabling the legacy PluginEngine. Environment Capsule clean-build Evidence, live multi-runtime/provider evidence, Codex execution and browser visual Evidence remain pending or blocked.",
+  "globalState": "PARTIAL"
+}

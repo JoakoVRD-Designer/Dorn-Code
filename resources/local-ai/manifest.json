@@ -1,0 +1,83 @@
+{
+  "bundle": "DORN Local Model Hub",
+  "catalogVersion": "0.4.0",
+  "runtime": {
+    "name": "llama.cpp",
+    "version": "b10091",
+    "platform": "win32-x64",
+    "source": "https://github.com/ggml-org/llama.cpp/releases/tag/b10091",
+    "archiveSha256": "b2d991bdd37258bb51309f50e9fb7a52a16fe662ba71b2cbbbbb9303b47b5dee",
+    "license": "MIT"
+  },
+  "model": {
+    "id": "qwen3-0.6b-q8",
+    "displayName": "Qwen3 0.6B Q8_0",
+    "name": "Qwen3-0.6B-Q8_0.gguf",
+    "source": "https://huggingface.co/Qwen/Qwen3-0.6B-GGUF",
+    "sizeBytes": 639446688,
+    "sha256": "9465e63a22add5354d9bb4b99e90117043c7124007664907259bd16d043bb031",
+    "license": "Apache-2.0"
+  },
+  "models": [
+    {
+      "id": "qwen3-0.6b-q8",
+      "displayName": "Qwen3 0.6B Q8_0",
+      "level": "Exigencia muy baja",
+      "name": "Qwen3-0.6B-Q8_0.gguf",
+      "revision": "23749fefcc72300e3a2ad315e1317431b06b590a",
+      "source": "https://huggingface.co/Qwen/Qwen3-0.6B-GGUF",
+      "sizeBytes": 639446688,
+      "sha256": "9465e63a22add5354d9bb4b99e90117043c7124007664907259bd16d043bb031",
+      "minimumRamGb": 4,
+      "license": "Apache-2.0"
+    },
+    {
+      "id": "qwen3-1.7b-q8",
+      "displayName": "Qwen3 1.7B Q8_0",
+      "level": "Exigencia baja",
+      "name": "Qwen3-1.7B-Q8_0.gguf",
+      "revision": "90862c4b9d2787eaed51d12237eafdfe7c5f6077",
+      "source": "https://huggingface.co/Qwen/Qwen3-1.7B-GGUF",
+      "sizeBytes": 1834426016,
+      "sha256": "061b54daade076b5d3362dac252678d17da8c68f07560be70818cace6590cb1a",
+      "minimumRamGb": 6,
+      "license": "Apache-2.0"
+    },
+    {
+      "id": "qwen3-4b-q4",
+      "displayName": "Qwen3 4B Q4_K_M",
+      "level": "Exigencia media",
+      "name": "Qwen3-4B-Q4_K_M.gguf",
+      "revision": "bc640142c66e1fdd12af0bd68f40445458f3869b",
+      "source": "https://huggingface.co/Qwen/Qwen3-4B-GGUF",
+      "sizeBytes": 2497280256,
+      "sha256": "7485fe6f11af29433bc51cab58009521f205840f5b4ae3a32fa7f92e8534fdf5",
+      "minimumRamGb": 10,
+      "license": "Apache-2.0"
+    },
+    {
+      "id": "qwen3-8b-q4",
+      "displayName": "Qwen3 8B Q4_K_M",
+      "level": "Exigencia alta",
+      "name": "Qwen3-8B-Q4_K_M.gguf",
+      "revision": "7c41481f57cb95916b40956ab2f0b139b296d974",
+      "source": "https://huggingface.co/Qwen/Qwen3-8B-GGUF",
+      "sizeBytes": 5027783488,
+      "sha256": "d98cdcbd03e17ce47681435b5150e34c1417f50b5c0019dd560e4882c5745785",
+      "minimumRamGb": 16,
+      "license": "Apache-2.0"
+    },
+    {
+      "id": "qwen3-14b-q4",
+      "displayName": "Qwen3 14B Q4_K_M",
+      "level": "Exigencia muy alta",
+      "name": "Qwen3-14B-Q4_K_M.gguf",
+      "revision": "530227a7d994db8eca5ab5ced2fb692b614357fd",
+      "source": "https://huggingface.co/Qwen/Qwen3-14B-GGUF",
+      "sizeBytes": 9001752960,
+      "sha256": "500a8806e85ee9c83f3ae08420295592451379b4f8cf2d0f41c15dffeb6b81f0",
+      "minimumRamGb": 24,
+      "license": "Apache-2.0"
+    }
+  ]
+}

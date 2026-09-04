@@ -1,0 +1,37 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://dorn.local/schemas/dorn-plugin.schema.json",
+  "title": "DORN Plugin Manifest",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["id", "name", "version", "author", "entry", "permissions", "capabilities"],
+  "properties": {
+    "id": { "type": "string", "pattern": "^[A-Za-z0-9][A-Za-z0-9._-]{2,79}$" },
+    "name": { "type": "string", "minLength": 1, "maxLength": 120 },
+    "version": { "type": "string", "pattern": "^\\d+\\.\\d+\\.\\d+(?:-[0-9A-Za-z.-]+)?$" },
+    "author": { "type": "string", "minLength": 1, "maxLength": 120 },
+    "entry": { "type": "string", "pattern": "^[^/\\\\]+\\.js$" },
+    "permissions": {
+      "type": "array",
+      "uniqueItems": true,
+      "items": {
+        "enum": [
+          "commands",
+          "filesystem.read",
+          "filesystem.write",
+          "process.execute",
+          "network",
+          "microphone",
+          "gpu",
+          "models",
+          "interface"
+        ]
+      }
+    },
+    "capabilities": {
+      "type": "array",
+      "uniqueItems": true,
+      "items": { "type": "string" }
+    }
+  }
+}

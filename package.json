@@ -1,0 +1,128 @@
+{
+  "name": "dorn-ai-desktop",
+  "productName": "DORN AI",
+  "version": "4.0.0-alpha.7",
+  "description": "DORN AI — entorno de trabajo inteligente compatible con Windows 11 x64",
+  "main": "./out/main/bootstrap.js",
+  "author": "Joaquín Maximiliano Verdejo Pinto",
+  "license": "UNLICENSED",
+  "private": true,
+  "engines": {
+    "node": ">=22"
+  },
+  "bin": {
+    "dorn-installer": "./bin/dorn-installer.js"
+  },
+  "scripts": {
+    "start": "node node_modules/electron/cli.js .",
+    "dev": "node node_modules/electron/cli.js .",
+    "test": "node --test tests/*.test.cjs",
+    "verify:source": "node scripts/verify-source-checkout.cjs",
+    "verify:runtime": "node scripts/verify-runtime-dependencies.cjs",
+    "verify": "node scripts/verify-recovery.cjs && npm run verify:runtime && node --test tests/*.test.cjs",
+    "verify:windows": "node scripts/verify-windows-runtime.cjs",
+    "verify:installer": "node scripts/verify-installer-v2.cjs",
+    "verify:installer:legacy": "node scripts/verify-native-installer.cjs",
+    "assemble:windows": "node scripts/assemble-windows-portable.cjs",
+    "pack:asar": "node scripts/build-app-asar.cjs",
+    "pack:editable": "node scripts/package-editable.cjs",
+    "pack:editable:two": "node scripts/package-editable-two-zips.cjs",
+    "pack:editable:four": "node scripts/package-editable-four-zips.cjs",
+    "build:installer": "bash installer/v3/build-installer-v3.sh",
+    "build:installer:legacy": "installer/build-native-installer.sh",
+    "dist:win": "electron-builder --win nsis --x64"
+  },
+  "dependencies": {
+    "archiver": "^8.0.0",
+    "electron-updater": "^6.8.9",
+    "extract-zip": "^2.0.1",
+    "zod": "^4.1.5"
+  },
+  "devDependencies": {
+    "@electron/asar": "^4.0.1",
+    "electron": "37.2.6",
+    "electron-builder": "^26.0.12"
+  },
+  "build": {
+    "appId": "com.dorn.ai",
+    "productName": "DORN AI",
+    "asar": true,
+    "directories": {
+      "output": "dist"
+    },
+    "files": [
+      "out/**/*",
+      "build/**/*",
+      "installer/**/*",
+      "bin/**/*",
+      "sdk/**/*",
+      "scripts/**/*",
+      "tests/**/*",
+      "dorn-v3-implementation.json",
+      "dorn-v3-requirements.json",
+      "RELEASE-VERIFICATION.json",
+      "ALCANCE-REAL-ALPHA5.md",
+      "ALCANCE-REAL-ALPHA6.md",
+      "ALCANCE-REAL-ALPHA7.md",
+      "ALCANCE-REAL-ALPHA8.md",
+      "ALCANCE-REAL-ALPHA9.md",
+      "ALCANCE-REAL-ALPHA10.md",
+      "ALCANCE-REAL-V4-ALPHA1.md",
+      "ALCANCE-REAL-V4-ALPHA3.md",
+      "ALCANCE-REAL-V4-ALPHA5.md",
+      "VERIFICACION-ALPHA5.md",
+      "AUDITORIA-TECNICA-ALPHA10.2.md",
+      "HOTFIX-ALPHA10.1.md",
+      "HOTFIX-ALPHA10.2.md",
+      "HOTFIX-ALPHA10.3.md",
+      "RECUPERACION-V0.4-ALPHA10.3.md",
+      "AYUDA-DE-INICIO.txt",
+      "COMPROBAR-DORN.ps1",
+      "ESTADO-152-PUNTOS-ALPHA6.md",
+      "ESTADO-152-PUNTOS-ALPHA7.md",
+      "ESTADO-152-PUNTOS-ALPHA8.md",
+      "ESTADO-152-PUNTOS-ALPHA9.md",
+      "ESTADO-152-PUNTOS-ALPHA10.md",
+      "README.md",
+      "RECOVERY-NOTES.md",
+      "RECOMPILAR-WINDOWS.md",
+      "CAMBIOS-Y-PRUEBAS.txt",
+      "DORN-V4-CHANGELOG.md",
+      "HERRAMIENTAS-DE-COMPILACION.md",
+      "AUTENTICACION-ALPHA6.md",
+      "AUTENTICACION-FUTURA-ALPHA7.md",
+      "MEJORAS_ROUTER_MOVIMIENTO_INSTALADOR_ALPHA7.md",
+      "package.json"
+    ],
+    "extraResources": [
+      {
+        "from": "resources/local-ai",
+        "to": "local-ai"
+      },
+      {
+        "from": "resources/startup",
+        "to": "startup"
+      }
+    ],
+    "win": {
+      "target": [
+        {
+          "target": "nsis",
+          "arch": [
+            "x64"
+          ]
+        }
+      ],
+      "icon": "installer/assets/dorn-installer.ico",
+      "artifactName": "DORN-AI-Setup-${version}-${arch}.${ext}"
+    },
+    "nsis": {
+      "oneClick": false,
+      "allowToChangeInstallationDirectory": true,
+      "createDesktopShortcut": true,
+      "createStartMenuShortcut": true,
+      "shortcutName": "DORN AI",
+      "include": "installer/dorn-products.nsh"
+    }
+  }
+}

@@ -1,0 +1,153 @@
+DORN AI 4.0.0-alpha.3 · COMPILACIÓN PARA WINDOWS 11 x64
+
+CORRECCIÓN FINAL ALPHA 3
+------------------------
+- 20 paletas profesionales, editor HEX e imagen de fondo local sincronizados con la suite.
+- Personalización admite ajuste, intensidad y desenfoque de PNG, JPG y WebP.
+- El menú incorpora un icono discreto para abrir el Discord oficial de DORN.
+- Generación de imágenes con proveedor dedicado, vista previa dentro del chat
+  y guardado aprobado en una carpeta de proyecto.
+- Dictado, lectura y conversación continua con System.Speech de Windows.
+- Confirmación compacta para archivos, CMD, PowerShell y terminal: Sí, No y
+  menú de tres puntos para autorizar el resto del plan actual.
+- DORN Local no participa en el Router hasta que su modelo esté descargado.
+- Una instalación sin IA lista muestra: «Entra a Configuración y agrega tus IAs».
+- Gamers asiste al jugador; la creación de juegos y scripts queda en Desarrollador.
+- Configuración conserva únicamente el Centro DORN grande.
+- El catálogo A-Z, el contraste de selectores y las guías Web fueron corregidos.
+- El error de inicio «Object has been destroyed» fue protegido con validación
+  de ventanas y webContents antes de cada operación asíncrona.
+- El comando proyecto enlaza internamente ID, ruta, permisos y herramientas;
+  el mensaje visible sólo contiene lo que el usuario quiere hacer.
+- Instalador nativo PE32+ x64 con interfaz DORN, SHA-256 del payload, productos
+  seleccionables, ruta configurable y desinstalador real.
+- Pruebas: 85 aprobadas, 0 fallidas.
+
+HISTORIAL RECUPERADO
+====================
+
+ALPHA 10.3 — RECUPERACIÓN REAL DE DORN v0.4
+- Se verificaron el ejecutable, app.asar, splash, audio y runtime local recuperados.
+- El splash aparece antes de cargar los módulos pesados.
+- Editable, portable e instalación resuelven la misma carpeta de inicio.
+- Animación y sonido ahora se controlan desde Configuración.
+- El audio se reproduce una sola vez y queda registrado.
+- DORN Local usa resources/local-ai también durante desarrollo.
+- El instalador reconstruye el EXE desde cuatro partes y comprueba 205.883.904 bytes.
+- Electron queda fijado en 37.2.6 en código, lockfile y paquete Windows.
+- Se añadieron pruebas de regresión para todo el flujo.
+====================================
+
+Esta compilación continúa sobre alpha.9 y aplica el texto final escrito
+manualmente en el documento maestro. No modifica claves, tokens ni credenciales.
+
+CORRECCIÓN DE EJECUTABLE ALPHA.10.2
+-----------------------------------
+- Se demostró que DORN AI.exe de alpha.9, alpha.10 y alpha.10.1 estaba
+  truncado: medía 56.754.176 bytes, pero su tabla PE exigía al menos
+  225.733.632 bytes.
+- El runtime heredado también mezclaba DLL y paquetes de una compilación
+  diferente a Electron 37.2.6.
+- Se reemplazó todo el runtime, no sólo el EXE, por la distribución oficial
+  limpia Electron 37.2.6 win32-x64.
+- El DORN AI.exe íntegro mide 205.883.904 bytes y todas sus secciones PE están
+  físicamente presentes.
+- ELECTRON-RUNTIME.json conserva tamaño y SHA-256 de cada archivo del runtime
+  publicado.
+- verify-windows-runtime.cjs rechaza ejecutables truncados, otra arquitectura,
+  mezclas de versión y archivos distintos a su manifiesto.
+- COMPROBAR-DORN.ps1 ahora inspecciona cabecera, arquitectura, secciones,
+  tamaño, versión y SHA-256.
+- VALIDAR-Y-ABRIR-DORN.cmd permite validar y abrir en modo seguro.
+- Un bootstrap temprano registra fallos anteriores a la interfaz en
+  %APPDATA%\DORN AI\dorn-bootstrap.log.
+- Se incluyeron realmente los iconos que usan las ventanas, la bandeja y los
+  accesos directos.
+- Se actualizó archiver 7 a archiver 8 y npm audit finaliza con
+  0 vulnerabilidades conocidas en las dependencias de producción.
+
+CORRECCIÓN DE ARRANQUE ALPHA.10.1
+--------------------------------
+- Se reprodujo el cierre previo a la ventana principal.
+- Se identificó un árbol de producción incompleto en archiver-utils.
+- Se reconstruyeron desde cero todas las dependencias usando package-lock.json.
+- La verificación ahora carga archiver, electron-updater, extract-zip y zod,
+  incluidas sus dependencias transitivas.
+- El portable sigue siendo Windows x64; ARM64 requiere otra compilación.
+- Se conservaron el diseño y todas las funciones incorporadas en alpha.10.
+- Se creó un instalador NSIS editable con diseño derivado de la presentación:
+  grafito, cuadrícula técnica, plata y la palabra DORN.
+- El instalador detecta x64, instala por usuario, permite elegir carpeta,
+  crea accesos directos opcionales, registra el desinstalador y conserva los
+  datos personales salvo confirmación expresa.
+
+CAMBIOS FUNCIONALES
+-------------------
+- Preferencias persistentes: Directo, Mentor y Cercano.
+- Perfiles opt-in: Aprendizaje, Ingeniería, Gamers y Desarrollador.
+- Gamers se limita a asistencia para jugadores; scripts y creación permanecen en Desarrollador.
+- Sugerencias de espacio sin mover conversaciones automáticamente.
+- DORN Local puede precargarse al iniciar y reutiliza llama-server.
+- Campo del chat ampliado a 320 px con espacios y saltos preservados.
+- Prueba del reconocimiento de fórmulas KaTeX con números imaginarios.
+- Centro de control ampliado con Productos, Plugins e Installer Studio.
+- Instalación local de plugins con inspección, hash, permisos y confirmación.
+- Diseñador inicial de manifiestos, componentes, pantallas, tema y JSON.
+- Guías de configuración para proveedores de API conocidos.
+- Contrato CAD neutral para Open CASCADE, Assimp y aplicaciones autorizadas.
+- Catálogo buscable de cinco modelos locales verificables.
+- Guías de implementación para doce conectores API o locales.
+- DORN Design separado con lienzo, capas, inspector e historial.
+- DORN Editor audiovisual con medios, pistas, cortes y subtítulos.
+- Envío de contexto estructurado desde Design y Editor a DORN AI.
+- SDK específico de plugins de Installer Studio.
+- Acciones reales en cada respuesta: copiar, regenerar, escuchar, compartir,
+  exportar y valorar.
+- Regeneración y edición mediante ramas; nunca se sobrescribe el historial
+  original de forma silenciosa.
+- Buscador de conversaciones y menú para renombrar, anclar, archivar,
+  restaurar, duplicar, exportar o eliminar con confirmación.
+- Migración de SQLite compatible con historiales de compilaciones anteriores.
+- Accesos Gamers y Personalización integrados dentro de Configuración.
+- Perfil Gamers ampliado con objetivo, nivel, motor y plataforma.
+- Prioridades Gamers para rendimiento, gráficos, pruebas, accesibilidad,
+  streaming y modding legítimo.
+- Veinte paletas visuales aplicables al núcleo y los productos de DORN.
+- Editor de paleta con seis colores HEX, selector visual y vista previa.
+- Evaluación de contraste de texto antes de guardar.
+- Importación y exportación de paletas mediante JSON versionado.
+- Migración automática de preferencias anteriores a los nuevos campos.
+- Apariencia persistente de la suite mediante un archivo validado y escritura
+  atómica.
+- Sincronización en vivo con DORN Design, DORN Editor y DORN Studio3D.
+- Migración de la preferencia visual guardada por alpha.9.
+- Densidad compacta y movimiento reducido aplicados en las tres aplicaciones.
+- Studio3D adapta el fondo WebGL, la rejilla, la iluminación de borde y el
+  resaltado de la selección.
+
+MATRIZ DEL WORD
+---------------
+- 152 puntos rastreados.
+- 3 puntos permanecen pendientes.
+- 7 puntos antes pendientes ahora tienen una base partial-alpha.7.
+- 149 puntos son parciales de distintas etapas; no se presentan como finales.
+
+LÍMITES
+-------
+- No se implementa evasión de inactividad de Roblox ni anti-cheat.
+- No se concede acceso silencioso o irrestricto al computador.
+- Google OAuth, telemetría pública y marketplace remoto requieren servidor,
+  dominio, TLS y credenciales oficiales.
+- Android requiere un motor de virtualización y pruebas de hardware.
+- Design y Editor son bases funcionales, no productos industriales terminados.
+- Editor aún necesita FFmpeg validado para codificar video final.
+- Los motores Open CASCADE/Assimp y los SDK propietarios no están incluidos.
+- Los colores son locales al computador y todavía no se sincronizan mediante
+  una cuenta o servidor.
+- Studio3D sigue siendo un inspector/visor inicial; el modelado, materiales,
+  animación y render avanzado son fases posteriores.
+
+PRUEBAS
+-------
+Ejecuta: npm run verify
+Resultado esperado de esta compilación: 85 aprobadas, 0 fallidas.

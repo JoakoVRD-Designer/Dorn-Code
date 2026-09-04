@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data: blob: dorn-background:; connect-src 'none'; object-src 'none'; base-uri 'none'; form-action 'none'">
+    <title>DORN Design</title>
+    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="../renderer/vendor/dorn-product-shell.css">
+    <link rel="stylesheet" href="../renderer/vendor/dorn-appearance.css">
+    <script src="../renderer/vendor/dorn-appearance.js"></script>
+    <script src="./app.js" defer></script>
+  </head>
+  <body>
+    <header class="titlebar">
+      <div class="wordmark"><img src="./icon.svg" alt="">DORN <span>DESIGN</span></div>
+      <nav>
+        <button data-action="new">Nuevo</button>
+        <button data-action="open">Abrir</button>
+        <button data-action="save">Guardar</button>
+        <button data-action="export-svg">Exportar SVG</button>
+        <button data-action="export-png">Exportar PNG</button>
+        <button class="ai" data-action="ai">Enviar a DORN AI</button>
+      </nav>
+      <div class="window-controls">
+        <button data-window="minimize">—</button>
+        <button data-window="maximize">□</button>
+        <button data-window="close">×</button>
+      </div>
+    </header>
+    <div class="workspace">
+      <aside class="tools">
+        <span>HERRAMIENTAS</span>
+        <button class="active" data-tool="select">↖<small>Seleccionar</small></button>
+        <button data-tool="brush">✎<small>Pincel</small></button>
+        <button data-tool="line">╱<small>Línea</small></button>
+        <button data-add="rectangle">▭<small>Rectángulo</small></button>
+        <button data-add="ellipse">○<small>Elipse</small></button>
+        <button data-add="text">T<small>Texto</small></button>
+        <button data-action="import-image">▧<small>Imagen</small></button>
+        <input type="file" accept="image/png,image/jpeg,image/webp" data-image-file hidden>
+        <button data-action="duplicate">⧉<small>Duplicar</small></button>
+        <button data-action="delete">⌫<small>Eliminar</small></button>
+      </aside>
+      <main class="stage">
+        <div class="stage-toolbar">
+          <button data-action="undo">↶ Deshacer</button>
+          <button data-action="redo">↷ Rehacer</button>
+          <label>Zoom <input type="range" min="25" max="150" value="75" data-zoom></label>
+          <span data-status>Documento nuevo</span>
+        </div>
+        <div class="canvas-shell">
+          <svg data-canvas xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Lienzo DORN Design"></svg>
+        </div>
+      </main>
+      <aside class="properties">
+        <section>
+          <span>DOCUMENTO</span>
+          <div class="field-row"><label>Ancho<input type="number" min="64" max="8192" data-doc="width"></label><label>Alto<input type="number" min="64" max="8192" data-doc="height"></label></div>
+          <label>Fondo<input type="color" data-doc="background"></label>
+        </section>
+        <section>
+          <span>ELEMENTO</span>
+          <div data-empty-selection>Selecciona una capa.</div>
+          <div data-inspector hidden>
+            <label>Nombre<input data-element="name"></label>
+            <div class="field-row"><label>X<input type="number" data-element="x"></label><label>Y<input type="number" data-element="y"></label></div>
+            <div class="field-row"><label>Ancho<input type="number" min="1" data-element="width"></label><label>Alto<input type="number" min="1" data-element="height"></label></div>
+            <label>Color<input type="color" data-element="fill"></label>
+            <label data-stroke-field>Grosor<input type="number" min="1" max="120" data-element="strokeWidth"></label>
+            <label data-text-field>Texto<input data-element="text"></label>
+          </div>
+        </section>
+        <section class="layers">
+          <div class="section-title"><span>CAPAS</span><small data-layer-count>0</small></div>
+          <div data-layers></div>
+        </section>
+      </aside>
+    </div>
+    <footer><span>DORN Design · Base vectorial local</span><span data-document-info>1200 × 800</span></footer>
+  </body>
+</html>

@@ -1,0 +1,90 @@
+{
+  "schema": "dorn.checkpoint-delta/1",
+  "checkpointId": "dorn-pc-linux-runtime-p0-2026-09-02",
+  "product": "DORN AI",
+  "baseVersion": "4.0.0-alpha.7",
+  "releaseVersionChanged": false,
+  "state": "PARTIAL",
+  "baseCheckpoint": {
+    "files": 23368,
+    "bytes": 947581660,
+    "contentSetSha256": "ff7d89bf45db0d71c5723aefb98fc968398173095ac954c3fc2ffc2fa69fd07c"
+  },
+  "scope": "Linux Runtime P0: WSL 2 discovery, fixed Node transport, Work Unit durability and interrupted-run recovery.",
+  "files": [
+    {
+      "path": "out/main/dorn-core/linux-runtime.js",
+      "change": "ADDED",
+      "baselineSha256": null,
+      "sha256": "6fe8937bd962f318ba506ca071825d5a2731bb79ee3b7751094fb970934f8c7d",
+      "bytes": 14487
+    },
+    {
+      "path": "out/main/dorn-core/execution-core.js",
+      "change": "MODIFIED",
+      "baselineSha256": "90e52af6b50ad55340dbff0a183afc801cb1cc1087056028fce246b6a95dddb1",
+      "sha256": "5feb504ae1c34481544f876a7fad5710a122348e9316cf0797e7088985281ef7",
+      "bytes": 20712
+    },
+    {
+      "path": "out/main/index.js",
+      "change": "MODIFIED",
+      "baselineSha256": "203122320907c050339e9e1574a2039f7a720f8a526f1f8e1d854026be68f3ba",
+      "sha256": "ca0d8f9bf32f21c90b424452002fa2bc32c94a19a023947fd06e3e276c9c924b",
+      "bytes": 238939
+    },
+    {
+      "path": "tests/linux-runtime.test.cjs",
+      "change": "ADDED",
+      "baselineSha256": null,
+      "sha256": "f824cf01683a15b9e7e17100cbdec723fb49d5bef5d10c301b3fd2e0281f786a",
+      "bytes": 7323
+    },
+    {
+      "path": "docs/DORN-PC-LINUX-RUNTIME-P0.md",
+      "change": "ADDED",
+      "baselineSha256": null,
+      "sha256": "0a33461d7a7b673c21cafdeb6b2e2ecd6808223006b99e6c8cc7563a81399066",
+      "bytes": 2946
+    },
+    {
+      "path": "verification/ui-4.0-change-ledger.json",
+      "change": "MODIFIED",
+      "baselineSha256": "7f460979c274e01312f9f9d1056167531c2503d4df36dbedc757c1415a2ea2e0",
+      "sha256": "efe09872cf14e9d0343a65ebe824f9b32283ab10e0c958f31675079ac13606b1",
+      "bytes": 10671
+    }
+  ],
+  "verification": {
+    "command": "node --test tests/*.test.cjs",
+    "tests": 278,
+    "passed": 277,
+    "failed": 0,
+    "skipped": 1,
+    "focusedLinuxTests": 5,
+    "truth": "The WSL transport was exercised through a deterministic test adapter on Linux. A live Windows 11 and WSL 2 retest remains required."
+  },
+  "implemented": [
+    "Detect wsl.exe without shell and pin its SHA-256.",
+    "Decode UTF-16 WSL output and enumerate observed WSL 1/2 distributions.",
+    "Select only an explicit WSL 2 distribution.",
+    "Run only a fixed wsl.exe --distribution <distro> --exec node contract inside a Work Unit.",
+    "Persist PREPARED, RUNNING, EXECUTED, FAILED, CANCELLED and INTERRUPTED states.",
+    "Recover an unfinished RUNNING state as INTERRUPTED after restart.",
+    "Keep Linux Runtime internal to Electron main with no renderer process API."
+  ],
+  "blockedOrPending": [
+    "Live Windows 11 and WSL 2 execution retest.",
+    "Windows Job Object or equivalent proof for the full WSL process tree.",
+    "Enforced network isolation for Linux tasks.",
+    "WSL ext4-managed Work Units and manifest-based synchronization.",
+    "Agent runtime admission and task execution for Codex, Claude Code and OpenCode.",
+    "User interface for Linux target status and Work Units.",
+    "Final Windows installer rebuild and retest."
+  ],
+  "references": [
+    "https://learn.microsoft.com/windows/wsl/basic-commands",
+    "https://learn.microsoft.com/windows/wsl/wsl-config",
+    "https://learn.microsoft.com/windows/wsl/filesystems"
+  ]
+}

@@ -1,0 +1,16 @@
+{
+  "schema": "dorn.ui-reference-manifest/1",
+  "references": [
+    {
+      "path": "verification/ui-references/DORN_Presentacion_Animada.html",
+      "sha256": "6895ae5e0a97fcbf1a0398611b07fd5e42163cfbf0eb4ceac82f87ab4a76731e",
+      "role": "Historical identity reference supplied by the user to explain the visual origin of DORN; it is not the startup animation specification.",
+      "constraints": [
+        "Do not place its embedded logos inside the DORN application or splash.",
+        "Do not load its external Google Fonts dependency at startup.",
+        "Do not transplant its layout or animations into the startup splash.",
+        "The byte-exact DORN 4.0 splash remains canonical."
+      ]
+    }
+  ]
+}

@@ -1,0 +1,1687 @@
+{
+  "schemaVersion": 1,
+  "product": "DORN AI Windows 3.0",
+  "source": "maestro.md",
+  "generatedAt": "2026-07-29T00:00:00.000-04:00",
+  "totalRequirements": 152,
+  "expectedRequirements": 152,
+  "missing": [],
+  "phases": {
+    "1": "Núcleo estable",
+    "2": "Trabajo real",
+    "3": "DORN Studio 3D básico",
+    "4": "DORN Design y 3D avanzado",
+    "5": "DORN Editor e ingeniería CAD",
+    "6": "Ecosistema, distribución e Installer Studio"
+  },
+  "requirements": [
+    {
+      "number": 1,
+      "title": "IDENTIDAD CENTRAL DE DORN",
+      "sourceLine": 22,
+      "module": "core",
+      "phase": 1,
+      "status": "partial-existing",
+      "evidence": [
+        "Alpha.8 añade búsqueda local, renombrado, anclado, archivado/restauración, duplicado, exportación Markdown/JSON y borrado confirmado."
+      ]
+    },
+    {
+      "number": 2,
+      "title": "OBJETIVO GENERAL DEL PRODUCTO",
+      "sourceLine": 75,
+      "module": "core",
+      "phase": 1,
+      "status": "partial-existing",
+      "evidence": [
+        "Alpha.8 incorpora acciones por respuesta: copiar, regenerar en rama, escuchar, compartir, exportar y valorar; los detalles de proceso siguen plegables."
+      ]
+    },
+    {
+      "number": 3,
+      "title": "PRINCIPIOS OBLIGATORIOS",
+      "sourceLine": 119,
+      "module": "core",
+      "phase": 1,
+      "status": "partial-alpha.3",
+      "evidence": [
+        "Control local, aprobación, límites y recuperación."
+      ]
+    },
+    {
+      "number": 4,
+      "title": "SISTEMA DE SUBAGENTES",
+      "sourceLine": 210,
+      "module": "agents",
+      "phase": 2,
+      "status": "partial-alpha.3",
+      "evidence": [
+        "Coordinador, especialistas, crítico y supervisor con ejecución real."
+      ]
+    },
+    {
+      "number": 5,
+      "title": "CONTROL DE AGENTES",
+      "sourceLine": 321,
+      "module": "agents",
+      "phase": 2,
+      "status": "partial-alpha.3",
+      "evidence": [
+        "Límites de agentes, iteraciones, tiempo y tokens según modo."
+      ]
+    },
+    {
+      "number": 6,
+      "title": "MODOS DE FUNCIONAMIENTO",
+      "sourceLine": 369,
+      "module": "agents",
+      "phase": 2,
+      "status": "partial-alpha.3",
+      "evidence": [
+        "Siete modos persistentes por proyecto y política de privacidad."
+      ]
+    },
+    {
+      "number": 7,
+      "title": "PROVEEDORES DE IA",
+      "sourceLine": 451,
+      "module": "providers-accounts",
+      "phase": 1,
+      "status": "partial-existing",
+      "evidence": []
+    },
+    {
+      "number": 8,
+      "title": "INICIO DE SESIÓN Y CUENTA",
+      "sourceLine": 529,
+      "module": "providers-accounts",
+      "phase": 1,
+      "status": "partial-alpha.4",
+      "evidence": [
+        "Perfil local persistente y comandos de cuenta; Google OAuth queda bloqueado hasta incorporar credenciales oficiales de la aplicación."
+      ]
+    },
+    {
+      "number": 9,
+      "title": "MEMORIA",
+      "sourceLine": 562,
+      "module": "memory-chat-render",
+      "phase": 1,
+      "status": "partial-alpha.3",
+      "evidence": [
+        "Memoria personal, de proyecto, semántica y grafo; exportación y eliminación."
+      ]
+    },
+    {
+      "number": 10,
+      "title": "ORGANIZACIÓN DE CHATS",
+      "sourceLine": 634,
+      "module": "memory-chat-render",
+      "phase": 1,
+      "status": "partial-existing",
+      "evidence": []
+    },
+    {
+      "number": 11,
+      "title": "INTERFAZ DE CHAT",
+      "sourceLine": 673,
+      "module": "memory-chat-render",
+      "phase": 1,
+      "status": "partial-existing",
+      "evidence": []
+    },
+    {
+      "number": 12,
+      "title": "TEXTOS EDITABLES",
+      "sourceLine": 740,
+      "module": "memory-chat-render",
+      "phase": 1,
+      "status": "partial-alpha.3",
+      "evidence": [
+        "Borradores separados y persistentes por conversación.",
+        "Alpha.8 permite editar desde un mensaje del usuario creando una rama no destructiva; todavía no existe un editor WYSIWYG del contenido histórico."
+      ]
+    },
+    {
+      "number": 13,
+      "title": "RENDERIZADO DE CONTENIDO",
+      "sourceLine": 762,
+      "module": "memory-chat-render",
+      "phase": 1,
+      "status": "partial-alpha.3",
+      "evidence": [
+        "Markdown GFM, tablas, KaTeX, Mermaid, resaltado y sanitización local."
+      ]
+    },
+    {
+      "number": 14,
+      "title": "SISTEMA DE ARCHIVOS",
+      "sourceLine": 815,
+      "module": "files-plugins",
+      "phase": 2,
+      "status": "partial-alpha.3",
+      "evidence": [
+        "Acciones confinadas al proyecto, vista previa, aprobación e historial."
+      ]
+    },
+    {
+      "number": 15,
+      "title": "SISTEMA DE PLUGINS",
+      "sourceLine": 886,
+      "module": "files-plugins",
+      "phase": 2,
+      "status": "partial-alpha.3",
+      "evidence": [
+        "Plugins con manifiesto, permisos, hash, aislamiento y ciclo de vida."
+      ]
+    },
+    {
+      "number": 16,
+      "title": "DORN 3D STUDIO",
+      "sourceLine": 964,
+      "module": "studio-3d",
+      "phase": 3,
+      "status": "partial-alpha.3",
+      "evidence": [
+        "Inspector Studio 3D y creación paramétrica disponibles desde texto."
+      ]
+    },
+    {
+      "number": 17,
+      "title": "ACTIVACIÓN AUTOMÁTICA DEL MODO 3D",
+      "sourceLine": 982,
+      "module": "studio-3d",
+      "phase": 3,
+      "status": "partial-alpha.3",
+      "evidence": [
+        "El router textual detecta archivos 3D y activa el inspector bajo demanda."
+      ]
+    },
+    {
+      "number": 18,
+      "title": "ARQUITECTURA DEL SISTEMA 3D",
+      "sourceLine": 1014,
+      "module": "studio-3d",
+      "phase": 3,
+      "status": "partial-alpha.3",
+      "evidence": [
+        "Geometry Engine separado y registro de adaptadores opcionales."
+      ]
+    },
+    {
+      "number": 19,
+      "title": "MOTORES PARA EL MÓDULO 3D",
+      "sourceLine": 1135,
+      "module": "studio-3d",
+      "phase": 3,
+      "status": "partial-alpha.3",
+      "evidence": [
+        "Three.js local para visualización y DORN Bridge para motores externos autorizados."
+      ]
+    },
+    {
+      "number": 20,
+      "title": "FORMATOS 3D",
+      "sourceLine": 1223,
+      "module": "studio-3d",
+      "phase": 3,
+      "status": "partial-alpha.3",
+      "evidence": [
+        "Lectura real de OBJ, STL, PLY, glTF y GLB; otros formatos mediante Bridge."
+      ]
+    },
+    {
+      "number": 21,
+      "title": "INTERFAZ DEL DORN 3D STUDIO",
+      "sourceLine": 1275,
+      "module": "studio-3d",
+      "phase": 3,
+      "status": "partial-alpha.3",
+      "evidence": [
+        "Ventana Studio 3D separada y abierta únicamente desde una instrucción textual."
+      ]
+    },
+    {
+      "number": 22,
+      "title": "HERRAMIENTAS DEL VISOR 3D",
+      "sourceLine": 1308,
+      "module": "studio-3d",
+      "phase": 3,
+      "status": "partial-alpha.3",
+      "evidence": [
+        "Giro, desplazamiento, zoom, encuadre, selección, rejilla, malla e inspector."
+      ]
+    },
+    {
+      "number": 23,
+      "title": "ANÁLISIS AUTOMÁTICO DE MODELOS 3D",
+      "sourceLine": 1351,
+      "module": "studio-3d",
+      "phase": 3,
+      "status": "partial-alpha.3",
+      "evidence": [
+        "Conteos geométricos, límites, superficie STL, escena y advertencias."
+      ]
+    },
+    {
+      "number": 24,
+      "title": "MODOS DE ANÁLISIS 3D",
+      "sourceLine": 1396,
+      "module": "studio-3d",
+      "phase": 3,
+      "status": "partial-alpha.3",
+      "evidence": [
+        "Análisis textual real y extensible por adaptadores."
+      ]
+    },
+    {
+      "number": 25,
+      "title": "MEJORAS PROPUESTAS POR IA EN 3D",
+      "sourceLine": 1481,
+      "module": "studio-3d",
+      "phase": 3,
+      "status": "partial-alpha.3",
+      "evidence": [
+        "Recomendaciones justificadas por conteos, dimensiones, unidades, materiales y complejidad."
+      ]
+    },
+    {
+      "number": 26,
+      "title": "EDICIÓN 3D ASISTIDA POR IA",
+      "sourceLine": 1531,
+      "module": "studio-3d",
+      "phase": 3,
+      "status": "partial-alpha.3",
+      "evidence": [
+        "Edición OBJ no destructiva para centrar, escalar y trasladar mediante copia aprobada."
+      ]
+    },
+    {
+      "number": 27,
+      "title": "CREACIÓN DE MODELOS 3D DESDE TEXTO",
+      "sourceLine": 1555,
+      "module": "studio-3d",
+      "phase": 3,
+      "status": "partial-alpha.3",
+      "evidence": [
+        "Generación paramétrica OBJ con piezas y lista de materiales."
+      ]
+    },
+    {
+      "number": 28,
+      "title": "PROYECTOS 3D",
+      "sourceLine": 1592,
+      "module": "studio-3d",
+      "phase": 3,
+      "status": "partial-alpha.3",
+      "evidence": [
+        "Resultados 3D versionables dentro de la carpeta del proyecto."
+      ]
+    },
+    {
+      "number": 29,
+      "title": "GENERACIÓN DE IMÁGENES",
+      "sourceLine": 1620,
+      "module": "image-developer",
+      "phase": 2,
+      "status": "partial-alpha.4",
+      "evidence": [
+        "Pasarela real para APIs de imagen compatibles, respuesta Base64/HTTPS, límite de 25 MB, SHA-256 y guardado binario mediante vista previa y aprobación."
+      ]
+    },
+    {
+      "number": 30,
+      "title": "PROGRAMACIÓN",
+      "sourceLine": 1657,
+      "module": "image-developer",
+      "phase": 2,
+      "status": "partial-alpha.3",
+      "evidence": [
+        "Creación de archivos y programas con validación ejecutable."
+      ]
+    },
+    {
+      "number": 31,
+      "title": "TERMINAL Y PERMISOS",
+      "sourceLine": 1703,
+      "module": "image-developer",
+      "phase": 2,
+      "status": "partial-alpha.3",
+      "evidence": [
+        "Terminal aprobada, cancelación, límites y bloqueo destructivo."
+      ]
+    },
+    {
+      "number": 32,
+      "title": "IA LOCAL PERMANENTE",
+      "sourceLine": 1741,
+      "module": "local-experience",
+      "phase": 1,
+      "status": "partial-existing",
+      "evidence": []
+    },
+    {
+      "number": 33,
+      "title": "VOZ",
+      "sourceLine": 1783,
+      "module": "local-experience",
+      "phase": 1,
+      "status": "partial-alpha.4",
+      "evidence": [
+        "Síntesis real mediante System.Speech de Windows y control de detención; alpha.8 la expone en cada respuesta. Reconocimiento y palabra de activación requieren un adaptador autorizado."
+      ]
+    },
+    {
+      "number": 34,
+      "title": "PERSONALIDAD",
+      "sourceLine": 1808,
+      "module": "local-experience",
+      "phase": 1,
+      "status": "partial-existing",
+      "evidence": []
+    },
+    {
+      "number": 35,
+      "title": "ESPACIOS DE TRABAJO",
+      "sourceLine": 1838,
+      "module": "local-experience",
+      "phase": 1,
+      "status": "partial-existing",
+      "evidence": []
+    },
+    {
+      "number": 36,
+      "title": "INTERFAZ PERSONALIZABLE",
+      "sourceLine": 1872,
+      "module": "local-experience",
+      "phase": 1,
+      "status": "partial-alpha.6",
+      "evidence": [
+      "out/renderer/vendor/dorn-control-center.js",
+      "out/renderer/vendor/dorn-control-center.css",
+      "out/renderer/vendor/dorn-appearance.js",
+      "out/main/dorn-suite/appearance-store.js",
+      "Alpha.10 comparte las siete paletas, la paleta HEX, densidad, contraste y movimiento entre DORN AI, Design, Editor y Studio3D mediante persistencia validada y actualización en vivo. Los paneles desacoplables siguen pendientes."
+      ]
+    },
+    {
+      "number": 37,
+      "title": "BOTÓN PRODUCTOS",
+      "sourceLine": 1912,
+      "module": "local-experience",
+      "phase": 1,
+      "status": "partial-alpha.4",
+      "evidence": [
+        "Registro de productos y comando textual /productos integrados sin alterar el diseño principal; el botón visual queda para una fuente React mantenible."
+      ]
+    },
+    {
+      "number": 38,
+      "title": "GAMERS",
+      "sourceLine": 1933,
+      "module": "local-experience",
+      "phase": 1,
+      "status": "partial-alpha.6",
+      "evidence": [
+        "out/main/dorn-suite/preference-engine.js",
+        "Alpha.9 amplía el perfil opt-in con objetivo, nivel, motor, plataforma y prioridades de rendimiento, gráficos, pruebas, accesibilidad, streaming y modding autorizado. No implementa evasión de inactividad ni anti-cheat."
+      ]
+    },
+    {
+      "number": 39,
+      "title": "COLABORACIÓN",
+      "sourceLine": 1969,
+      "module": "ecosystem-operations",
+      "phase": 6,
+      "status": "partial-alpha.4",
+      "evidence": [
+        "Sala local o LAN con token Bearer, mensajes JSON persistentes, límites de tamaño e inicio/detención explícitos."
+      ]
+    },
+    {
+      "number": 40,
+      "title": "SINCRONIZACIÓN Y SERVIDOR",
+      "sourceLine": 2006,
+      "module": "ecosystem-operations",
+      "phase": 6,
+      "status": "partial-alpha.4",
+      "evidence": [
+        "Servidor local/LAN bajo demanda y respaldos verificables; la sincronización pública requiere infraestructura, dominio y autenticación oficiales."
+      ]
+    },
+    {
+      "number": 41,
+      "title": "ACTUALIZACIONES",
+      "sourceLine": 2047,
+      "module": "ecosystem-operations",
+      "phase": 6,
+      "status": "partial-existing",
+      "evidence": []
+    },
+    {
+      "number": 42,
+      "title": "TELEMETRÍA",
+      "sourceLine": 2070,
+      "module": "ecosystem-operations",
+      "phase": 6,
+      "status": "partial-alpha.4",
+      "evidence": [
+        "Telemetría desactivada por defecto, opt-in y limitada a contadores locales; no existe transmisión externa en esta compilación."
+      ]
+    },
+    {
+      "number": 43,
+      "title": "SEGURIDAD",
+      "sourceLine": 2114,
+      "module": "ecosystem-operations",
+      "phase": 6,
+      "status": "partial-alpha.3",
+      "evidence": [
+        "Confinamiento, secretos fuera de procesos, permisos y hashes."
+      ]
+    },
+    {
+      "number": 44,
+      "title": "LOGO E IDENTIDAD",
+      "sourceLine": 2136,
+      "module": "ecosystem-operations",
+      "phase": 6,
+      "status": "partial-existing",
+      "evidence": []
+    },
+    {
+      "number": 45,
+      "title": "REDES SOCIALES",
+      "sourceLine": 2169,
+      "module": "ecosystem-operations",
+      "phase": 6,
+      "status": "partial-alpha.4",
+      "evidence": [
+        "Comando /redes con el enlace de Discord indicado en el documento maestro."
+      ]
+    },
+    {
+      "number": 46,
+      "title": "SISTEMA DE ERRORES",
+      "sourceLine": 2186,
+      "module": "ecosystem-operations",
+      "phase": 6,
+      "status": "partial-alpha.3",
+      "evidence": [
+        "Errores estructurados, causas, acciones, reintentos y auditoría."
+      ]
+    },
+    {
+      "number": 47,
+      "title": "RENDIMIENTO",
+      "sourceLine": 2224,
+      "module": "ecosystem-operations",
+      "phase": 6,
+      "status": "partial-existing",
+      "evidence": []
+    },
+    {
+      "number": 48,
+      "title": "EMULACIÓN DE ANDROID",
+      "sourceLine": 2254,
+      "module": "ecosystem-operations",
+      "phase": 6,
+      "status": "pending",
+      "evidence": []
+    },
+    {
+      "number": 49,
+      "title": "CONSOLA Y AUTOMATIZACIÓN",
+      "sourceLine": 2276,
+      "module": "ecosystem-operations",
+      "phase": 6,
+      "status": "partial-alpha.3",
+      "evidence": [
+        "Automatización mediante acciones y comandos aprobados."
+      ]
+    },
+    {
+      "number": 50,
+      "title": "OBJETIVOS DE ENTREGA",
+      "sourceLine": 2302,
+      "module": "delivery",
+      "phase": 1,
+      "status": "partial-existing",
+      "evidence": []
+    },
+    {
+      "number": 51,
+      "title": "REQUISITOS DE IMPLEMENTACIÓN",
+      "sourceLine": 2379,
+      "module": "delivery",
+      "phase": 1,
+      "status": "partial-existing",
+      "evidence": []
+    },
+    {
+      "number": 52,
+      "title": "RESULTADO ESPERADO",
+      "sourceLine": 2414,
+      "module": "delivery",
+      "phase": 1,
+      "status": "partial-existing",
+      "evidence": []
+    },
+    {
+      "number": 53,
+      "title": "DORN COMO ECOSISTEMA DE APLICACIONES",
+      "sourceLine": 2513,
+      "module": "suite-management",
+      "phase": 6,
+      "status": "partial-alpha.3",
+      "evidence": [
+        "Núcleo modular con agentes, memoria, plugins, Bridge, Doctor e Installer Engine."
+      ]
+    },
+    {
+      "number": 54,
+      "title": "INSTALADOR MODULAR DE DORN",
+      "sourceLine": 2822,
+      "module": "suite-management",
+      "phase": 6,
+      "status": "partial-alpha.3",
+      "evidence": [
+        "Manifiestos con componentes, perfiles y dependencias."
+      ]
+    },
+    {
+      "number": 55,
+      "title": "DORN INSTALLATION MANAGER",
+      "sourceLine": 2920,
+      "module": "suite-management",
+      "phase": 6,
+      "status": "partial-alpha.3",
+      "evidence": [
+        "Registro verificable de instalaciones, reparación, desinstalación y análisis."
+      ]
+    },
+    {
+      "number": 56,
+      "title": "DESINSTALACIÓN Y ELIMINACIÓN DE DATOS",
+      "sourceLine": 3002,
+      "module": "suite-management",
+      "phase": 6,
+      "status": "partial-alpha.3",
+      "evidence": [
+        "Desinstalación conserva archivos modificados y datos del usuario por defecto."
+      ]
+    },
+    {
+      "number": 57,
+      "title": "CUENTA DE GOOGLE Y RECUPERACIÓN",
+      "sourceLine": 3077,
+      "module": "suite-management",
+      "phase": 6,
+      "status": "partial-alpha.4",
+      "evidence": [
+        "Perfil local y recuperación mediante .dornbackup opcionalmente cifrado con AES-256-GCM; Google OAuth requiere cliente y redirección oficiales."
+      ]
+    },
+    {
+      "number": 58,
+      "title": "DATOS QUE NO DEBEN SINCRONIZARSE DIRECTAMENTE",
+      "sourceLine": 3153,
+      "module": "suite-management",
+      "phase": 6,
+      "status": "partial-alpha.4",
+      "evidence": [
+        "El respaldo integrado excluye archivos y rutas con claves, tokens, secretos y credenciales; no sincroniza modelos ni archivos personales."
+      ]
+    },
+    {
+      "number": 59,
+      "title": "ASISTENTE DE CONFIGURACIÓN DE APIs",
+      "sourceLine": 3185,
+      "module": "suite-management",
+      "phase": 6,
+      "status": "partial-alpha.3",
+      "evidence": [
+        "Guías locales por proveedor, URLs oficiales y diagnóstico de errores."
+      ]
+    },
+    {
+      "number": 60,
+      "title": "CONFIGURACIÓN AUTOMÁTICA DE PROVEEDORES",
+      "sourceLine": 3262,
+      "module": "suite-management",
+      "phase": 6,
+      "status": "partial-alpha.3",
+      "evidence": [
+        "Presets rápidos y conexiones compatibles con OpenAI."
+      ]
+    },
+    {
+      "number": 61,
+      "title": "DORN DEBE ENSEÑAR SIN DEPENDER DE SOPORTE EXTERNO",
+      "sourceLine": 3363,
+      "module": "suite-management",
+      "phase": 6,
+      "status": "partial-alpha.3",
+      "evidence": [
+        "Centro de ayuda local consultable desde el chat."
+      ]
+    },
+    {
+      "number": 62,
+      "title": "SISTEMA DE DIAGNÓSTICO AUTOMÁTICO",
+      "sourceLine": 3434,
+      "module": "suite-management",
+      "phase": 6,
+      "status": "partial-alpha.3",
+      "evidence": [
+        "DORN Doctor revisa sistema, memoria, almacenamiento, motores y herramientas."
+      ]
+    },
+    {
+      "number": 63,
+      "title": "PERFIL DE MODELOS Y ENSEÑANZA DE CAPACIDADES",
+      "sourceLine": 3496,
+      "module": "suite-management",
+      "phase": 6,
+      "status": "partial-alpha.3",
+      "evidence": [
+        "Perfiles inferidos y editables de capacidades de modelos."
+      ]
+    },
+    {
+      "number": 64,
+      "title": "SISTEMA DE PLUGINS TIPO BLENDER",
+      "sourceLine": 3523,
+      "module": "extensions-bridge",
+      "phase": 2,
+      "status": "partial-alpha.3",
+      "evidence": [
+        "Motor de plugins extensible con instalación administrada."
+      ]
+    },
+    {
+      "number": 65,
+      "title": "TIPOS DE PLUGINS",
+      "sourceLine": 3589,
+      "module": "extensions-bridge",
+      "phase": 2,
+      "status": "partial-alpha.3",
+      "evidence": [
+        "Capacidades declaradas y comandos como base de tipos de extensión."
+      ]
+    },
+    {
+      "number": 66,
+      "title": "API PARA PLUGINS",
+      "sourceLine": 3705,
+      "module": "extensions-bridge",
+      "phase": 2,
+      "status": "partial-alpha.3",
+      "evidence": [
+        "API defineDornPlugin, comandos y contexto restringido."
+      ]
+    },
+    {
+      "number": 67,
+      "title": "SEGURIDAD DE PLUGINS",
+      "sourceLine": 3776,
+      "module": "extensions-bridge",
+      "phase": 2,
+      "status": "partial-alpha.3",
+      "evidence": [
+        "Worker aislado, permisos, hash, límites y bloqueo de process/require."
+      ]
+    },
+    {
+      "number": 68,
+      "title": "MARKETPLACE DE PLUGINS",
+      "sourceLine": 3828,
+      "module": "extensions-bridge",
+      "phase": 2,
+      "status": "partial-alpha.6",
+      "evidence": [
+        "out/renderer/vendor/dorn-control-center.js",
+        "Instalación local con inspección, hash, permisos, activación y estado; catálogo/servidor remoto pendiente."
+      ]
+    },
+    {
+      "number": 69,
+      "title": "COMUNICACIÓN ENTRE APLICACIONES DORN",
+      "sourceLine": 3906,
+      "module": "extensions-bridge",
+      "phase": 2,
+      "status": "partial-alpha.3",
+      "evidence": [
+        "DORN Bridge ejecuta adaptadores declarados con copias aisladas y artefactos verificados."
+      ]
+    },
+    {
+      "number": 70,
+      "title": "PROYECTOS COMPARTIDOS ENTRE APLICACIONES",
+      "sourceLine": 3973,
+      "module": "extensions-bridge",
+      "phase": 2,
+      "status": "partial-alpha.3",
+      "evidence": [
+        "Los motores consumen el proyecto común sin entregar rutas completas a procesos externos."
+      ]
+    },
+    {
+      "number": 71,
+      "title": "DORN DESIGN — ARQUITECTURA",
+      "sourceLine": 3998,
+      "module": "design",
+      "phase": 4,
+      "status": "partial-alpha.7",
+      "evidence": [
+        "out/design/index.html",
+        "out/design/app.js",
+        "Aplicación separada, documento dorn-design/1, historial local y guardado mediante rutas autorizadas."
+      ]
+    },
+    {
+      "number": 72,
+      "title": "DORN DESIGN — HERRAMIENTAS BASE",
+      "sourceLine": 4015,
+      "module": "design",
+      "phase": 4,
+      "status": "partial-alpha.7",
+      "evidence": [
+        "out/design/app.js",
+        "Lienzo SVG, capas, selección, posición/tamaño, color, texto, rectángulo, elipse, duplicado y exportación SVG/PNG."
+      ]
+    },
+    {
+      "number": 73,
+      "title": "DORN DESIGN — IA",
+      "sourceLine": 4097,
+      "module": "design",
+      "phase": 4,
+      "status": "partial-alpha.7",
+      "evidence": [
+        "out/main/index.js",
+        "out/preload/product.js",
+        "Un proyecto puede enviar su documento estructurado al compositor de DORN AI; ejecución automática de operaciones visuales aún pendiente."
+      ]
+    },
+    {
+      "number": 74,
+      "title": "DORN EDITOR — ARQUITECTURA",
+      "sourceLine": 4133,
+      "module": "editor",
+      "phase": 5,
+      "status": "partial-alpha.7",
+      "evidence": [
+        "out/editor/index.html",
+        "out/editor/app.js",
+        "Aplicación audiovisual separada con proyecto dorn-editor/1 y referencias no destructivas a medios autorizados."
+      ]
+    },
+    {
+      "number": 75,
+      "title": "DORN EDITOR — HERRAMIENTAS BASE",
+      "sourceLine": 4164,
+      "module": "editor",
+      "phase": 5,
+      "status": "partial-alpha.7",
+      "evidence": [
+        "out/editor/app.js",
+        "Importación y previsualización local de audio/video, pistas, división, orden, entrada/salida, volumen y subtítulos; render final pendiente."
+      ]
+    },
+    {
+      "number": 76,
+      "title": "DORN EDITOR — IA",
+      "sourceLine": 4234,
+      "module": "editor",
+      "phase": 5,
+      "status": "partial-alpha.7",
+      "evidence": [
+        "out/main/index.js",
+        "out/renderer/vendor/dorn-control-center.js",
+        "La secuencia estructurada puede enviarse a DORN AI sin exponer bytes de medios; agente de edición y codificación final pendientes."
+      ]
+    },
+    {
+      "number": 77,
+      "title": "IDENTIDAD VISUAL DE LA SUITE",
+      "sourceLine": 4273,
+      "module": "suite-runtime",
+      "phase": 6,
+      "status": "partial-alpha.3",
+      "evidence": [
+        "Studio 3D comparte identidad visual DORN con una variante reconocible y discreta."
+      ]
+    },
+    {
+      "number": 78,
+      "title": "CONSUMO Y PROCESOS",
+      "sourceLine": 4319,
+      "module": "suite-runtime",
+      "phase": 6,
+      "status": "partial-alpha.3",
+      "evidence": [
+        "Módulos pesados opcionales y motores activados bajo demanda."
+      ]
+    },
+    {
+      "number": 79,
+      "title": "DESINSTALACIÓN DE COMPONENTES",
+      "sourceLine": 4350,
+      "module": "suite-runtime",
+      "phase": 6,
+      "status": "partial-alpha.3",
+      "evidence": [
+        "Componentes y datos del usuario se administran por separado."
+      ]
+    },
+    {
+      "number": 80,
+      "title": "REPARACIÓN DE INSTALACIÓN",
+      "sourceLine": 4379,
+      "module": "suite-runtime",
+      "phase": 6,
+      "status": "partial-alpha.3",
+      "evidence": [
+        "Verificación por archivo y reparación desde el paquete original."
+      ]
+    },
+    {
+      "number": 81,
+      "title": "PRIORIZACIÓN DE DESARROLLO",
+      "sourceLine": 4409,
+      "module": "suite-runtime",
+      "phase": 6,
+      "status": "partial-alpha.3",
+      "evidence": [
+        "Se prioriza núcleo, trabajo real y Studio 3D básico antes de Design y Editor."
+      ]
+    },
+    {
+      "number": 82,
+      "title": "REGLA GENERAL DE IMPLEMENTACIÓN",
+      "sourceLine": 4540,
+      "module": "suite-runtime",
+      "phase": 6,
+      "status": "partial-alpha.3",
+      "evidence": [
+        "Cada módulo activo tiene ejecución, límites, resultados y pruebas."
+      ]
+    },
+    {
+      "number": 83,
+      "title": "SISTEMA DE DISTRIBUCIÓN MODULAR",
+      "sourceLine": 4632,
+      "module": "distribution",
+      "phase": 6,
+      "status": "partial-alpha.3",
+      "evidence": [
+        "Motor de distribución modular basado en manifiestos."
+      ]
+    },
+    {
+      "number": 84,
+      "title": "DISTRIBUCIÓN EN VARIOS ARCHIVOS ZIP",
+      "sourceLine": 4684,
+      "module": "distribution",
+      "phase": 6,
+      "status": "partial-alpha.3",
+      "evidence": [
+        "División de paquetes en fragmentos numerados."
+      ]
+    },
+    {
+      "number": 85,
+      "title": "FORMATO DE PAQUETE MULTIPARTE",
+      "sourceLine": 4710,
+      "module": "distribution",
+      "phase": 6,
+      "status": "partial-alpha.3",
+      "evidence": [
+        "Formato dorn-multipart/1 con índice, tamaño y SHA-256 por parte."
+      ]
+    },
+    {
+      "number": 86,
+      "title": "DESCARGA AUTOMÁTICA DE FRAGMENTOS",
+      "sourceLine": 4774,
+      "module": "distribution",
+      "phase": 6,
+      "status": "partial-alpha.3",
+      "evidence": [
+        "Descarga HTTPS y reconstrucción disponibles como primitivas del motor."
+      ]
+    },
+    {
+      "number": 87,
+      "title": "DESCARGAS REANUDABLES",
+      "sourceLine": 4830,
+      "module": "distribution",
+      "phase": 6,
+      "status": "partial-alpha.3",
+      "evidence": [
+        "Descarga reanudable mediante HTTP Range y archivo parcial."
+      ]
+    },
+    {
+      "number": 88,
+      "title": "RECONSTRUCCIÓN DE PAQUETES",
+      "sourceLine": 4869,
+      "module": "distribution",
+      "phase": 6,
+      "status": "partial-alpha.3",
+      "evidence": [
+        "Reconstrucción en streaming con verificación final."
+      ]
+    },
+    {
+      "number": 89,
+      "title": "EXTRACCIÓN CONJUNTA",
+      "sourceLine": 4927,
+      "module": "distribution",
+      "phase": 6,
+      "status": "partial-alpha.3",
+      "evidence": [
+        "Extracción conjunta desde el paquete reconstruido."
+      ]
+    },
+    {
+      "number": 90,
+      "title": "CARPETA DE DISTRIBUCIÓN",
+      "sourceLine": 4978,
+      "module": "distribution",
+      "phase": 6,
+      "status": "partial-alpha.3",
+      "evidence": [
+        "Carpeta de distribución con manifiesto multipartes."
+      ]
+    },
+    {
+      "number": 91,
+      "title": "PAQUETES POR COMPONENTE",
+      "sourceLine": 5000,
+      "module": "distribution",
+      "phase": 6,
+      "status": "partial-alpha.3",
+      "evidence": [
+        "Paquetes y componentes declarados de forma independiente."
+      ]
+    },
+    {
+      "number": 92,
+      "title": "DORN INSTALLER STUDIO",
+      "sourceLine": 5052,
+      "module": "installer-studio",
+      "phase": 6,
+      "status": "partial-alpha.3",
+      "evidence": [
+        "Fundación funcional de DORN Installer Studio activa como motor."
+      ]
+    },
+    {
+      "number": 93,
+      "title": "OBJETIVOS DE DORN INSTALLER STUDIO",
+      "sourceLine": 5081,
+      "module": "installer-studio",
+      "phase": 6,
+      "status": "partial-alpha.3",
+      "evidence": [
+        "Empaquetado, instalación, verificación, reparación y desinstalación reales."
+      ]
+    },
+    {
+      "number": 94,
+      "title": "MODOS DE INSTALADOR",
+      "sourceLine": 5119,
+      "module": "installer-studio",
+      "phase": 6,
+      "status": "partial-alpha.3",
+      "evidence": [
+        "Perfiles mínimos/personalizados y configuración avanzada por manifiesto o CLI."
+      ]
+    },
+    {
+      "number": 95,
+      "title": "INTERFAZ DE DORN INSTALLER STUDIO",
+      "sourceLine": 5215,
+      "module": "installer-studio",
+      "phase": 6,
+      "status": "partial-alpha.6",
+      "evidence": [
+        "out/renderer/vendor/dorn-control-center.js",
+        "Panel visual integrado para editar y exportar un manifiesto."
+      ]
+    },
+    {
+      "number": 96,
+      "title": "DISEÑADOR VISUAL DE INSTALADORES",
+      "sourceLine": 5248,
+      "module": "installer-studio",
+      "phase": 6,
+      "status": "partial-alpha.6",
+      "evidence": [
+        "out/renderer/vendor/dorn-control-center.js",
+        "Editor sincronizado de identidad, componentes, pantallas, tema y JSON."
+      ]
+    },
+    {
+      "number": 97,
+      "title": "PANTALLAS DEL INSTALADOR",
+      "sourceLine": 5313,
+      "module": "installer-studio",
+      "phase": 6,
+      "status": "partial-alpha.6",
+      "evidence": [
+        "out/renderer/vendor/dorn-control-center.js",
+        "Lista editable de pantallas; editor drag-and-drop pendiente."
+      ]
+    },
+    {
+      "number": 98,
+      "title": "SISTEMA DE TEMAS PARA INSTALADORES",
+      "sourceLine": 5357,
+      "module": "installer-studio",
+      "phase": 6,
+      "status": "partial-alpha.6",
+      "evidence": [
+        "out/renderer/vendor/dorn-control-center.js",
+        "Selección y persistencia de tema en el manifiesto; editor completo de tokens pendiente."
+      ]
+    },
+    {
+      "number": 99,
+      "title": "DISEÑO RESPONSIVO",
+      "sourceLine": 5401,
+      "module": "installer-studio",
+      "phase": 6,
+      "status": "partial-alpha.6",
+      "evidence": [
+        "out/renderer/vendor/dorn-control-center.css",
+        "Vista previa y formulario adaptables a una columna bajo 720 px."
+      ]
+    },
+    {
+      "number": 100,
+      "title": "PROYECTO DE INSTALADOR",
+      "sourceLine": 5434,
+      "module": "installer-studio",
+      "phase": 6,
+      "status": "partial-alpha.3",
+      "evidence": [
+        "Proyecto dorn-installer.json generado desde lenguaje natural."
+      ]
+    },
+    {
+      "number": 101,
+      "title": "DETECCIÓN AUTOMÁTICA DE ARCHIVOS",
+      "sourceLine": 5474,
+      "module": "installer-studio",
+      "phase": 6,
+      "status": "partial-alpha.3",
+      "evidence": [
+        "Escaneo automático de archivos, tamaños, hashes y extensiones."
+      ]
+    },
+    {
+      "number": 102,
+      "title": "REGLAS DE INCLUSIÓN Y EXCLUSIÓN",
+      "sourceLine": 5514,
+      "module": "installer-studio",
+      "phase": 6,
+      "status": "partial-alpha.3",
+      "evidence": [
+        "Reglas include/exclude con bloqueos de rutas inseguras y enlaces."
+      ]
+    },
+    {
+      "number": 103,
+      "title": "COMPONENTES SELECCIONABLES",
+      "sourceLine": 5536,
+      "module": "installer-studio",
+      "phase": 6,
+      "status": "partial-alpha.3",
+      "evidence": [
+        "Componentes seleccionables mediante patrones."
+      ]
+    },
+    {
+      "number": 104,
+      "title": "PERFILES DE INSTALACIÓN",
+      "sourceLine": 5576,
+      "module": "installer-studio",
+      "phase": 6,
+      "status": "partial-alpha.3",
+      "evidence": [
+        "Perfiles de componentes validados."
+      ]
+    },
+    {
+      "number": 105,
+      "title": "DEPENDENCIAS",
+      "sourceLine": 5624,
+      "module": "installer-studio",
+      "phase": 6,
+      "status": "partial-alpha.3",
+      "evidence": [
+        "Dependencias obligatorias y opcionales declaradas en manifiesto."
+      ]
+    },
+    {
+      "number": 106,
+      "title": "INSTALACIÓN POR USUARIO O POR EQUIPO",
+      "sourceLine": 5662,
+      "module": "installer-studio",
+      "phase": 6,
+      "status": "partial-alpha.3",
+      "evidence": [
+        "Alcance por usuario o equipo declarado y validado."
+      ]
+    },
+    {
+      "number": 107,
+      "title": "ACCIONES DE INSTALACIÓN",
+      "sourceLine": 5694,
+      "module": "installer-studio",
+      "phase": 6,
+      "status": "partial-alpha.3",
+      "evidence": [
+        "Acción transaccional de instalación de archivos."
+      ]
+    },
+    {
+      "number": 108,
+      "title": "TRANSACCIONES Y REVERSIÓN",
+      "sourceLine": 5738,
+      "module": "installer-studio",
+      "phase": 6,
+      "status": "partial-alpha.3",
+      "evidence": [
+        "Copia previa y reversión automática ante fallos."
+      ]
+    },
+    {
+      "number": 109,
+      "title": "DESINSTALADOR GENERADO",
+      "sourceLine": 5769,
+      "module": "installer-studio",
+      "phase": 6,
+      "status": "partial-alpha.3",
+      "evidence": [
+        "Desinstalador basado en el registro exacto de archivos."
+      ]
+    },
+    {
+      "number": 110,
+      "title": "REGISTRO DE ARCHIVOS INSTALADOS",
+      "sourceLine": 5796,
+      "module": "installer-studio",
+      "phase": 6,
+      "status": "partial-alpha.3",
+      "evidence": [
+        "Registro persistente de producto, versión, destino, componentes y hashes."
+      ]
+    },
+    {
+      "number": 111,
+      "title": "SISTEMA DE ACTUALIZACIÓN DIFERENCIAL",
+      "sourceLine": 5830,
+      "module": "installer-studio",
+      "phase": 6,
+      "status": "partial-alpha.3",
+      "evidence": [
+        "Comparación exacta de archivos añadidos, eliminados, modificados e iguales."
+      ]
+    },
+    {
+      "number": 112,
+      "title": "PARCHES",
+      "sourceLine": 5851,
+      "module": "installer-studio",
+      "phase": 6,
+      "status": "partial-alpha.4",
+      "evidence": [
+        "Formato dorn-patch/1, comparación de versiones, payload diferencial y reconstrucción reproducible con validación SHA-256."
+      ]
+    },
+    {
+      "number": 113,
+      "title": "PUBLICACIÓN",
+      "sourceLine": 5881,
+      "module": "installer-studio",
+      "phase": 6,
+      "status": "partial-alpha.3",
+      "evidence": [
+        "Compilación reproducible a .dornpkg."
+      ]
+    },
+    {
+      "number": 114,
+      "title": "SERVIDORES ALTERNATIVOS",
+      "sourceLine": 5919,
+      "module": "installer-studio",
+      "phase": 6,
+      "status": "partial-alpha.3",
+      "evidence": [
+        "Descarga HTTPS configurable como base de servidores alternativos."
+      ]
+    },
+    {
+      "number": 115,
+      "title": "PRUEBAS DEL INSTALADOR",
+      "sourceLine": 5950,
+      "module": "installer-studio",
+      "phase": 6,
+      "status": "partial-alpha.3",
+      "evidence": [
+        "Pruebas automatizadas de paquete, instalación, reparación y multipartes."
+      ]
+    },
+    {
+      "number": 116,
+      "title": "ASISTENTE DE IA PARA CREAR INSTALADORES",
+      "sourceLine": 6017,
+      "module": "installer-studio",
+      "phase": 6,
+      "status": "partial-alpha.3",
+      "evidence": [
+        "El chat genera una configuración inicial de instalador para el proyecto."
+      ]
+    },
+    {
+      "number": 117,
+      "title": "EDITOR DE CONFIGURACIÓN",
+      "sourceLine": 6063,
+      "module": "installer-studio",
+      "phase": 6,
+      "status": "partial-alpha.3",
+      "evidence": [
+        "Configuración JSON legible, editable y validada."
+      ]
+    },
+    {
+      "number": 118,
+      "title": "PLUGINS PARA DORN INSTALLER STUDIO",
+      "sourceLine": 6097,
+      "module": "installer-studio",
+      "phase": 6,
+      "status": "partial-alpha.7",
+      "evidence": [
+        "sdk/installer-plugins/dorn-installer-plugin.schema.json",
+        "sdk/installer-plugins/README.md",
+        "Contrato de hooks y permisos específico; el host aislado de ejecución permanece pendiente."
+      ]
+    },
+    {
+      "number": 119,
+      "title": "AUTOMATIZACIÓN Y LÍNEA DE COMANDOS",
+      "sourceLine": 6138,
+      "module": "installer-studio",
+      "phase": 6,
+      "status": "partial-alpha.3",
+      "evidence": [
+        "CLI dorn-installer con análisis, build, instalación, reparación, partes y limpieza."
+      ]
+    },
+    {
+      "number": 120,
+      "title": "INTEGRACIÓN CON PIPELINES",
+      "sourceLine": 6158,
+      "module": "installer-studio",
+      "phase": 6,
+      "status": "partial-alpha.3",
+      "evidence": [
+        "La CLI entrega JSON, códigos de salida y rutas explícitas para pipelines."
+      ]
+    },
+    {
+      "number": 121,
+      "title": "CONTROL DE VERSIONES",
+      "sourceLine": 6198,
+      "module": "installer-studio",
+      "phase": 6,
+      "status": "partial-alpha.3",
+      "evidence": [
+        "Versiones semánticas validadas y comparación de compilaciones."
+      ]
+    },
+    {
+      "number": 122,
+      "title": "COMPATIBILIDAD ENTRE VERSIONES",
+      "sourceLine": 6224,
+      "module": "installer-studio",
+      "phase": 6,
+      "status": "partial-alpha.3",
+      "evidence": [
+        "Comprobación de plataforma, arquitectura y versión mínima de DORN Core."
+      ]
+    },
+    {
+      "number": 123,
+      "title": "RESPALDO ANTES DE ACTUALIZAR",
+      "sourceLine": 6240,
+      "module": "installer-studio",
+      "phase": 6,
+      "status": "partial-alpha.3",
+      "evidence": [
+        "Respaldo de archivos existentes antes de reemplazarlos."
+      ]
+    },
+    {
+      "number": 124,
+      "title": "PAQUETES DE IDIOMA",
+      "sourceLine": 6260,
+      "module": "installer-studio",
+      "phase": 6,
+      "status": "partial-alpha.3",
+      "evidence": [
+        "Paquetes de idioma representables como componentes."
+      ]
+    },
+    {
+      "number": 125,
+      "title": "PAQUETES DE RECURSOS",
+      "sourceLine": 6274,
+      "module": "installer-studio",
+      "phase": 6,
+      "status": "partial-alpha.3",
+      "evidence": [
+        "Paquetes de recursos representables como componentes."
+      ]
+    },
+    {
+      "number": 126,
+      "title": "MODELOS DE IA COMO PAQUETES",
+      "sourceLine": 6293,
+      "module": "installer-studio",
+      "phase": 6,
+      "status": "partial-alpha.3",
+      "evidence": [
+        "Modelos representables como componentes opcionales."
+      ]
+    },
+    {
+      "number": 127,
+      "title": "LIMPIEZA DE ARCHIVOS TEMPORALES",
+      "sourceLine": 6338,
+      "module": "installer-studio",
+      "phase": 6,
+      "status": "partial-alpha.3",
+      "evidence": [
+        "Limpieza segura de trabajos temporales por antigüedad."
+      ]
+    },
+    {
+      "number": 128,
+      "title": "ADMINISTRACIÓN DE ALMACENAMIENTO",
+      "sourceLine": 6358,
+      "module": "installer-studio",
+      "phase": 6,
+      "status": "partial-alpha.3",
+      "evidence": [
+        "Análisis de peso total y distribución por extensión."
+      ]
+    },
+    {
+      "number": 129,
+      "title": "UBICACIONES PERSONALIZABLES",
+      "sourceLine": 6390,
+      "module": "installer-studio",
+      "phase": 6,
+      "status": "partial-alpha.3",
+      "evidence": [
+        "Destino de instalación seleccionable."
+      ]
+    },
+    {
+      "number": 130,
+      "title": "MOVIMIENTO DE COMPONENTES",
+      "sourceLine": 6412,
+      "module": "installer-studio",
+      "phase": 6,
+      "status": "partial-alpha.3",
+      "evidence": [
+        "Movimiento transaccional con verificación y reversión del destino."
+      ]
+    },
+    {
+      "number": 131,
+      "title": "INSTALACIÓN DESDE ARCHIVOS LOCALES",
+      "sourceLine": 6442,
+      "module": "installer-studio",
+      "phase": 6,
+      "status": "partial-alpha.3",
+      "evidence": [
+        "Construcción e instalación desde archivos locales."
+      ]
+    },
+    {
+      "number": 132,
+      "title": "FORMATO DORN PACKAGE",
+      "sourceLine": 6465,
+      "module": "installer-studio",
+      "phase": 6,
+      "status": "partial-alpha.3",
+      "evidence": [
+        "Formato dorn-package/1 dentro de .dornpkg."
+      ]
+    },
+    {
+      "number": 133,
+      "title": "FORMATO DORN BUNDLE",
+      "sourceLine": 6497,
+      "module": "installer-studio",
+      "phase": 6,
+      "status": "partial-alpha.4",
+      "evidence": [
+        "Formato dorn-bundle/1 para agrupar dos o más .dornpkg, con hashes por paquete y extracción verificada."
+      ]
+    },
+    {
+      "number": 134,
+      "title": "FIRMA DIGITAL",
+      "sourceLine": 6520,
+      "module": "installer-studio",
+      "phase": 6,
+      "status": "partial-alpha.3",
+      "evidence": [
+        "Firma Ed25519 opcional y verificación con clave pública."
+      ]
+    },
+    {
+      "number": 135,
+      "title": "INTEGRIDAD",
+      "sourceLine": 6548,
+      "module": "installer-studio",
+      "phase": 6,
+      "status": "partial-alpha.3",
+      "evidence": [
+        "SHA-256 por archivo, paquete y fragmento."
+      ]
+    },
+    {
+      "number": 136,
+      "title": "REGISTROS DE INSTALACIÓN",
+      "sourceLine": 6572,
+      "module": "installer-studio",
+      "phase": 6,
+      "status": "partial-alpha.3",
+      "evidence": [
+        "Registro de instalación y auditoría estructurada."
+      ]
+    },
+    {
+      "number": 137,
+      "title": "RECUPERACIÓN ANTE FALLOS",
+      "sourceLine": 6601,
+      "module": "installer-studio",
+      "phase": 6,
+      "status": "partial-alpha.3",
+      "evidence": [
+        "Transacción, reversión y reparación verificable."
+      ]
+    },
+    {
+      "number": 138,
+      "title": "INSTALADOR CON IDENTIDAD DORN",
+      "sourceLine": 6630,
+      "module": "installer-studio",
+      "phase": 6,
+      "status": "partial-alpha.6",
+      "evidence": [
+        "out/renderer/vendor/dorn-control-center.js",
+        "Vista previa Graphite con palabra DORN y experiencia modular."
+      ]
+    },
+    {
+      "number": 139,
+      "title": "EXPERIENCIA DEL USUARIO",
+      "sourceLine": 6659,
+      "module": "installer-studio",
+      "phase": 6,
+      "status": "partial-alpha.6",
+      "evidence": [
+        "out/renderer/vendor/dorn-control-center.js",
+        "Editor simple, estados y exportación; flujo instalable final pendiente."
+      ]
+    },
+    {
+      "number": 140,
+      "title": "MODO AVANZADO DEL INSTALADOR",
+      "sourceLine": 6688,
+      "module": "installer-studio",
+      "phase": 6,
+      "status": "partial-alpha.3",
+      "evidence": [
+        "Manifiesto y CLI como modo avanzado sin saturar la interfaz principal."
+      ]
+    },
+    {
+      "number": 141,
+      "title": "MODO SIMPLE",
+      "sourceLine": 6718,
+      "module": "installer-studio",
+      "phase": 6,
+      "status": "partial-alpha.3",
+      "evidence": [
+        "Perfil mínimo mediante componentes requeridos."
+      ]
+    },
+    {
+      "number": 142,
+      "title": "DORN INSTALLER STUDIO COMO PRODUCTO OPCIONAL",
+      "sourceLine": 6731,
+      "module": "installer-studio",
+      "phase": 6,
+      "status": "partial-alpha.3",
+      "evidence": [
+        "Installer Studio se mantiene como módulo opcional sobre un motor común."
+      ]
+    },
+    {
+      "number": 143,
+      "title": "ESPACIO DE TRABAJO DE INSTALADORES",
+      "sourceLine": 6755,
+      "module": "installer-studio",
+      "phase": 6,
+      "status": "partial-alpha.3",
+      "evidence": [
+        "Espacio textual para crear y analizar proyectos de instalador."
+      ]
+    },
+    {
+      "number": 144,
+      "title": "COMPARACIÓN DE COMPILACIONES",
+      "sourceLine": 6775,
+      "module": "installer-studio",
+      "phase": 6,
+      "status": "partial-alpha.3",
+      "evidence": [
+        "Comparación de dos manifiestos."
+      ]
+    },
+    {
+      "number": 145,
+      "title": "ANALIZADOR DE PESO",
+      "sourceLine": 6800,
+      "module": "installer-studio",
+      "phase": 6,
+      "status": "partial-alpha.3",
+      "evidence": [
+        "Analizador de archivos, extensiones y peso."
+      ]
+    },
+    {
+      "number": 146,
+      "title": "DEDUPLICACIÓN ENTRE PRODUCTOS",
+      "sourceLine": 6828,
+      "module": "installer-studio",
+      "phase": 6,
+      "status": "partial-alpha.3",
+      "evidence": [
+        "Detección de contenido duplicado y bytes recuperables."
+      ]
+    },
+    {
+      "number": 147,
+      "title": "AISLAMIENTO DE COMPONENTES",
+      "sourceLine": 6861,
+      "module": "installer-studio",
+      "phase": 6,
+      "status": "partial-alpha.3",
+      "evidence": [
+        "Selección aislada de componentes sin mezclar sus registros."
+      ]
+    },
+    {
+      "number": 148,
+      "title": "DECISIÓN SOBRE LOS ZIP",
+      "sourceLine": 6880,
+      "module": "installer-studio",
+      "phase": 6,
+      "status": "partial-alpha.3",
+      "evidence": [
+        "Partes ZIP numeradas con reconstrucción y verificación."
+      ]
+    },
+    {
+      "number": 149,
+      "title": "PRIMERA VERSIÓN DE DORN INSTALLER STUDIO",
+      "sourceLine": 6911,
+      "module": "installer-studio",
+      "phase": 6,
+      "status": "partial-alpha.3",
+      "evidence": [
+        "Base de la primera versión: proyecto, escaneo, paquete, transacción y registro."
+      ]
+    },
+    {
+      "number": 150,
+      "title": "SEGUNDA VERSIÓN",
+      "sourceLine": 6947,
+      "module": "installer-studio",
+      "phase": 6,
+      "status": "pending",
+      "evidence": []
+    },
+    {
+      "number": 151,
+      "title": "TERCERA VERSIÓN",
+      "sourceLine": 6971,
+      "module": "installer-studio",
+      "phase": 6,
+      "status": "pending",
+      "evidence": []
+    },
+    {
+      "number": 152,
+      "title": "RESULTADO FINAL ESPERADO",
+      "sourceLine": 6995,
+      "module": "installer-studio",
+      "phase": 6,
+      "status": "partial-alpha.3",
+      "evidence": [
+        "Núcleo verificable que puede ampliar las etapas restantes sin reescribir la aplicación."
+      ]
+    }
+  ]
+}

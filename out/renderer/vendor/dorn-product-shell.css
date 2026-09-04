@@ -1,0 +1,119 @@
+:root {
+  --dorn-bg: #0a0a0c;
+  --dorn-panel: #101214;
+  --dorn-panel-2: #15181b;
+  --dorn-line: rgba(255,255,255,.09);
+  --dorn-line-strong: rgba(255,255,255,.17);
+  --dorn-text: #f2f3f4;
+  --dorn-muted: #8d9398;
+  --dorn-dim: #5f666c;
+  --dorn-accent: #a7e6ff;
+  --accent: #a7e6ff;
+}
+
+html, body {
+  background: var(--dorn-bg) !important;
+  color: var(--dorn-text) !important;
+  font-family: Inter, "Segoe UI", Arial, sans-serif !important;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: -18%;
+  z-index: -2;
+  pointer-events: none;
+  opacity: .18;
+  background-image:
+    linear-gradient(rgba(255,255,255,.055) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,.055) 1px, transparent 1px);
+  background-size: 64px 64px;
+  mask-image: radial-gradient(circle at 50% 36%, #000 0%, transparent 72%);
+}
+
+body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  background: radial-gradient(circle at 50% 0%, rgba(168,202,221,.09), transparent 48%);
+}
+
+.titlebar, .studio-header {
+  border-color: var(--dorn-line) !important;
+  background: rgba(10,11,13,.96) !important;
+  box-shadow: 0 1px rgba(255,255,255,.025), 0 12px 38px rgba(0,0,0,.25) !important;
+}
+
+.wordmark, .brand, .studio-header .brand {
+  color: var(--dorn-text) !important;
+  letter-spacing: -.03em !important;
+}
+
+.wordmark img, .titlebar .brand img, .brand-orbit img, .machine-glyph img, .official-empty img {
+  width: 34px !important;
+  height: 34px !important;
+  object-fit: contain;
+  filter: drop-shadow(0 8px 20px rgba(167,230,255,.1)) !important;
+}
+
+.wordmark span, .titlebar .brand small, .studio-header .brand small {
+  color: var(--dorn-muted) !important;
+  font-weight: 600 !important;
+  letter-spacing: .18em !important;
+}
+
+.tools, .properties, .panel, .education-nav, .machine-nav, .inspector,
+.stage-toolbar, .toolbar, .timeline, .viewer, .statusbar, footer {
+  border-color: var(--dorn-line) !important;
+  background: rgba(16,18,20,.94) !important;
+}
+
+.tools button, .education-nav button, .machine-nav button,
+button, select, input, textarea {
+  border-color: var(--dorn-line) !important;
+}
+
+button {
+  color: #cdd1d4 !important;
+  background: linear-gradient(180deg, #1b1e21, #131517) !important;
+  box-shadow: inset 0 1px rgba(255,255,255,.035) !important;
+}
+
+button:hover {
+  color: #fff !important;
+  border-color: var(--dorn-line-strong) !important;
+  background: #202326 !important;
+}
+
+button.active, button.primary, button.ai, .hero-actions .primary {
+  color: #111416 !important;
+  border-color: #d8dde0 !important;
+  background: linear-gradient(135deg, #f3f5f6, #aeb8bf) !important;
+}
+
+input, select, textarea {
+  color: #e5e7e8 !important;
+  background: #0c0e10 !important;
+}
+
+.hero h1, .page-head h1, .section-head h2, .inspector h1 {
+  color: var(--dorn-text) !important;
+  background: none !important;
+  -webkit-text-fill-color: currentColor !important;
+}
+
+.eyebrow, [class*="status"], small {
+  color: var(--dorn-muted);
+}
+
+.brand-orbit, .machine-glyph {
+  border-color: var(--dorn-line) !important;
+  background: #0b0d0f !important;
+  box-shadow: inset 0 1px rgba(255,255,255,.04), 0 15px 30px rgba(0,0,0,.28) !important;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { scroll-behavior: auto !important; animation-duration: .01ms !important; transition-duration: .01ms !important; }
+}

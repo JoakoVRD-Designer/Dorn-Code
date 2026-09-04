@@ -1,0 +1,131 @@
+{
+  "schema": "dorn.ui-change-ledger/1",
+  "baseline": "DORN AI 4.0.0-alpha.7",
+  "rule": "Every protected visual change must be explicit, motivated, reversible and covered by tests.",
+  "entries": [
+    {
+      "path": "out/main/index.js",
+      "baselineSha256": "c374928ee21c043c65a18dfd27635665a8b741674393121588b7f4ef0906acf4",
+      "currentSha256": "b327945dd98b0c64c2aedb3178e9035e8fe282c395c62daac54de79249c5ac17",
+      "status": "APPROVED_FOR_DORN_4_0_EVOLUTION",
+      "reason": "Cumplir la decisión del usuario: splash DORN pequeño de 760x440, siempre por encima, visible durante exactamente 7.000 ms y con la ventana principal oculta hasta que la carga termine; conectar los núcleos de proyecto, integridad, Evidence, Jobs, Worktree, Policy y Execution; reparar la compatibilidad IA; registrar Web Golden detrás de gates; añadir Agent Session Broker, handoffs y el Registry versionado de AgentRuntimeAdapter; integrar Context Compiler 2.0 para Working Sets acotados; conectar Contract Intelligence al gate interno de Worktree; integrar Data Intelligence con Evidence, backup y rollback; integrar Intelligence Gateway 2.0 con entidades separadas, salud, cuotas, coste, circuit breaker y failover durable; conectar Harness x Model x Skill x Tool Benchmarking al Router con selección explicable y experimentos aislados que sólo aprenden de Evidence independiente exacta; añadir un Multi-agent Coordinator durable con Task Graph, dependencias, utilidad marginal, propiedad temporal, Worktrees, comparación independiente e integración exclusiva del ganador; integrar Environment Capsule 2.0 para separar requisitos del proyecto de observaciones del PC; integrar Linux Runtime P0 para detectar WSL 2 por hash y preparar Work Units Linux recuperables; y registrar los IPC acotados de Installer v3 para consultar estado, targets, plan de preparación y toolchain, además de preparar, ejecutar Node y cancelar por identificadores validados. Ninguna de estas rutas altera la identidad visual 4.0 ni expone proceso, SQLite, rutas de ejecutables, credenciales, ContextPacks, contratos mutables, migraciones, Gateway, benchmarking o control de agentes al renderer.",
+      "tests": [
+        "tests/senior-baseline.test.cjs",
+        "tests/state-event-core.test.cjs",
+        "tests/project-core.test.cjs",
+        "tests/project-integrity-change-scope.test.cjs",
+        "tests/ai-provider-compatibility.test.cjs",
+        "tests/evidence-core.test.cjs",
+        "tests/job-runtime.test.cjs",
+        "tests/worktree-manager.test.cjs",
+        "tests/policy-engine.test.cjs",
+        "tests/execution-core.test.cjs",
+        "tests/provider-quick-connect.test.cjs",
+        "tests/provider-edit-transaction.test.cjs",
+        "tests/web-golden-project.test.cjs",
+        "tests/web-golden-runtime.test.cjs",
+        "tests/agent-session-broker.test.cjs",
+        "tests/agent-runtime-registry.test.cjs",
+        "tests/context-compiler.test.cjs",
+        "tests/contract-intelligence.test.cjs",
+        "tests/data-intelligence.test.cjs",
+        "tests/intelligence-gateway.test.cjs",
+        "tests/intelligence-benchmark-router.test.cjs",
+        "tests/multi-agent-coordinator.test.cjs",
+        "tests/environment-capsule.test.cjs",
+        "tests/linux-runtime.test.cjs"
+      ],
+      "rollback": "Restaurar out/main/index.js desde los ZIP 4.0 originales o desde el hash c374928ee21c043c65a18dfd27635665a8b741674393121588b7f4ef0906acf4 de la referencia intacta."
+    },
+    {
+      "path": "installer/assets/dorn-installer-icon.png",
+      "baselineSha256": "2ff154509282623653436db334fef9a92e3864771367223a2853d64dcf1ba261",
+      "currentSha256": "7cc83e50344c96548be4b7df2db4f949740acd854a023cd76a7ba780216edf9d",
+      "status": "APPROVED_FOR_DORN_4_0_EVOLUTION",
+      "reason": "Aplicar el símbolo oficial entregado por el usuario únicamente a la identidad externa del instalador DORN.",
+      "tests": ["tests/senior-baseline.test.cjs"],
+      "rollback": "Restaurar el PNG con hash 2ff154509282623653436db334fef9a92e3864771367223a2853d64dcf1ba261 desde la referencia 4.0 intacta."
+    },
+    {
+      "path": "installer/assets/dorn-installer.ico",
+      "baselineSha256": "fc868ba38688a0ed9d7646bf43121371bbf38282d98b9f6dc972e41ba5e4468a",
+      "currentSha256": "4cfd2370fba76efb400acaa2007c57a291d614ae3761d942eca2f2bff777b01d",
+      "status": "APPROVED_FOR_DORN_4_0_EVOLUTION",
+      "reason": "Aplicar el símbolo oficial entregado por el usuario al ejecutable, instalador y desinstalador de DORN con seis resoluciones Windows.",
+      "tests": ["tests/senior-baseline.test.cjs"],
+      "rollback": "Restaurar el ICO con hash fc868ba38688a0ed9d7646bf43121371bbf38282d98b9f6dc972e41ba5e4468a desde la referencia 4.0 intacta."
+    },
+    {
+      "path": "resources/startup/dorn-logo-official-source.ico",
+      "baselineSha256": null,
+      "currentSha256": "0e0b4c43251e8299b6b8d3433f18bf3357bf0c0660be839aceada4b07adbe59e",
+      "status": "APPROVED_FOR_DORN_4_0_EVOLUTION",
+      "reason": "Conservar sin cambios el archivo original enviado por el usuario como fuente canónica y auditable del símbolo externo de DORN.",
+      "tests": ["tests/senior-baseline.test.cjs"],
+      "rollback": "Retirar únicamente esta copia añadida; el archivo original enviado permanece fuera del árbol de desarrollo y no fue modificado."
+    },
+    {
+      "path": "resources/startup/icon-v4.ico",
+      "baselineSha256": "fc868ba38688a0ed9d7646bf43121371bbf38282d98b9f6dc972e41ba5e4468a",
+      "currentSha256": "4cfd2370fba76efb400acaa2007c57a291d614ae3761d942eca2f2bff777b01d",
+      "status": "APPROVED_FOR_DORN_4_0_EVOLUTION",
+      "reason": "Usar el símbolo oficial como icono externo de las ventanas, la bandeja y la aplicación DORN en Windows.",
+      "tests": ["tests/senior-baseline.test.cjs"],
+      "rollback": "Restaurar el ICO con hash fc868ba38688a0ed9d7646bf43121371bbf38282d98b9f6dc972e41ba5e4468a desde la referencia 4.0 intacta."
+    },
+    {
+      "path": "resources/startup/icon.ico",
+      "baselineSha256": "fc868ba38688a0ed9d7646bf43121371bbf38282d98b9f6dc972e41ba5e4468a",
+      "currentSha256": "4cfd2370fba76efb400acaa2007c57a291d614ae3761d942eca2f2bff777b01d",
+      "status": "APPROVED_FOR_DORN_4_0_EVOLUTION",
+      "reason": "Usar el símbolo oficial en los accesos directos externos de DORN creados por el instalador.",
+      "tests": ["tests/senior-baseline.test.cjs"],
+      "rollback": "Restaurar el ICO con hash fc868ba38688a0ed9d7646bf43121371bbf38282d98b9f6dc972e41ba5e4468a desde la referencia 4.0 intacta."
+    },
+    {
+      "path": "resources/startup/icon-v4.png",
+      "baselineSha256": "2ff154509282623653436db334fef9a92e3864771367223a2853d64dcf1ba261",
+      "currentSha256": "7cc83e50344c96548be4b7df2db4f949740acd854a023cd76a7ba780216edf9d",
+      "status": "APPROVED_FOR_DORN_4_0_EVOLUTION",
+      "reason": "Usar el símbolo oficial en la identidad externa de bandeja cuando la plataforma requiere PNG.",
+      "tests": ["tests/senior-baseline.test.cjs"],
+      "rollback": "Restaurar el PNG con hash 2ff154509282623653436db334fef9a92e3864771367223a2853d64dcf1ba261 desde la referencia 4.0 intacta."
+    },
+    {
+      "path": "resources/startup/icon.png",
+      "baselineSha256": "2ff154509282623653436db334fef9a92e3864771367223a2853d64dcf1ba261",
+      "currentSha256": "7cc83e50344c96548be4b7df2db4f949740acd854a023cd76a7ba780216edf9d",
+      "status": "APPROVED_FOR_DORN_4_0_EVOLUTION",
+      "reason": "Usar el símbolo oficial en las notificaciones externas emitidas por DORN.",
+      "tests": ["tests/senior-baseline.test.cjs"],
+      "rollback": "Restaurar el PNG con hash 2ff154509282623653436db334fef9a92e3864771367223a2853d64dcf1ba261 desde la referencia 4.0 intacta."
+    },
+    {
+      "path": "out/preload/index.js",
+      "baselineSha256": "809916072e9e99ef0459dd264244aad1460ba9a2934355b8586c54ba945a771f",
+      "currentSha256": "277d84cf776cb3ffcfc9733241aa691cfa9534f1119b9de08e960d9b255e0507",
+      "status": "APPROVED_FOR_DORN_4_0_EVOLUTION",
+      "reason": "Exponer al renderer únicamente operaciones locales y acotadas de Prompt Explorer, State Core, Event Bus, Project Core, integridad, impacto, Evidence, consulta/cancelación/revisión explícita de Jobs, conexión IA verificada y DORN Linux mediante IPC declarativo. Linux limita la superficie a estado, targets, plan de preparación, toolchain observado, Work Units Node y cancelación por identificador; no entrega acceso a Node, SQLite, Git, rutas internas, credenciales, red genérica ni ejecución directa.",
+      "tests": ["tests/prompt-explorer.test.cjs", "tests/state-event-core.test.cjs", "tests/project-core.test.cjs", "tests/project-integrity-change-scope.test.cjs", "tests/evidence-core.test.cjs", "tests/job-runtime.test.cjs", "tests/worktree-manager.test.cjs", "tests/ai-provider-compatibility.test.cjs", "tests/linux-runtime.test.cjs", "tests/senior-baseline.test.cjs"],
+      "rollback": "Retirar el bloque promptExplorer o restaurar el preload con hash 809916072e9e99ef0459dd264244aad1460ba9a2934355b8586c54ba945a771f."
+    },
+    {
+      "path": "out/renderer/vendor/dorn-control-center.js",
+      "baselineSha256": "13555c742f915b2bc30baca80bde5f82d4f4d86412d8fdc5c9a8b673048d2626",
+      "currentSha256": "40b1f25c6b4f03fd03a9457a0bc91ef312a6d4c665b228bd9edb659432e411cf",
+      "status": "APPROVED_FOR_DORN_4_0_EVOLUTION",
+      "reason": "Añadir Prompt Explorer, selector de permisos y conexión IA de un paso tanto en el catálogo como en Modelos y APIs; la ficha buscable de Kimi y otros presets indica configuración automática, solicita sólo la API key, prueba antes de activar y mantiene el editor avanzado como opción. Las fichas Kimi/Kimi K2 de la enciclopedia se resuelven ahora al mismo conector oficial en lugar de abrir una plantilla JSON vacía. Se conservan el menú, productos, paletas y lenguaje visual de DORN 4.0.",
+      "tests": ["tests/prompt-explorer.test.cjs", "tests/ai-provider-compatibility.test.cjs", "tests/provider-quick-connect.test.cjs", "tests/provider-edit-transaction.test.cjs", "tests/senior-baseline.test.cjs"],
+      "rollback": "Restaurar dorn-control-center.js con hash 13555c742f915b2bc30baca80bde5f82d4f4d86412d8fdc5c9a8b673048d2626 desde la referencia 4.0 intacta."
+    },
+    {
+      "path": "out/renderer/vendor/dorn-control-center.css",
+      "baselineSha256": "df042625084808470f21bac31c5b2095f338efa53854f7ff12071d27b1c4d610",
+      "currentSha256": "023080f95e7121432e12a3c59c3289311f8a339a2424c18d2225301375e8b37b",
+      "status": "APPROVED_FOR_DORN_4_0_EVOLUTION",
+      "reason": "Integrar visualmente Prompt Explorer en el sistema de paletas, densidad, responsive y movimiento reducido de DORN 4.0 sin reemplazar la interfaz existente.",
+      "tests": ["tests/prompt-explorer.test.cjs", "tests/senior-baseline.test.cjs"],
+      "rollback": "Restaurar dorn-control-center.css con hash df042625084808470f21bac31c5b2095f338efa53854f7ff12071d27b1c4d610 desde la referencia 4.0 intacta."
+    }
+  ]
+}

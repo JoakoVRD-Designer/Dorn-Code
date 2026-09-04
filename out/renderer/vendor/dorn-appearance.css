@@ -1,0 +1,83 @@
+html[data-dorn-background="image"] body {
+  position: relative;
+  isolation: isolate;
+  background: var(--dorn-background) !important;
+}
+
+html[data-dorn-background="image"] body::before {
+  content: "";
+  position: fixed;
+  z-index: 0;
+  inset: -28px;
+  pointer-events: none;
+  background-color: var(--dorn-background);
+  background-image: var(--dorn-background-image);
+  background-position: center;
+  background-size: var(--dorn-background-size);
+  background-repeat: var(--dorn-background-repeat);
+  filter: blur(var(--dorn-background-blur));
+  opacity: var(--dorn-background-strength);
+  mix-blend-mode: var(--dorn-background-blend);
+  transform: scale(1.03);
+}
+
+html[data-dorn-background="image"] body::after {
+  content: "";
+  position: fixed;
+  z-index: 0;
+  inset: 0;
+  pointer-events: none;
+  background: var(--dorn-background);
+  opacity: var(--dorn-background-tint);
+}
+
+html[data-dorn-background="image"] body #root,
+html[data-dorn-background="image"] body .app-root,
+html[data-dorn-background="image"] body .app-layout,
+html[data-dorn-background="image"] body .main-workspace,
+html[data-dorn-background="image"] body .workspace,
+html[data-dorn-background="image"] body .education-shell,
+html[data-dorn-background="image"] body .education-main,
+html[data-dorn-background="image"] body .machine-shell,
+html[data-dorn-background="image"] body .machine-shell > main,
+html[data-dorn-background="image"] body .studio-shell,
+html[data-dorn-background="image"] body .studio-content {
+  position: relative;
+  z-index: 1;
+  background-color: color-mix(in srgb, var(--dorn-background) 68%, transparent) !important;
+  background-image: none !important;
+}
+
+html[data-dorn-background="image"] body .sidebar,
+html[data-dorn-background="image"] body .education-nav,
+html[data-dorn-background="image"] body .machine-nav,
+html[data-dorn-background="image"] body .properties,
+html[data-dorn-background="image"] body .tools,
+html[data-dorn-background="image"] body .library,
+html[data-dorn-background="image"] body .inspector {
+  position: relative;
+  z-index: 2;
+  background: color-mix(in srgb, var(--dorn-panel) 86%, transparent) !important;
+  backdrop-filter: blur(15px);
+}
+
+html[data-dorn-background="image"] body .titlebar,
+html[data-dorn-background="image"] body .studio-header,
+html[data-dorn-background="image"] body .statusbar,
+html[data-dorn-background="image"] body footer {
+  position: relative;
+  z-index: 3;
+  background: color-mix(in srgb, var(--dorn-panel) 90%, transparent) !important;
+  backdrop-filter: blur(16px);
+}
+
+html[data-dorn-background="image"] body .dorn-cc-backdrop,
+html[data-dorn-background="image"] body .dorn-approval-layer,
+html[data-dorn-background="image"] body .dorn-setup-layer,
+html[data-dorn-background="image"] body [role="dialog"] {
+  z-index: 9998;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html[data-dorn-background="image"] body::before { transform: none; }
+}

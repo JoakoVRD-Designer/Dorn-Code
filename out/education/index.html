@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data: dorn-background:; connect-src 'none'; object-src 'none'; base-uri 'none'; form-action 'none'">
+    <title>DORN Education</title>
+    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="../renderer/vendor/dorn-product-shell.css">
+    <link rel="stylesheet" href="../renderer/vendor/dorn-appearance.css">
+    <script src="../renderer/vendor/dorn-appearance.js"></script>
+    <script src="./data/paes-2026-clavijeros.js"></script>
+    <script src="./app.js" defer></script>
+  </head>
+  <body>
+    <header class="titlebar">
+      <div class="wordmark"><img src="./icon.svg" alt="">DORN <span>EDUCATION</span></div>
+      <div class="course-title"><small>RUTA ACTIVA</small><strong data-course-title>Preparación PAES · Matemática M1</strong></div>
+      <div class="window-controls">
+        <button data-window="minimize" aria-label="Minimizar">—</button>
+        <button data-window="maximize" aria-label="Maximizar">□</button>
+        <button data-window="close" aria-label="Cerrar">×</button>
+      </div>
+    </header>
+    <div class="education-shell">
+      <aside class="education-nav">
+        <div class="brand-orbit"><img src="./icon.svg" alt="Identidad de DORN Education"><i></i></div>
+        <nav>
+          <button class="active" data-view="home"><b>01</b><span>Inicio</span></button>
+          <button data-view="courses"><b>02</b><span>Cursos</span></button>
+          <button data-view="learn"><b>03</b><span>Aprender</span></button>
+          <button data-view="practice"><b>04</b><span>Práctica</span></button>
+          <button data-view="exam"><b>05</b><span>Simulacro</span></button>
+          <button data-view="official"><b>06</b><span>Corrector 2026</span></button>
+          <button data-view="progress"><b>07</b><span>Progreso</span></button>
+        </nav>
+        <div class="local-note"><strong>LOCAL</strong><span>Tu progreso queda en este equipo.</span></div>
+      </aside>
+      <main class="education-main">
+        <section data-page="home" class="page active">
+          <div class="hero">
+            <span class="eyebrow">DORN EDUCATION · APRENDER ANTES DE EVALUAR</span>
+            <h1>Entiende el método.<br>Después demuestra lo aprendido.</h1>
+            <p>DORN Education separa explicación, práctica guiada y simulacro. Las preguntas incluidas son originales y siguen el estilo de habilidades PAES; no se presentan como material oficial del DEMRE.</p>
+            <div class="hero-actions">
+              <button class="primary" data-start-learning>Comenzar lección</button>
+              <button data-open-courses>Explorar cursos</button>
+              <button data-open-official>Corregir PAES 2026</button>
+            </div>
+          </div>
+          <article class="voice-tutor">
+            <div class="voice-tutor-heading"><span><small>TUTOR POR VOZ · LOCAL</small><h2>Habla, escucha y continúa aprendiendo</h2><p>Education puede leer la lección, escribir lo que dices y explicar conceptos incluidos. Para preguntas abiertas utiliza una IA que hayas configurado en DORN.</p></span><i data-voice-indicator></i></div>
+            <label><span>Pregunta o concepto</span><textarea data-tutor-question rows="2" placeholder="Escribe una pregunta o usa Escuchar…"></textarea></label>
+            <div class="voice-tutor-actions"><button data-tutor-listen>Escuchar</button><button data-tutor-transcribe>Transcribir WAV</button><button data-tutor-read>Leer lección</button><button data-tutor-diagnose>Comprobar voz</button><button class="primary" data-tutor-ask>Preguntar</button></div>
+            <div class="voice-tutor-response" data-tutor-response hidden></div>
+          </article>
+          <div class="dashboard-grid">
+            <article><small>RUTA ACTUAL</small><strong>Matemática M1</strong><span>Números, álgebra, geometría y datos</span></article>
+            <article><small>DOMINIO LOCAL</small><strong data-mastery>0%</strong><span>Calculado con respuestas guardadas</span></article>
+            <article><small>BANCO INICIAL</small><strong data-bank-size>0</strong><span>Ejercicios originales con solución</span></article>
+          </div>
+          <article class="adaptive-plan" data-adaptive-plan></article>
+        </section>
+        <section data-page="courses" class="page">
+          <div class="section-head"><span><small>CATÁLOGO FORMATIVO</small><h2>Cursos y rutas</h2></span><input type="search" data-course-search placeholder="Buscar PAES, AutoCAD, SOLIDWORKS…"></div>
+          <p class="page-note">DORN distingue el contenido funcional incluido, los cursos base y las rutas futuras. No presenta una mención en el catálogo como integración oficial.</p>
+          <div class="course-grid" data-course-grid></div>
+        </section>
+        <section data-page="learn" class="page">
+          <div class="section-head"><span><small>ETAPA 1</small><h2>Aprende antes de responder</h2></span><select data-topic></select></div>
+          <article class="lesson-card" data-lesson></article>
+          <div class="lesson-actions"><button class="primary" data-lesson-practice>Practicar este contenido</button></div>
+        </section>
+        <section data-page="practice" class="page">
+          <div class="section-head"><span><small>ETAPA 2</small><h2>Práctica guiada</h2></span><span data-question-count></span></div>
+          <div class="question-shell" data-practice-shell></div>
+        </section>
+        <section data-page="exam" class="page">
+          <div class="section-head"><span><small>ETAPA 3</small><h2>Simulacro original estilo PAES</h2></span><span data-exam-timer>Sin iniciar</span></div>
+          <div class="exam-intro" data-exam-intro>
+            <h3>Respuestas A, B, C, D y E</h3>
+            <p>El simulacro mezcla habilidades, guarda tus respuestas localmente y entrega un solucionario explicado al terminar. Primero puedes revisar la lección recomendada.</p>
+            <div><button data-exam-lesson>Revisar lección previa</button><button class="primary" data-exam-start>Iniciar 8 preguntas</button></div>
+          </div>
+          <div class="question-shell" data-exam-shell hidden></div>
+          <div class="exam-result" data-exam-result hidden></div>
+        </section>
+        <section data-page="official" class="page">
+          <div class="section-head"><span><small>FUENTE OFICIAL 2026</small><h2>Corrector de clavijeros PAES</h2></span><select data-official-exam></select></div>
+          <div class="official-warning">
+            <strong>Corrector verificable, no banco de preguntas.</strong>
+            <p>Este módulo usa los clavijeros y tablas de transformación aportados. Como esos PDF no contienen los enunciados, debes responder la prueba en su cuadernillo y luego ingresar aquí tus alternativas.</p>
+          </div>
+          <article class="official-meta" data-official-meta></article>
+          <div class="official-grid" data-official-grid></div>
+          <div class="official-actions"><button class="primary" data-official-calculate>Calcular resultado</button><button data-official-clear>Limpiar respuestas</button></div>
+          <article class="official-result" data-official-result hidden></article>
+        </section>
+        <section data-page="progress" class="page">
+          <div class="section-head"><span><small>DATOS LOCALES</small><h2>Tu progreso</h2></span><div class="inline-actions"><button data-repeat-diagnostic>Repetir diagnóstico</button><button data-reset-progress>Restablecer</button></div></div>
+          <div class="progress-board" data-progress-board></div>
+        </section>
+      </main>
+    </div>
+    <footer><span>DORN Education · Base funcional v4</span><span data-status>Listo para aprender</span></footer>
+    <div class="diagnostic-backdrop" data-diagnostic hidden>
+      <form class="diagnostic-card" data-diagnostic-form>
+        <span class="eyebrow">PRIMER INICIO · PERFIL ADAPTATIVO</span>
+        <h2>Primero necesito entender tu objetivo</h2>
+        <p>No te encasillamos en un “estilo de aprendizaje”. DORN ajusta ejemplos, práctica, repeticiones y dificultad usando tus respuestas y tu progreso real.</p>
+        <label>¿Qué quieres aprender primero?<select name="goal" required><option value="paes-m1">PAES Matemática M1</option><option value="paes-m2">PAES Matemática M2</option><option value="paes-lectora">PAES Competencia Lectora</option><option value="autocad">Fundamentos de AutoCAD</option><option value="solidworks">Fundamentos de SOLIDWORKS</option></select></label>
+        <label>¿Cómo te sientes con el tema?<select name="confidence" required><option value="low">Estoy comenzando</option><option value="medium">Tengo una base</option><option value="high">Quiero profundizar</option></select></label>
+        <label>Tiempo habitual por sesión<select name="minutes" required><option value="15">15 minutos</option><option value="30" selected>30 minutos</option><option value="60">60 minutos</option></select></label>
+        <fieldset><legend>¿Qué apoyo quieres priorizar?</legend><label><input type="radio" name="support" value="examples" checked> Ejemplos resueltos</label><label><input type="radio" name="support" value="practice"> Más práctica guiada</label><label><input type="radio" name="support" value="summary"> Resúmenes y conceptos</label></fieldset>
+        <button class="primary" type="submit">Crear mi ruta</button>
+      </form>
+    </div>
+  </body>
+</html>

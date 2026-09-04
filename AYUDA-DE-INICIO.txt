@@ -1,0 +1,39 @@
+DORN AI 4.0.0-alpha.3 — AYUDA DE INICIO
+================================================
+
+1. Haz clic derecho sobre el ZIP y selecciona "Extraer todo".
+2. Entra en la carpeta "DORN AI Windows 4.0.0 alpha 2".
+3. Ejecuta "DORN AI.exe" sin separarlo de los demás archivos.
+
+El portable necesita Windows 10 u 11 y un procesador x64. No es una
+compilación ARM64. Puedes comprobarlo en:
+Configuración > Sistema > Acerca de > Tipo de sistema.
+
+No ejecutes DORN dentro del visor del ZIP y no copies únicamente el EXE:
+Electron necesita las DLL, la carpeta resources y la carpeta locales.
+
+COMPROBACIÓN RECOMENDADA
+------------------------
+Ejecuta "VALIDAR-Y-ABRIR-DORN.cmd". Este archivo:
+1. Revisa que DORN AI.exe sea x64 y PE32+.
+2. Comprueba que todas sus secciones estén completas.
+3. Verifica que mida exactamente 205.883.904 bytes.
+4. Verifica el hash oficial y los archivos esenciales.
+5. Abre DORN en modo seguro únicamente cuando todo es correcto.
+
+También puedes hacer clic derecho en COMPROBAR-DORN.ps1 y elegir
+"Ejecutar con PowerShell". Ninguno de los dos archivos modifica tu equipo.
+
+Hash esperado de DORN AI.exe:
+582c6eeaac0b32d7f78cfe5e225854a3cfe38ff16d725f41f590c20800054375
+
+Si la aplicación abre y después encuentra otro problema, comparte:
+1. El resultado de COMPROBAR-DORN.ps1.
+2. El texto exacto mostrado por Windows.
+3. %APPDATA%\DORN AI\dorn-bootstrap.log
+4. %APPDATA%\DORN AI\dorn-startup.log
+5. %APPDATA%\DORN AI\dorn-local-runtime.log, si falla DORN Local.
+
+La alerta "Editor desconocido" es SmartScreen y se debe a que esta compilación
+interna todavía no posee un certificado comercial de firma de código. No es el
+mismo error que "Esta aplicación no puede ejecutarse en el equipo".

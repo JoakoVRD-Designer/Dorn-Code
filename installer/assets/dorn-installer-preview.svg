@@ -1,0 +1,64 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="600" viewBox="0 0 960 600">
+  <defs>
+    <linearGradient id="silver" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#ffffff"/>
+      <stop offset=".38" stop-color="#969ba1"/>
+      <stop offset=".68" stop-color="#e8eaed"/>
+      <stop offset="1" stop-color="#6a6f75"/>
+    </linearGradient>
+    <pattern id="grid" width="36" height="36" patternUnits="userSpaceOnUse">
+      <path d="M36 0H0V36" fill="none" stroke="#ffffff" stroke-opacity=".038"/>
+    </pattern>
+  </defs>
+  <rect width="960" height="600" fill="#050608"/>
+  <rect width="960" height="600" fill="url(#grid)"/>
+  <rect x="48" y="43" width="864" height="526" rx="18" fill="#000" opacity=".48"/>
+  <g>
+    <rect x="34" y="27" width="892" height="546" rx="14" fill="#090b0e" stroke="#84909e" stroke-opacity=".32"/>
+    <rect x="34" y="27" width="306" height="546" rx="14" fill="#0d1117"/>
+    <rect x="326" y="27" width="14" height="546" fill="#090b0e"/>
+    <path d="M340 50v500" stroke="#596574" stroke-opacity=".75"/>
+    <g opacity=".12" stroke="#b9c3cf">
+      <path d="M58 70h256M58 106h256M58 142h256M58 178h256M58 214h256M58 250h256M58 286h256M58 322h256M58 358h256M58 394h256M58 430h256M58 466h256M58 502h256"/>
+    </g>
+    <text x="72" y="126" fill="url(#silver)" font-family="DejaVu Sans" font-size="62" font-weight="700" letter-spacing="-3">DORN</text>
+    <rect x="74" y="146" width="92" height="2" fill="#d7dade" fill-opacity=".52"/>
+    <text x="74" y="175" fill="#a7b0bb" font-family="DejaVu Sans Mono" font-size="11" letter-spacing="1.5">SISTEMA DE TRABAJO</text>
+    <text x="74" y="194" fill="#a7b0bb" font-family="DejaVu Sans Mono" font-size="11" letter-spacing="1.5">CON INTELIGENCIA</text>
+    <text x="74" y="522" fill="#788391" font-family="DejaVu Sans Mono" font-size="9" letter-spacing="1.2">4.0 · ALPHA INTERNA</text>
+
+    <text x="382" y="76" fill="#84909e" font-family="DejaVu Sans Mono" font-size="10" letter-spacing="1.45">INSTALADOR NATIVO · WINDOWS 11 X64</text>
+    <text x="382" y="121" fill="#f0f3f6" font-family="DejaVu Sans" font-size="30" font-weight="700">Configura DORN AI</text>
+    <text x="382" y="150" fill="#98a4b2" font-family="DejaVu Sans" font-size="13">El núcleo se instala por usuario. Elige su ruta y accesos independientes.</text>
+
+    <text x="382" y="194" fill="#84909e" font-family="DejaVu Sans Mono" font-size="9" letter-spacing="1.2">CARPETA DE INSTALACIÓN</text>
+    <rect x="382" y="208" width="390" height="39" rx="7" fill="#11151a" stroke="#414a55"/>
+    <text x="398" y="232" fill="#dce2e8" font-family="DejaVu Sans" font-size="11">C:\Users\usuario\AppData\Local\Programs\DORN AI</text>
+    <rect x="783" y="208" width="103" height="39" rx="7" fill="#1a1f26" stroke="#586473"/>
+    <text x="834.5" y="232" text-anchor="middle" fill="#edf1f5" font-family="DejaVu Sans" font-size="11">Examinar</text>
+
+    <text x="382" y="282" fill="#84909e" font-family="DejaVu Sans Mono" font-size="9" letter-spacing="1.2">ACCESOS Y PRODUCTOS</text>
+    <g font-family="DejaVu Sans" font-size="12" fill="#e5e9ed">
+      <rect x="382" y="300" width="15" height="15" rx="3" fill="#c8d1dc"/><path d="m386 307 3 3 5-7" fill="none" stroke="#090b0e" stroke-width="2"/>
+      <text x="407" y="312">DORN AI en el escritorio</text>
+      <rect x="382" y="333" width="15" height="15" rx="3" fill="#c8d1dc"/><path d="m386 340 3 3 5-7" fill="none" stroke="#090b0e" stroke-width="2"/>
+      <text x="407" y="345">DORN Design</text>
+      <rect x="634" y="333" width="15" height="15" rx="3" fill="#11151a" stroke="#697482"/>
+      <text x="659" y="345">DORN Editor</text>
+      <rect x="382" y="366" width="15" height="15" rx="3" fill="#c8d1dc"/><path d="m386 373 3 3 5-7" fill="none" stroke="#090b0e" stroke-width="2"/>
+      <text x="407" y="378">DORN Education</text>
+      <rect x="634" y="366" width="15" height="15" rx="3" fill="#11151a" stroke="#697482"/>
+      <text x="659" y="378">DORN Machine</text>
+      <rect x="382" y="399" width="15" height="15" rx="3" fill="#c8d1dc"/><path d="m386 406 3 3 5-7" fill="none" stroke="#090b0e" stroke-width="2"/>
+      <text x="407" y="411">Iniciar DORN AI al finalizar</text>
+    </g>
+
+    <rect x="382" y="448" width="504" height="8" rx="4" fill="#171b21"/>
+    <rect x="382" y="448" width="212" height="8" rx="4" fill="#c8d1dc"/>
+    <text x="382" y="477" fill="#98a4b2" font-family="DejaVu Sans" font-size="10">Integridad verificada. Preparando los productos seleccionados…</text>
+    <rect x="639" y="502" width="105" height="42" rx="8" fill="#1a1f26" stroke="#414a55"/>
+    <text x="691.5" y="528" text-anchor="middle" fill="#edf1f5" font-family="DejaVu Sans" font-size="12">Cancelar</text>
+    <rect x="755" y="502" width="131" height="42" rx="8" fill="#c8d1dc"/>
+    <text x="820.5" y="528" text-anchor="middle" fill="#090b0e" font-family="DejaVu Sans" font-size="12" font-weight="700">Instalar DORN AI</text>
+  </g>
+</svg>

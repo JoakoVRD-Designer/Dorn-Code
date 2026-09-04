@@ -1,0 +1,47 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://dorn.local/schemas/cad-operation.schema.json",
+  "title": "DORN CAD Bridge Operation",
+  "type": "object",
+  "required": ["schema", "jobId", "operation", "input", "outputDirectory"],
+  "additionalProperties": false,
+  "properties": {
+    "schema": { "const": "dorn-cad-operation/1" },
+    "jobId": { "type": "string", "minLength": 8, "maxLength": 128 },
+    "operation": {
+      "enum": [
+        "health",
+        "inspect-brep",
+        "tessellate",
+        "convert-neutral",
+        "repair-shape",
+        "extract-assembly",
+        "measure",
+        "render-preview"
+      ]
+    },
+    "input": {
+      "type": "object",
+      "required": ["file"],
+      "properties": {
+        "file": {
+          "type": "object",
+          "required": ["name", "path", "sizeBytes", "sha256"],
+          "properties": {
+            "name": { "type": "string" },
+            "path": { "type": "string" },
+            "sizeBytes": { "type": "integer", "minimum": 0 },
+            "sha256": { "type": "string", "pattern": "^[a-f0-9]{64}$" }
+          },
+          "additionalProperties": false
+        },
+        "targetFormat": { "enum": ["step", "iges", "brep", "stl", "obj", "gltf", "glb"] },
+        "linearDeflection": { "type": "number", "exclusiveMinimum": 0 },
+        "angularDeflection": { "type": "number", "exclusiveMinimum": 0 },
+        "units": { "enum": ["mm", "cm", "m", "in"] }
+      },
+      "additionalProperties": false
+    },
+    "outputDirectory": { "type": "string", "minLength": 1 }
+  }
+}

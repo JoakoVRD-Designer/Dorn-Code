@@ -1,0 +1,33 @@
+#include <windows.h>
+
+1 ICON "../assets/dorn-installer.ico"
+2 BITMAP "../assets/dorn-installer-forest.bmp"
+
+1 VERSIONINFO
+FILEVERSION 4,0,0,7
+PRODUCTVERSION 4,0,0,7
+FILEFLAGSMASK 0x3fL
+FILEFLAGS 0x2L
+FILEOS 0x40004L
+FILETYPE 0x1L
+FILESUBTYPE 0x0L
+BEGIN
+  BLOCK "StringFileInfo"
+  BEGIN
+    BLOCK "040904b0"
+    BEGIN
+      VALUE "CompanyName", "DORN\0"
+      VALUE "FileDescription", "Instalador nativo de DORN AI\0"
+      VALUE "FileVersion", "4.0.0-alpha.7\0"
+      VALUE "InternalName", "DORN AI Setup\0"
+      VALUE "LegalCopyright", "Copyright 2026 DORN\0"
+      VALUE "OriginalFilename", "DORN_AI_Setup_4.0.0-alpha.7_x64.exe\0"
+      VALUE "ProductName", "DORN AI\0"
+      VALUE "ProductVersion", "4.0.0-alpha.7\0"
+    END
+  END
+  BLOCK "VarFileInfo"
+  BEGIN
+    VALUE "Translation", 0x409, 1200
+  END
+END

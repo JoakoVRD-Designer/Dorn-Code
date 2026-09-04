@@ -1,0 +1,28 @@
+{
+  "schema": "dorn.completion-gate/1",
+  "goal": "Continue until every CURRENT PDF requirement and every protected DORN 4.0 behavior is implemented and independently evidenced.",
+  "canonicalBase": "DORN AI 4.0.0-alpha.7",
+  "globalState": "PARTIAL",
+  "completionRequires": [
+    "Every CURRENT requirement has a stable identifier and a terminal VERIFIED evidence result.",
+    "Every protected DORN 4.0 visual and product behavior passes its regression contract.",
+    "Every completed work unit links implementation bytes, hostile regressions and Evidence over the same source hash.",
+    "No unresolved PARTIAL, BLOCKED or NEEDS_RETEST requirement remains.",
+    "app.asar and all four editable ZIPs reconstruct byte-exactly from a clean destination.",
+    "The native system installer passes clean install, update, first launch, uninstall and rollback tests on Windows 11."
+  ],
+  "workingRules": {
+    "stopOnPartialSuccess": false,
+    "deleteWithoutDocumentedReason": false,
+    "requireHostileRegression": true,
+    "requireRollbackForMutations": true,
+    "preserveEarlierCheckpoints": true,
+    "truthStates": [
+      "PARTIAL",
+      "BLOCKED",
+      "NEEDS_RETEST",
+      "VERIFIED"
+    ]
+  },
+  "nextUnit": "Supply Chain Guard plus Skill/Plugin Trust Pipeline: verified quarantine, provenance, exact version/hash/signature/license/SBOM, permission diff, Compatibility Lab, per-project activation and rollback"
+}
