@@ -58,7 +58,8 @@ jobs:
             echo "Symbolic links are not allowed in this checkpoint." >&2
             exit 1
           fi
-          git diff --cached --check -- .github .gitignore .gitattributes README.md CONTRIBUTING.md scripts/verify-source-checkout.cjs package.json
+          node --check scripts/verify-source-checkout.cjs
+          node -e "JSON.parse(require('node:fs').readFileSync('package.json','utf8'))"
           git config user.name "DORN Checkpoint Bot"
           git config user.email "actions@users.noreply.github.com"
           git commit -m "checkpoint: DORN AI 4.0.0-alpha.7 Installer v3"
