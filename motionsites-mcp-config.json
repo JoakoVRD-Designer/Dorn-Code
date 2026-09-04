@@ -1,0 +1,13 @@
+{
+  "mcpServers": {
+    "motionsites": {
+      "command": "node",
+      "args": ["/path/to/motionsites-mcp/build/index.js"],
+      "env": {
+        "MOTIONSITES_API_URL": "https://motionsites.ai",
+        "MOTIONSITES_API_KEY": "your-api-key-here",
+        "MOTIONSITES_TIMEOUT": "30000"
+      }
+    }
+  }
+}
