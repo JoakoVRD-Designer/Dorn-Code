@@ -1,0 +1,213 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Smooth scroll behavior */
+html {
+  scroll-behavior: smooth;
+  scroll-snap-type: y mandatory;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* Fullscreen presentation styles */
+body {
+  background-color: #080B10;
+  color: #F4F7FA;
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  overflow-x: hidden;
+}
+
+/* Slide sections */
+.slide {
+  @apply min-h-screen w-full snap-start flex flex-col justify-center items-center relative overflow-hidden;
+}
+
+/* Smooth transitions */
+.transition-fade {
+  transition: opacity 300ms ease-out;
+}
+
+.transition-slide {
+  transition: transform 400ms cubic-bezier(0.4, 0, 0.2, 1), opacity 300ms ease-out;
+}
+
+/* Accessibility improvements */
+*:focus-visible {
+  outline: 2px solid #F3A93A;
+  outline-offset: 2px;
+}
+
+button:focus-visible,
+a:focus-visible {
+  outline: 2px solid #F3A93A;
+  outline-offset: 2px;
+}
+
+/* Skip to main content link */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+/* Smooth animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideUp {
+  from {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes fadeInScale {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.animate-fade-in {
+  animation: fadeIn 600ms ease-out forwards;
+}
+
+.animate-slide-up {
+  animation: slideUp 600ms ease-out forwards;
+}
+
+.animate-fade-in-scale {
+  animation: fadeInScale 600ms ease-out forwards;
+}
+
+/* Prevent reduced motion from stopping all animations */
+@media (prefers-reduced-motion: reduce) {
+  .animate-fade-in,
+  .animate-slide-up,
+  .animate-fade-in-scale {
+    animation: none;
+    opacity: 1;
+    transform: none;
+  }
+}
+
+/* Grid utilities for consistent layouts */
+.grid-center {
+  @apply grid place-items-center;
+}
+
+/* Text utilities */
+.text-xs-safe {
+  @apply text-xs md:text-sm;
+}
+
+.text-sm-safe {
+  @apply text-sm md:text-base;
+}
+
+.text-base-safe {
+  @apply text-base md:text-lg;
+}
+
+.text-lg-safe {
+  @apply text-lg md:text-2xl;
+}
+
+.text-xl-safe {
+  @apply text-xl md:text-3xl;
+}
+
+.text-2xl-safe {
+  @apply text-2xl md:text-4xl;
+}
+
+.text-3xl-safe {
+  @apply text-3xl md:text-5xl;
+}
+
+.text-4xl-safe {
+  @apply text-4xl md:text-6xl;
+}
+
+/* Ensure text is readable from distance */
+@media (min-width: 1920px) {
+  .text-4xl-safe {
+    @apply text-7xl;
+  }
+
+  .text-3xl-safe {
+    @apply text-6xl;
+  }
+}
+
+/* Glassmorphism alternative (minimal, clean) */
+.panel-bg {
+  @apply bg-dorn-panel border border-dorn-panel-secondary rounded-lg;
+}
+
+.panel-bg-secondary {
+  @apply bg-dorn-panel-secondary border border-dorn-panel rounded-lg;
+}
+
+/* Buttons */
+.btn {
+  @apply px-6 py-3 rounded-lg font-medium transition-all duration-300;
+  @apply focus-visible:outline-2 focus-visible:outline-offset-2;
+  @apply min-h-[44px] flex items-center justify-center;
+}
+
+.btn-primary {
+  @apply btn bg-dorn-accent text-dorn-bg hover:bg-yellow-500 active:scale-95;
+}
+
+.btn-secondary {
+  @apply btn bg-dorn-panel text-dorn-text border border-dorn-text hover:bg-dorn-panel-secondary;
+}
+
+.btn-ghost {
+  @apply btn text-dorn-accent hover:text-yellow-500 hover:bg-dorn-panel/50;
+}
+
+.btn-disabled {
+  @apply btn opacity-50 cursor-not-allowed pointer-events-none;
+}
+
+/* Links */
+a {
+  @apply text-dorn-accent hover:text-yellow-500 transition-colors duration-300;
+}
+
+a:focus-visible {
+  @apply outline-2 outline-offset-2 outline-dorn-accent;
+}

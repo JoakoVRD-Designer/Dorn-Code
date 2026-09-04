@@ -1,0 +1,151 @@
+{
+  "event": {
+    "name": "Católica Innovation Tournament 2026",
+    "date": "2026-09-08",
+    "location": "Universidad Católica de Chillán",
+    "timeZone": "America/Santiago"
+  },
+  "project": {
+    "name": "DORN",
+    "tagline": "Inteligencia que crea. Tecnología que devuelve vida.",
+    "missionStatement": "No reemplazamos una máquina completa cuando todavía puede recuperarse. DORN le devuelve control, interfaz y continuidad."
+  },
+  "problem": {
+    "title": "A veces no muere la máquina. Muere su control.",
+    "description": "Una placa dañada u obsoleta puede detener un equipo que todavía conserva valor mecánico y productivo."
+  },
+  "product": {
+    "name": "DORN Machine Retrofit Kit",
+    "components": [
+      {
+        "name": "ESP32-P4",
+        "role": "Consola objetivo",
+        "status": "DISPLAY_ONLY",
+        "note": "Pantalla defectuosa de fábrica. Exhibida como unidad de demostración, no operativa."
+      },
+      {
+        "name": "ESP32-S3",
+        "role": "Controlador de respaldo para piloto",
+        "status": "REQUIRES_PRETEST",
+        "note": "Programado en Arduino IDE. Requiere prueba previa documentada antes de validar control físico."
+      },
+      {
+        "name": "DORN Machine PC",
+        "role": "Interfaz para computadora",
+        "status": "DEMO_MODE",
+        "note": "Disponible en modo demostración simulado."
+      },
+      {
+        "name": "DORN Machines Mobile",
+        "role": "PWA para Android",
+        "status": "DEMO_MODE",
+        "note": "Disponible en modo demostración simulado, sin conexión real al hardware."
+      }
+    ],
+    "includes": [
+      "Consola objetivo basada en ESP32-P4",
+      "Controlador local basado en ESP32-S3",
+      "DORN Machine para PC",
+      "DORN Machines Mobile para Android",
+      "Instalación o adaptador compatible",
+      "Seis meses de servicio DORN incluidos"
+    ]
+  },
+  "pilot": {
+    "name": "Nanoburbujas 01",
+    "description": "Máquina de nanoburbujas con bomba de 12 V",
+    "logic": {
+      "onDuration": 15,
+      "onUnit": "minutes",
+      "offDuration": 22,
+      "offUnit": "minutes",
+      "execution": "local",
+      "voiceCommand": "activa la bomba DORN",
+      "manualStop": true,
+      "internetRequired": false,
+      "aiDecisionRequired": false
+    },
+    "flow": "DORN AI → Aplicación PC/Móvil → ESP32-S3 → Control Autorizado → Máquina",
+    "safetyNote": "La IA no escribe libremente sobre el relé. Control local y manual siempre disponibles."
+  },
+  "customers": {
+    "initial": [
+      "Pymes",
+      "Propietarios de maquinaria",
+      "Técnicos e integradores",
+      "Organizaciones con equipos compatibles detenidos"
+    ],
+    "sectors": [
+      "Modernización y recuperación de maquinaria",
+      "Automatización para pymes"
+    ],
+    "note": "No afirmar compatibilidad universal. Validación por familia de equipos."
+  },
+  "revenue": {
+    "model": [
+      {
+        "item": "Kit físico",
+        "description": "Venta del paquete hardware completo"
+      },
+      {
+        "item": "Instalación y adaptación",
+        "description": "Servicio de instalación por tipo de máquina"
+      },
+      {
+        "item": "Servicio continuo",
+        "description": "Suscripción post-inclusión (seis meses inicialmente cubiertos)"
+      }
+    ],
+    "pricing": "PENDING_VALIDATION",
+    "note": "No afirmar precio, número de clientes, ahorro o impacto medido sin evidencia."
+  },
+  "status": {
+    "overall": "PARTIAL · PILOTO EN VALIDACIÓN",
+    "proven": [
+      "DORN AI para PC en desarrollo interno",
+      "DORN Machine PC con simulador",
+      "DORN Machines Mobile como PWA",
+      "Narrativa, flujo y contrato de integración"
+    ],
+    "pending": [
+      "Prueba previa del firmware S3",
+      "Integración real PC/móvil ↔ S3",
+      "Validación del relé, protecciones, parada manual y bomba",
+      "APK nativo firmado",
+      "Precio y primer piloto comercial"
+    ]
+  },
+  "contact": {
+    "email": null,
+    "form": null,
+    "url": null,
+    "note": "Centralizar valores. CTAs desactivados hasta confirmar contacto."
+  },
+  "motionsites": {
+    "mobileAppRoute": "/machines/",
+    "videoReference": "https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260622_204103_f607742e-09da-4cf5-bb06-4e67b0a531de.mp4",
+    "videoUsage": "VERIFY_PERMISSION",
+    "note": "Si se confirma permiso legal, guardar como public/media/dorn-hero.mp4. Si no, usar fondo cinemático local CSS."
+  },
+  "prohibitions": {
+    "hardware": [
+      "No afirmar que ESP32-P4 funciona",
+      "No insinuar que su pantalla puede encenderse",
+      "No afirmar control S3→bomba sin prueba previa documentada"
+    ],
+    "product": [
+      "No afirmar disponibilidad para compra",
+      "No mostrar precio validado",
+      "No afirmar clientes, ventas, ahorro o impacto sin evidencia"
+    ],
+    "capabilities": [
+      "No afirmar compatibilidad universal",
+      "No afirmar que IA controla seguridad física directamente",
+      "No afirmar APK nativo firmado",
+      "No afirmar que sitio/PWA pueden enviar comandos reales"
+    ],
+    "evidence": [
+      "No afirmar pruebas no documentadas"
+    ]
+  }
+}
