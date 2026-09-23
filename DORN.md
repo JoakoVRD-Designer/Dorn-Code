@@ -24,6 +24,34 @@ universal de IAs" más abajo.
 > (stack, estructura de carpetas, módulos de agentes, integraciones de
 > proveedores, etc.).
 
+### Relación con Virillio Code
+
+DORN CODE es la evolución de **Virillio Code** (virillio.com), del mismo
+creador. Virillio Code ya resuelve buena parte de la base —conexión con
+75+ proveedores de IA y modelos locales/custom, capa de permisos y
+revisión de diffs, memoria persistente de convenciones/decisiones del
+proyecto, agentes especializados, plugins tipo MCP (GitHub, Slack,
+Notion, Figma, Stripe, etc.)— en una app de escritorio en beta (macOS,
+Windows, Linux).
+
+DORN CODE no repite esa base como si fuera nueva: la toma como punto de
+partida y agrega lo que Virillio Code, a la fecha de este documento, no
+expone públicamente:
+
+- **Autoridad humana estructural**, no solo una capa de revisión: el
+  agente no puede ampliarse permisos a sí mismo ni desactivar su propia
+  auditoría (ver "Garantía estructural de autoridad humana").
+- **Medidor de gasto/uso unificado** y siempre visible entre todos los
+  proveedores conectados, no una vista por proveedor.
+- **Uso general explícito**, no enfocado solo en desarrolladores: gratis
+  para cualquier persona y cualquier propósito, incluyendo proyectos
+  personales como juegos (ver "Uso libre (freeware)" más abajo).
+- **Dominios más allá del desarrollo de software**, como la gestión de
+  maquinaria empresarial (ver "Aplicaciones futuras").
+
+Esta sección se actualiza si Virillio Code lanza alguna de estas
+funciones, para no reclamar una diferenciación que ya no exista.
+
 ## Estructura del repositorio
 
 | Archivo/carpeta | Propósito |
