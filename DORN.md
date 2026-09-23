@@ -167,6 +167,31 @@ de tokens y mantiene la salida consistente.
 - Agregar una plantilla nueva solo cuando el patrón se repite (ver
   `templates/README.md` para el criterio y el formato).
 
+## Aplicaciones futuras
+
+### Gestión de maquinaria empresarial mediante agentes
+
+Además de los casos de uso actuales (ingeniería, programación,
+investigación, productividad), se contempla como proyecto futuro extender
+DORN CODE al manejo de maquinaria empresarial/industrial mediante agentes:
+agentes que monitoreen, operen o coordinen equipos y líneas de producción
+de una empresa, bajo los mismos principios ya definidos en este documento
+(criterio y sentido común de los agentes, confirmación explícita para
+acciones de alto impacto, compatibilidad con las IAs y sistemas ya
+presentes en el entorno del cliente).
+
+Este es un dominio de aplicación a futuro, no un requisito del núcleo de
+DORN CODE hoy. Antes de comenzar su implementación hay que definir:
+
+- Qué tipo de maquinaria/equipos se busca soportar y cómo se integran
+  (protocolos industriales, sensores, PLCs/SCADA u otros sistemas de
+  control ya existentes en la empresa).
+- Qué acciones puede tomar un agente de forma autónoma y cuáles requieren
+  confirmación humana explícita, dado que aquí el "radio de impacto" de un
+  error puede incluir riesgo físico/de seguridad, no solo económico.
+- Requisitos de seguridad y cumplimiento normativo específicos del sector
+  industrial (más estrictos que los de un entorno puramente de software).
+
 ## Próximos pasos sugeridos
 
 - Definir el stack técnico (lenguaje(s), framework(s), gestor de paquetes).
