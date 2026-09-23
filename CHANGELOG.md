@@ -15,6 +15,7 @@ y este proyecto sigue [Versionado Semántico](https://semver.org/lang/es/).
 - `DORN.md`: sección "Principios de diseño: criterio y sentido común de los agentes", con requisitos de comportamiento para que los agentes de DORN CODE no ejecuten acciones costosas, irreversibles o no solicitadas sin confirmación explícita del usuario.
 - `templates/`: base de plantillas reutilizables para agentes (task brief, agent handoff, entrada de changelog, descripción de PR) para reducir el consumo de tokens en tareas repetitivas. Documentado en `DORN.md`.
 - `DORN.md`: sección "Compatibilidad universal de IAs", estableciendo como requisito central que DORN CODE se integre con cualquier IA del equipo del usuario (CLIs, APIs, modelos locales) y las haga trabajar en conjunto, no de forma aislada.
+- `DORN.md`: sección "Medidor de gasto/uso unificado", exigiendo una vista agregada y siempre visible del consumo/costo de todas las IAs que orquesta DORN CODE, con límites configurables que disparan confirmación explícita.
 
 ### Changed
 - Nombre del proyecto de "DORN AI" a "DORN CODE" en README.md, DORN.md y CHANGELOG.md.
