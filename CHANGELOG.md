@@ -18,6 +18,7 @@ y este proyecto sigue [Versionado Semántico](https://semver.org/lang/es/).
 - `DORN.md`: sección "Aplicaciones futuras" con la gestión de maquinaria empresarial/industrial mediante agentes como proyecto próximo a evaluar, sobre los mismos principios de criterio y confirmación explícita ya definidos.
 - `DORN.md`: sección "Garantía estructural de autoridad humana", elevando el control humano de regla documentada a requisito estructural (el agente no puede ampliarse sus propios permisos, desactivar su propia auditoría, ni modificar las reglas que rigen su comportamiento).
 - `DORN.md`: sección "Memoria persistente y conciencia de contexto (inspirado en Obsidian)", proponiendo una base de conocimiento local en notas Markdown enlazadas para que los agentes retengan contexto entre tareas en vez de empezar cada vez desde cero.
+- `DORN.md`: sección "Medidor de gasto/uso unificado", exigiendo una vista agregada y siempre visible del consumo/costo de todas las IAs que orquesta DORN CODE, con límites configurables que disparan confirmación explícita.
 
 ### Changed
 - Nombre del proyecto de "DORN AI" a "DORN CODE" en README.md, DORN.md y CHANGELOG.md.

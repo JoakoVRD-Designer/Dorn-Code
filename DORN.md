@@ -247,6 +247,43 @@ mínimo:
   (quién decide, cómo se pasan resultados, cómo se resuelven conflictos
   entre agentes).
 
+## Medidor de gasto/uso unificado
+
+Hoy cada proveedor de IA muestra su propio consumo por separado; nadie
+tiene una vista única de cuánto se está gastando/consumiendo entre todas
+las IAs que corren en un mismo equipo a la vez. Esa falta de visibilidad
+agregada es justo el tipo de punto ciego que permite que un agente gaste
+dinero sin que el usuario lo note hasta que ya es tarde (ver "Principios
+de diseño: criterio y sentido común de los agentes").
+
+DORN CODE debe mostrar, en tiempo real y siempre visible (no escondido en
+configuración), el gasto y consumo agregado de **todas** las IAs que
+orquesta —CLIs, APIs, modelos locales—, no solo las suyas propias.
+
+### Requisitos
+
+- Consolidar el consumo (tokens, llamadas, costo estimado) de cada
+  proveedor conectado en una sola vista, aunque cada uno facture distinto
+  (por token, por suscripción, gratis con límites, etc.).
+- Mostrar el gasto acumulado de forma visible por defecto, no como una
+  opción que el usuario tiene que ir a buscar.
+- Permitir fijar límites de gasto/uso (por sesión, por día, por
+  proveedor) que, al alcanzarse, disparen la confirmación explícita ya
+  exigida en "Principios de diseño" antes de seguir.
+- Ser igual de entendible para alguien sin conocimientos técnicos que
+  para una empresa, dado que DORN CODE es de uso general (ver "Qué es
+  DORN CODE").
+
+### Próximos pasos técnicos
+
+- Definir cómo se normaliza el "costo" entre proveedores con modelos de
+  facturación muy distintos.
+- Definir de dónde se obtiene ese dato por proveedor (APIs de uso/billing
+  cuando existan, estimación local cuando no).
+- Diseñar la UI del medidor y cómo se conecta con los límites de gasto
+  mencionados en "Principios de diseño: criterio y sentido común de los
+  agentes".
+
 ## Plantillas para agentes (ahorro de tokens)
 
 `templates/` contiene plantillas reutilizables para las tareas que un
