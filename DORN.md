@@ -36,6 +36,30 @@ universal de IAs" más abajo.
 > (stack, estructura de carpetas, módulos de agentes, integraciones de
 > proveedores, etc.).
 
+### Base funcional del producto
+
+DORN CODE implementa una base funcional completa de orquestación
+multi-IA de escritorio: conexión con 75+ proveedores de IA y modelos
+locales/custom, capa de permisos y revisión de diffs, memoria persistente
+de convenciones/decisiones del proyecto, agentes especializados y
+plugins tipo MCP (GitHub, Slack, Notion, Figma, Stripe, etc.), disponible
+como app de escritorio (macOS, Windows, Linux).
+
+Sobre esa base, DORN CODE no se queda en lo esperable: agrega lo
+siguiente como parte central del producto, no como diferenciador
+frente a nadie en particular:
+
+- **Autoridad humana estructural**, no solo una capa de revisión: el
+  agente no puede ampliarse permisos a sí mismo ni desactivar su propia
+  auditoría (ver "Garantía estructural de autoridad humana").
+- **Medidor de gasto/uso unificado** y siempre visible entre todos los
+  proveedores conectados, no una vista por proveedor.
+- **Uso general explícito**, no enfocado solo en desarrolladores: gratis
+  para cualquier persona y cualquier propósito, incluyendo proyectos
+  personales como juegos (ver "Uso libre (freeware)" más abajo).
+- **Dominios más allá del desarrollo de software**, como la gestión de
+  maquinaria empresarial (ver "Aplicaciones futuras").
+
 ## Estructura del repositorio
 
 | Archivo/carpeta | Propósito |
