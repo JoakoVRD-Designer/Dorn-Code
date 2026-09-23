@@ -11,6 +11,9 @@ y este proyecto sigue [Versionado Semántico](https://semver.org/lang/es/).
 - Registro de cambios (`CHANGELOG.md`) para documentar la evolución del proyecto.
 - `DORN.md`: guía de proyecto y convenciones de trabajo (para colaboradores y asistentes de IA).
 
+### Added
+- `DORN.md`: sección "Principios de diseño: criterio y sentido común de los agentes", con requisitos de comportamiento para que los agentes de DORN CODE no ejecuten acciones costosas, irreversibles o no solicitadas sin confirmación explícita del usuario.
+
 ### Changed
 - Nombre del proyecto de "DORN AI" a "DORN CODE" en README.md, DORN.md y CHANGELOG.md.
 
