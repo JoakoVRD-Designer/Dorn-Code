@@ -1,6 +1,6 @@
 # Changelog
 
-Todos los cambios notables de DORN-AI se documentan en este archivo.
+Todos los cambios notables de DORN CODE se documentan en este archivo.
 
 El formato se basa en [Keep a Changelog](https://keepachangelog.com/es-ES/1.1.0/),
 y este proyecto sigue [Versionado Semántico](https://semver.org/lang/es/).
@@ -10,6 +10,9 @@ y este proyecto sigue [Versionado Semántico](https://semver.org/lang/es/).
 ### Added
 - Registro de cambios (`CHANGELOG.md`) para documentar la evolución del proyecto.
 - `DORN.md`: guía de proyecto y convenciones de trabajo (para colaboradores y asistentes de IA).
+
+### Changed
+- Nombre del proyecto de "DORN AI" a "DORN CODE" en README.md, DORN.md y CHANGELOG.md.
 
 ## [0.0.0] - 2026-09-23
 ### Added

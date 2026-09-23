@@ -1,12 +1,12 @@
 # DORN.md
 
-Guía de proyecto para DORN-AI: qué es, cómo está organizado y las convenciones
-que deben seguir tanto colaboradores humanos como asistentes de IA (Claude
-Code u otros) que trabajen en este repositorio.
+Guía de proyecto para DORN CODE: qué es, cómo está organizado y las
+convenciones que deben seguir tanto colaboradores humanos como asistentes de
+IA (Claude Code u otros) que trabajen en este repositorio.
 
-## Qué es DORN-AI
+## Qué es DORN CODE
 
-DORN AI es una plataforma de orquestación multi-agente de código abierto que
+DORN CODE es una plataforma de orquestación multi-agente de código abierto que
 unifica modelos de IA locales y proveedores en la nube en un único espacio de
 trabajo inteligente para ingeniería, programación, investigación y
 productividad.
