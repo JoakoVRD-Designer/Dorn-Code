@@ -15,7 +15,7 @@ y este proyecto sigue [Versionado Semántico](https://semver.org/lang/es/).
 - `DORN.md`: sección "Principios de diseño: criterio y sentido común de los agentes", con requisitos de comportamiento para que los agentes de DORN CODE no ejecuten acciones costosas, irreversibles o no solicitadas sin confirmación explícita del usuario.
 - `templates/`: base de plantillas reutilizables para agentes (task brief, agent handoff, entrada de changelog, descripción de PR) para reducir el consumo de tokens en tareas repetitivas. Documentado en `DORN.md`.
 - `DORN.md`: sección "Compatibilidad universal de IAs", estableciendo como requisito central que DORN CODE se integre con cualquier IA del equipo del usuario (CLIs, APIs, modelos locales) y las haga trabajar en conjunto, no de forma aislada.
-- `DORN.md`: sección "Relación con Virillio Code", documentando que DORN CODE es la evolución de Virillio Code (mismo creador) y listando los diferenciadores concretos frente a lo que Virillio Code ya ofrece públicamente.
+- `DORN.md`: sección "Relación con Virillio Code", documentando que DORN CODE se construye evolucionando el proyecto anterior Virillio Code como base, y listando los diferenciadores concretos frente a lo que Virillio Code ya ofrece públicamente.
 
 ### Changed
 - Nombre del proyecto de "DORN AI" a "DORN CODE" en README.md, DORN.md y CHANGELOG.md.

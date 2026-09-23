@@ -26,13 +26,13 @@ universal de IAs" más abajo.
 
 ### Relación con Virillio Code
 
-DORN CODE es la evolución de **Virillio Code** (virillio.com), del mismo
-creador. Virillio Code ya resuelve buena parte de la base —conexión con
-75+ proveedores de IA y modelos locales/custom, capa de permisos y
-revisión de diffs, memoria persistente de convenciones/decisiones del
-proyecto, agentes especializados, plugins tipo MCP (GitHub, Slack,
-Notion, Figma, Stripe, etc.)— en una app de escritorio en beta (macOS,
-Windows, Linux).
+DORN CODE se construye evolucionando **Virillio Code** (virillio.com), un
+proyecto anterior que se toma como base de partida. Virillio Code ya
+resuelve buena parte de esa base —conexión con 75+ proveedores de IA y
+modelos locales/custom, capa de permisos y revisión de diffs, memoria
+persistente de convenciones/decisiones del proyecto, agentes
+especializados, plugins tipo MCP (GitHub, Slack, Notion, Figma, Stripe,
+etc.)— en una app de escritorio en beta (macOS, Windows, Linux).
 
 DORN CODE no repite esa base como si fuera nueva: la toma como punto de
 partida y agrega lo que Virillio Code, a la fecha de este documento, no
