@@ -12,6 +12,18 @@ trabajo inteligente para ingeniería, programación, investigación y
 productividad. El software es de código cerrado; todos los derechos están
 reservados por DORN (ver `LICENSE`).
 
+**Uso libre (freeware)**: usar DORN CODE es gratis para cualquier persona
+y cualquier propósito —esto es sobre el *uso*, no sobre el *código*: el
+código sigue siendo cerrado y propiedad de DORN (nadie puede copiarlo,
+modificarlo o redistribuirlo sin permiso; ver `LICENSE`).
+
+**Alcance general, no solo empresarial**: DORN CODE puede hacer lo mismo
+que Claude Code o cualquier otra IA general instalada en el equipo —no
+está limitado a tareas "profesionales". Cualquier persona puede usarlo
+para lo que quiera: desarrollar juegos, proyectos personales, hobbies,
+etc., además de los casos de ingeniería/investigación/productividad ya
+mencionados.
+
 Un requisito central: DORN CODE debe ser compatible con cualquier IA
 existente en el equipo del usuario —CLIs, APIs, modelos locales— y hacer
 que trabajen en conjunto, no de forma aislada. Ver "Compatibilidad
@@ -31,7 +43,7 @@ universal de IAs" más abajo.
 | `README.md` | Descripción breve del proyecto (una línea + enlace a este documento y al changelog). |
 | `DORN.md` | Este archivo: guía de proyecto y convenciones de trabajo. |
 | `CHANGELOG.md` | Registro histórico de cambios notables, formato Keep a Changelog. |
-| `LICENSE` | Aviso de copyright propietario ("todos los derechos reservados"), no una licencia open-source. |
+| `LICENSE` | Aviso de copyright propietario: código cerrado, pero uso gratuito para cualquier persona/propósito (freeware). No es una licencia open-source. |
 | `templates/` | Plantillas reutilizables para tareas repetitivas de agentes (ver más abajo). |
 | `.gitignore` | Ignora artefactos de build/dependencias típicos de un stack Node/JS. |
 
