@@ -15,11 +15,16 @@ y este proyecto sigue [Versionado Semántico](https://semver.org/lang/es/).
 - `DORN.md`: sección "Principios de diseño: criterio y sentido común de los agentes", con requisitos de comportamiento para que los agentes de DORN CODE no ejecuten acciones costosas, irreversibles o no solicitadas sin confirmación explícita del usuario.
 - `templates/`: base de plantillas reutilizables para agentes (task brief, agent handoff, entrada de changelog, descripción de PR) para reducir el consumo de tokens en tareas repetitivas. Documentado en `DORN.md`.
 - `DORN.md`: sección "Compatibilidad universal de IAs", estableciendo como requisito central que DORN CODE se integre con cualquier IA del equipo del usuario (CLIs, APIs, modelos locales) y las haga trabajar en conjunto, no de forma aislada.
+- `DORN.md`: sección "Aplicaciones futuras" con la gestión de maquinaria empresarial/industrial mediante agentes como proyecto próximo a evaluar, sobre los mismos principios de criterio y confirmación explícita ya definidos.
+- `DORN.md`: sección "Garantía estructural de autoridad humana", elevando el control humano de regla documentada a requisito estructural (el agente no puede ampliarse sus propios permisos, desactivar su propia auditoría, ni modificar las reglas que rigen su comportamiento).
+- `DORN.md`: sección "Memoria persistente y conciencia de contexto (inspirado en Obsidian)", proponiendo una base de conocimiento local en notas Markdown enlazadas para que los agentes retengan contexto entre tareas en vez de empezar cada vez desde cero.
+- `DORN.md`: sección "Medidor de gasto/uso unificado", exigiendo una vista agregada y siempre visible del consumo/costo de todas las IAs que orquesta DORN CODE, con límites configurables que disparan confirmación explícita.
 - `DORN.md`: sección "Base funcional del producto", documentando la base de orquestación multi-IA de escritorio (75+ proveedores, permisos/revisión, memoria persistente, agentes especializados, plugins) y lo que DORN CODE agrega sobre esa base.
 
 ### Changed
 - Nombre del proyecto de "DORN AI" a "DORN CODE" en README.md, DORN.md y CHANGELOG.md.
 - `LICENSE` reemplazada: de Apache 2.0 (open-source) a copyright propietario ("todos los derechos reservados", DORN). README.md y DORN.md actualizados para reflejar que el software no es de código abierto.
+- `LICENSE` actualizada a modelo freeware: se otorga uso gratuito para cualquier persona y cualquier propósito (personal o comercial), manteniendo el código fuente cerrado y propiedad de DORN (sin derecho a copiarlo, modificarlo o redistribuirlo). README.md y DORN.md aclaran que DORN CODE es de alcance general —no limitado a uso empresarial/profesional— y puede usarse para proyectos personales como juegos.
 
 ## [0.0.0] - 2026-09-23
 ### Added
