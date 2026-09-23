@@ -11,6 +11,9 @@ y este proyecto sigue [Versionado Semántico](https://semver.org/lang/es/).
 - Registro de cambios (`CHANGELOG.md`) para documentar la evolución del proyecto.
 - `DORN.md`: guía de proyecto y convenciones de trabajo (para colaboradores y asistentes de IA).
 
+### Added
+- `templates/`: base de plantillas reutilizables para agentes (task brief, agent handoff, entrada de changelog, descripción de PR) para reducir el consumo de tokens en tareas repetitivas. Documentado en `DORN.md`.
+
 ### Changed
 - Nombre del proyecto de "DORN AI" a "DORN CODE" en README.md, DORN.md y CHANGELOG.md.
 
