@@ -12,6 +12,18 @@ trabajo inteligente para ingeniería, programación, investigación y
 productividad. El software es de código cerrado; todos los derechos están
 reservados por DORN (ver `LICENSE`).
 
+**Uso libre (freeware)**: usar DORN CODE es gratis para cualquier persona
+y cualquier propósito —esto es sobre el *uso*, no sobre el *código*: el
+código sigue siendo cerrado y propiedad de DORN (nadie puede copiarlo,
+modificarlo o redistribuirlo sin permiso; ver `LICENSE`).
+
+**Alcance general, no solo empresarial**: DORN CODE puede hacer lo mismo
+que Claude Code o cualquier otra IA general instalada en el equipo —no
+está limitado a tareas "profesionales". Cualquier persona puede usarlo
+para lo que quiera: desarrollar juegos, proyectos personales, hobbies,
+etc., además de los casos de ingeniería/investigación/productividad ya
+mencionados.
+
 Un requisito central: DORN CODE debe ser compatible con cualquier IA
 existente en el equipo del usuario —CLIs, APIs, modelos locales— y hacer
 que trabajen en conjunto, no de forma aislada. Ver "Compatibilidad
@@ -31,7 +43,7 @@ universal de IAs" más abajo.
 | `README.md` | Descripción breve del proyecto (una línea + enlace a este documento y al changelog). |
 | `DORN.md` | Este archivo: guía de proyecto y convenciones de trabajo. |
 | `CHANGELOG.md` | Registro histórico de cambios notables, formato Keep a Changelog. |
-| `LICENSE` | Aviso de copyright propietario ("todos los derechos reservados"), no una licencia open-source. |
+| `LICENSE` | Aviso de copyright propietario: código cerrado, pero uso gratuito para cualquier persona/propósito (freeware). No es una licencia open-source. |
 | `templates/` | Plantillas reutilizables para tareas repetitivas de agentes (ver más abajo). |
 | `.gitignore` | Ignora artefactos de build/dependencias típicos de un stack Node/JS. |
 
@@ -110,6 +122,89 @@ poder causar ese tipo de daño.
   escritura local, escritura compartida, acción financiera).
 - Diseñar límites de gasto/alcance configurables por el usuario.
 - Registrar y auditar toda acción de alto impacto ejecutada por un agente.
+
+## Garantía estructural de autoridad humana
+
+No alcanza con que el criterio y el sentido común (sección anterior) sean
+una regla escrita que el agente "debería" seguir: para que DORN CODE sea
+una respuesta real al miedo de que la IA actúe sin control humano, esa
+autoridad tiene que ser una garantía **estructural** del sistema, no una
+instrucción que el propio agente podría ignorar o reinterpretar.
+
+**Postura del proyecto**: DORN CODE no busca resolver el debate social
+sobre si la IA "dominará" a las personas; busca ser la demostración
+práctica de que la IA se implementa *al servicio del desarrollo*, no en
+lugar de la persona que decide. La autonomía del agente está para
+acelerar el trabajo que el humano dirige, no para reemplazar su criterio.
+
+### Requisitos (más allá de "Principios de diseño")
+
+- El agente no puede otorgarse a sí mismo más permisos de los que el
+  usuario le dio; ampliar su propio alcance requiere una acción humana
+  explícita, no una decisión del agente.
+- El registro/auditoría de acciones de alto impacto (ver sección
+  anterior) no puede ser desactivado, editado ni omitido por el propio
+  agente.
+- Debe existir una forma de detener o revertir la ejecución de un agente
+  que el agente mismo no pueda bloquear ni neutralizar.
+- Ningún agente puede modificar las reglas de permiso/confirmación que
+  rigen su propio comportamiento; esas reglas las define y cambia
+  únicamente el usuario.
+
+### Próximos pasos técnicos
+
+- Diseñar la capa de permisos como un componente separado del agente
+  (no una instrucción dentro de su propio prompt/contexto), para que no
+  dependa de que el modelo "decida" respetarla.
+- Definir cómo se expone el control/kill-switch al usuario de forma
+  simple y siempre disponible.
+- Evaluar cómo comunicar esta garantía de forma verificable (no solo
+  como promesa de marketing).
+
+## Memoria persistente y conciencia de contexto (inspirado en Obsidian)
+
+Los agentes de DORN CODE deben tener algo similar a lo que Obsidian le da
+a una persona: una base de conocimiento propia, hecha de notas
+enlazadas entre sí, en vez de empezar cada tarea sin memoria de lo ya
+trabajado. Eso es lo que le da más "conciencia" a un agente: contexto
+acumulado y conectado entre tareas, decisiones y proyectos anteriores,
+no una sesión aislada que olvida todo al terminar.
+
+### Qué se toma del modelo de Obsidian
+
+- **Archivos de texto plano (Markdown) locales**, no una base de datos
+  propietaria: el usuario es dueño de su propia memoria, puede
+  versionarla con git, leerla y editarla a mano.
+- **Enlaces bidireccionales (backlinks)** entre notas: una decisión, tarea
+  o entidad puede referenciar y ser referenciada por otras sin duplicar
+  contenido.
+- **Grafo de relaciones** entre conceptos/tareas/decisiones, en vez de una
+  lista plana sin conexión.
+- **Todo vive localmente** por defecto, coherente con que DORN CODE es
+  gratis, de uso general y no depende de un único proveedor en la nube.
+
+### Requisitos
+
+- Los agentes deben poder leer y escribir en esta base de conocimiento
+  como parte normal de su trabajo (registrar una decisión, un hallazgo,
+  un patrón detectado), respetando siempre los principios de criterio y
+  confirmación ya definidos — la memoria no es una excusa para actuar sin
+  permiso.
+- Un agente nuevo, o de otro proveedor (ver "Compatibilidad universal de
+  IAs"), debe poder retomar contexto leyendo esta memoria en vez de
+  reprocesar toda la conversación desde cero — esto también reduce el
+  consumo de tokens (ver "Plantillas para agentes").
+- El usuario controla qué entra en su memoria y puede editarla o
+  borrarla libremente; los datos son suyos, no de DORN.
+
+### Próximos pasos técnicos
+
+- Definir el formato de nota (metadata, enlaces, tags) y dónde vive
+  dentro de un proyecto DORN CODE.
+- Definir qué enlaces se generan automáticamente y cuáles añade el
+  agente de forma explícita.
+- Evaluar si hace falta un visualizador tipo grafo o si alcanza con
+  archivos Markdown + backlinks navegables.
 
 ## Compatibilidad universal de IAs
 
@@ -203,6 +298,31 @@ de tokens y mantiene la salida consistente.
   si ya existe una plantilla en `templates/` y usarla.
 - Agregar una plantilla nueva solo cuando el patrón se repite (ver
   `templates/README.md` para el criterio y el formato).
+
+## Aplicaciones futuras
+
+### Gestión de maquinaria empresarial mediante agentes
+
+Además de los casos de uso actuales (ingeniería, programación,
+investigación, productividad), se contempla como proyecto futuro extender
+DORN CODE al manejo de maquinaria empresarial/industrial mediante agentes:
+agentes que monitoreen, operen o coordinen equipos y líneas de producción
+de una empresa, bajo los mismos principios ya definidos en este documento
+(criterio y sentido común de los agentes, confirmación explícita para
+acciones de alto impacto, compatibilidad con las IAs y sistemas ya
+presentes en el entorno del cliente).
+
+Este es un dominio de aplicación a futuro, no un requisito del núcleo de
+DORN CODE hoy. Antes de comenzar su implementación hay que definir:
+
+- Qué tipo de maquinaria/equipos se busca soportar y cómo se integran
+  (protocolos industriales, sensores, PLCs/SCADA u otros sistemas de
+  control ya existentes en la empresa).
+- Qué acciones puede tomar un agente de forma autónoma y cuáles requieren
+  confirmación humana explícita, dado que aquí el "radio de impacto" de un
+  error puede incluir riesgo físico/de seguridad, no solo económico.
+- Requisitos de seguridad y cumplimiento normativo específicos del sector
+  industrial (más estrictos que los de un entorno puramente de software).
 
 ## Próximos pasos sugeridos
 
