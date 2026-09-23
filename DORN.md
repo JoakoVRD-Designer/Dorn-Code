@@ -6,10 +6,11 @@ IA (Claude Code u otros) que trabajen en este repositorio.
 
 ## Qué es DORN CODE
 
-DORN CODE es una plataforma de orquestación multi-agente de código abierto que
+DORN CODE es una plataforma propietaria de orquestación multi-agente que
 unifica modelos de IA locales y proveedores en la nube en un único espacio de
 trabajo inteligente para ingeniería, programación, investigación y
-productividad.
+productividad. El software es de código cerrado; todos los derechos están
+reservados por DORN (ver `LICENSE`).
 
 > Estado actual: el repositorio está en etapa inicial. Todavía no hay código
 > de aplicación; este documento define las bases (propósito, convenciones,
@@ -25,7 +26,7 @@ productividad.
 | `README.md` | Descripción breve del proyecto (una línea + enlace a este documento y al changelog). |
 | `DORN.md` | Este archivo: guía de proyecto y convenciones de trabajo. |
 | `CHANGELOG.md` | Registro histórico de cambios notables, formato Keep a Changelog. |
-| `LICENSE` | Licencia del proyecto. |
+| `LICENSE` | Aviso de copyright propietario ("todos los derechos reservados"), no una licencia open-source. |
 | `.gitignore` | Ignora artefactos de build/dependencias típicos de un stack Node/JS. |
 
 ## Convenciones de trabajo

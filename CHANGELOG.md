@@ -13,6 +13,7 @@ y este proyecto sigue [Versionado Semántico](https://semver.org/lang/es/).
 
 ### Changed
 - Nombre del proyecto de "DORN AI" a "DORN CODE" en README.md, DORN.md y CHANGELOG.md.
+- `LICENSE` reemplazada: de Apache 2.0 (open-source) a copyright propietario ("todos los derechos reservados", DORN). README.md y DORN.md actualizados para reflejar que el software no es de código abierto.
 
 ## [0.0.0] - 2026-09-23
 ### Added
