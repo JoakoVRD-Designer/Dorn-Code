@@ -11,6 +11,11 @@ unifica modelos de IA locales y proveedores en la nube en un único espacio de
 trabajo inteligente para ingeniería, programación, investigación y
 productividad.
 
+Un requisito central: DORN CODE debe ser compatible con cualquier IA
+existente en el equipo del usuario —CLIs, APIs, modelos locales— y hacer
+que trabajen en conjunto, no de forma aislada. Ver "Compatibilidad
+universal de IAs" más abajo.
+
 > Estado actual: el repositorio está en etapa inicial. Todavía no hay código
 > de aplicación; este documento define las bases (propósito, convenciones,
 > registro de cambios) antes de que empiece a crecer la base de código.
@@ -65,6 +70,47 @@ entrada.
   lo que no sea obvio (motivo de una decisión no evidente).
 - Preferir cambios mínimos y enfocados sobre refactors amplios no
   solicitados.
+
+## Compatibilidad universal de IAs
+
+DORN CODE debe poder integrar cualquier IA disponible en el equipo del
+usuario, sin importar cómo se exponga, y hacer que colaboren entre sí en
+una misma tarea —no ejecutarse aisladas unas de otras. Esto incluye, como
+mínimo:
+
+- **CLIs locales**: herramientas de IA instaladas en el sistema (ej.
+  Claude Code, y cualquier otra CLI de IA que el usuario tenga).
+- **APIs en la nube**: cualquier proveedor con API (Anthropic, OpenAI,
+  Google, etc.), no uno solo.
+- **Modelos locales**: modelos corriendo en el propio equipo (ej. vía
+  Ollama, LM Studio u otros runtimes locales).
+- **Cualquier otra IA presente en el sistema** que exponga alguna forma de
+  invocación (CLI, API, SDK, socket local, etc.).
+
+### Requisitos
+
+- No acoplar el diseño a un único proveedor, protocolo o formato de
+  integración; DORN CODE es el orquestador común, no un cliente de una
+  sola IA.
+- Detectar/registrar las IAs disponibles en el equipo (CLIs instaladas,
+  credenciales de API configuradas, modelos locales activos) en vez de
+  requerir configuración manual completa para cada una.
+- Definir una interfaz/adaptador común para que cualquier IA (CLI, API,
+  modelo local) se conecte de la misma forma a DORN CODE, traduciendo su
+  protocolo nativo a esa interfaz.
+- Permitir que agentes de distintos proveedores colaboren en una misma
+  tarea (orquestación real), con un mecanismo para pasar contexto y
+  resultados entre ellos.
+
+### Próximos pasos técnicos
+
+- Diseñar la capa de adaptadores (uno por tipo de integración: CLI, API
+  REST, SDK, modelo local) y el contrato común que exponen a DORN CODE.
+- Definir cómo se descubren y autentican/configuran las credenciales de
+  cada proveedor de forma segura.
+- Definir el protocolo de coordinación entre agentes de distintos orígenes
+  (quién decide, cómo se pasan resultados, cómo se resuelven conflictos
+  entre agentes).
 
 ## Próximos pasos sugeridos
 

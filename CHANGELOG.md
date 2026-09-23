@@ -11,6 +11,9 @@ y este proyecto sigue [Versionado Semántico](https://semver.org/lang/es/).
 - Registro de cambios (`CHANGELOG.md`) para documentar la evolución del proyecto.
 - `DORN.md`: guía de proyecto y convenciones de trabajo (para colaboradores y asistentes de IA).
 
+### Added
+- `DORN.md`: sección "Compatibilidad universal de IAs", estableciendo como requisito central que DORN CODE se integre con cualquier IA del equipo del usuario (CLIs, APIs, modelos locales) y las haga trabajar en conjunto, no de forma aislada.
+
 ### Changed
 - Nombre del proyecto de "DORN AI" a "DORN CODE" en README.md, DORN.md y CHANGELOG.md.
 
