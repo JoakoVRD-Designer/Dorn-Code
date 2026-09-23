@@ -27,6 +27,7 @@ reservados por DORN (ver `LICENSE`).
 | `DORN.md` | Este archivo: guía de proyecto y convenciones de trabajo. |
 | `CHANGELOG.md` | Registro histórico de cambios notables, formato Keep a Changelog. |
 | `LICENSE` | Aviso de copyright propietario ("todos los derechos reservados"), no una licencia open-source. |
+| `templates/` | Plantillas reutilizables para tareas repetitivas de agentes (ver más abajo). |
 | `.gitignore` | Ignora artefactos de build/dependencias típicos de un stack Node/JS. |
 
 ## Convenciones de trabajo
@@ -104,6 +105,21 @@ poder causar ese tipo de daño.
   escritura local, escritura compartida, acción financiera).
 - Diseñar límites de gasto/alcance configurables por el usuario.
 - Registrar y auditar toda acción de alto impacto ejecutada por un agente.
+
+## Plantillas para agentes (ahorro de tokens)
+
+`templates/` contiene plantillas reutilizables para las tareas que un
+agente repite seguido (definir una tarea, traspasar contexto entre
+agentes, redactar una entrada de changelog, describir un PR). La idea es
+que el agente complete campos fijos en vez de regenerar desde cero el
+mismo tipo de contexto/formato en cada ejecución, lo que reduce el consumo
+de tokens y mantiene la salida consistente.
+
+- Antes de redactar libremente un texto que encaje en una tarea repetitiva
+  (task brief, handoff, entrada de changelog, descripción de PR), revisar
+  si ya existe una plantilla en `templates/` y usarla.
+- Agregar una plantilla nueva solo cuando el patrón se repite (ver
+  `templates/README.md` para el criterio y el formato).
 
 ## Próximos pasos sugeridos
 
