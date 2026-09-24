@@ -10,8 +10,6 @@ y este proyecto sigue [Versionado Semántico](https://semver.org/lang/es/).
 ### Added
 - Registro de cambios (`CHANGELOG.md`) para documentar la evolución del proyecto.
 - `DORN.md`: guía de proyecto y convenciones de trabajo (para colaboradores y asistentes de IA).
-
-### Added
 - `DORN.md`: sección "Principios de diseño: criterio y sentido común de los agentes", con requisitos de comportamiento para que los agentes de DORN CODE no ejecuten acciones costosas, irreversibles o no solicitadas sin confirmación explícita del usuario.
 - `templates/`: base de plantillas reutilizables para agentes (task brief, agent handoff, entrada de changelog, descripción de PR) para reducir el consumo de tokens en tareas repetitivas. Documentado en `DORN.md`.
 - `DORN.md`: sección "Compatibilidad universal de IAs", estableciendo como requisito central que DORN CODE se integre con cualquier IA del equipo del usuario (CLIs, APIs, modelos locales) y las haga trabajar en conjunto, no de forma aislada.
@@ -26,9 +24,12 @@ y este proyecto sigue [Versionado Semántico](https://semver.org/lang/es/).
 - `LICENSE` reemplazada: de Apache 2.0 (open-source) a copyright propietario ("todos los derechos reservados", DORN). README.md y DORN.md actualizados para reflejar que el software no es de código abierto.
 - `LICENSE` actualizada a modelo freeware: se otorga uso gratuito para cualquier persona y cualquier propósito (personal o comercial), manteniendo el código fuente cerrado y propiedad de DORN (sin derecho a copiarlo, modificarlo o redistribuirlo). README.md y DORN.md aclaran que DORN CODE es de alcance general —no limitado a uso empresarial/profesional— y puede usarse para proyectos personales como juegos.
 
+### Fixed
+- `CHANGELOG.md`: se unificaron dos secciones `### Added` duplicadas dentro de `[Unreleased]` en una sola, y se corrigieron los links de comparación/release al final del archivo, que todavía apuntaban al nombre de repositorio anterior (`DORN-AI`) en lugar de `DORN-CODE`.
+
 ## [0.0.0] - 2026-09-23
 ### Added
 - Commit inicial del repositorio: `README.md`, `LICENSE` y `.gitignore`.
 
-[Unreleased]: https://github.com/JoakoVRD-Designer/DORN-AI/compare/main...HEAD
-[0.0.0]: https://github.com/JoakoVRD-Designer/DORN-AI/releases/tag/v0.0.0
+[Unreleased]: https://github.com/JoakoVRD-Designer/DORN-CODE/compare/main...HEAD
+[0.0.0]: https://github.com/JoakoVRD-Designer/DORN-CODE/releases/tag/v0.0.0
